@@ -30,4 +30,13 @@ class HomeController extends Controller
     {
         return view('adminHome');
     }
+
+    public function tampilkanSession(Request $request) {
+        if($request->session()->has('level')){
+            echo $request->session()->get('level');
+        }else{
+            echo 'Tidak ada data dalam session.';
+        }
+    }
+    
 }

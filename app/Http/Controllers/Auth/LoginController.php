@@ -51,13 +51,24 @@ class LoginController extends Controller
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
             if (auth()->user()->is_admin == 1) {
+                session()->put('level',1);
                 return redirect()->route('admin.home');
-            }else{
-                return redirect()->route('home');
+            }
+            elseif (auth()->user()->is_admin == 2){
+                session()->put('level',2);
+                return redirect()->route('admin.home');
+            }
+            elseif(auth()->user()->is_admin == 3){
+                session()->put('level',3);
+                return redirect()->route('admin.home');
+            }
+            elseif(auth()->user()->is_admin == 4){
+                session()->put('level',41);
+                return redirect()->route('admin.home');
             }
         }else{
             return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+                ->with('error','Email Address And Password Are Wrong.');
         }
           
     }
