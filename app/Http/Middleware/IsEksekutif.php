@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class IsAdmin
+class IsEksekutif
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,10 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     { 
-        if(auth()->user()->is_admin == 1){
+        if(auth()->user()->is_admin == 4){
         return $next($request);
         }
 
-    return redirect('home')->with('error',"You don't have admin access.");
+    return redirect(‘home’)->with(‘error’,"Anda Belum Login/Bukan Eksekutif");
     }
 }

@@ -42,8 +42,43 @@ Route::get('/superadmin/tatakelola/new_tatakelola', function () {
     return view('superadmin.new_tatakelola');
 });
 
+
+//Route Group Untuk Admin
+Route::middleware('is_admin')->group(function (){
+
+
+});
+
+//Route Group Untuk IT Staff
+Route::middleware('is_staff')->group(function (){
+
+
+});
+
+//Route Group Untuk IT Staff
+Route::middleware('is_auditor')->group(function (){
+
+
+});
+
+
+//Route Group Untuk IT Staff
+Route::middleware('is_eksekutif')->group(function (){
+
+
+});
+
+
 /// IT-Staff  ///////////////////////////////////////////////////////////////////////////////
 Route::get('/itstaff/evidence', function () {
     return view('itstaff.evidence');
 });
+
+
+
+
+
+//-- HANYA UNTUK TESTING --//
+Route::get('/lihatsession','HomeController@tampilkanSession');
+//-- HANYA UNTUK TESTING --//
 
