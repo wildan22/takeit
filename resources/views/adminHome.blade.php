@@ -73,7 +73,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Selamat Datang Super Admin</h3>
+					<h3 class="page-title">Selamat Datang Admin</h3>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
@@ -95,13 +95,9 @@
                                                 <th>Cobit 5</th>
 												<th>Proses</th>
 												<th>Kematangan Level %</th>
-												<th>Keterangan</th>
 											</tr>
                                         </thead>
                                     </table>
-									Halaman :  <br/>
-									Jumlah Data :  <br/>
-									Data per Halaman :  <br/>
 									
 								</div>
 							</div>

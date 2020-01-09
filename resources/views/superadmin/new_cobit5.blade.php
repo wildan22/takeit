@@ -72,7 +72,6 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h3 class="page-title">COBIT 5</h3>
                     <div class="row">
                         <div class="co-12">
                             <!-- BASIC TABLE -->
@@ -87,38 +86,34 @@
                                 <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
                                     @csrf
 
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Domain</label>
+                                        </div>
+                                        <select class="form-control" id="inputGroupSelect01" required>
+                                          <option selected>Pilih Domain</option>
+                                          <option value="1">EDM</option>
+                                          <option value="2">APO</option>
+                                          <option value="3">BAI</option>
+                                          <option value="4">DSS</option>
+                                          <option value="5">MEA</option>
+                                        </select>
+                                      </div>
+
+                                    <div class="form-group">
+                                        <label for="subdomain">Sub Domain</label>
+                                        <input type="text" name="subdomain" class="form-control" placeholder="Sub Domain"> @if ($errors->has('subdomain'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('subdomain')}}
+                                        </div>
+                                        @endif
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="proses">Proses</label>
-                                        <input type="text" name="proses" class="form-control" placeholder="Proses COBIT 5"> @if ($errors->has('proses'))
+                                        <textarea id="proses" name="proses" class="form-control" rows="10" placeholder="Proses" required></textarea> @if ($errors->has('proses'))
                                         <div class="text-danger">
                                             {{ $errors->first('proses')}}
-                                        </div>
-                                        @endif
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="kodeoutput">Kode Output</label>
-                                        <input type="text" name="kodeoutput" class="form-control" placeholder="Kode Output"> @if ($errors->has('kodeoutput'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('kodeoutput')}}
-                                        </div>
-                                        @endif
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="output_proses">Output dari Proses</label>
-                                        <textarea id="output_proses" name="output_proses" class="form-control" rows="10" placeholder="Output dari Proses" required></textarea> @if ($errors->has('output_proses'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('output_proses')}}
-                                        </div>
-                                        @endif
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="deskripsi">Deskripsi</label>
-                                        <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Output dari Proses" required></textarea> @if ($errors->has('deskripsi'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('deskripsi')}}
                                         </div>
                                         @endif
                                     </div>
@@ -140,7 +135,7 @@
                     <div class="clearfix"></div>
                     <footer>
                         <div class="container-fluid position-relative">
-                            <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                            <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                         </div>
                     </footer>
                 </div>

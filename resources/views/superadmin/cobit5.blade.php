@@ -73,13 +73,12 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">COBIT 5</h3>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">                                    
-                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Data</a>
+                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  COBIT</a>
 								</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
@@ -92,16 +91,15 @@
 									<table class="table">
 										<thead>
 											<tr>
+												<th>Domain</th>
+												<th>Sub Domain</th>
                                                 <th>Proses</th>
-                                                <th>Kode Output</th>
-												<th>Output dari Proses</th>
-												<th>Deskripsi</th>
+                                                <th>Aksi</th>
 											</tr>
                                         </thead>
                                     </table>
 									Halaman :  <br/>
 									Jumlah Data :  <br/>
-									Data per Halaman :  <br/>
 									
 								</div>
 							</div>
