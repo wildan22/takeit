@@ -46,4 +46,10 @@ Route::get('/superadmin/tatakelola/new_tatakelola', function () {
 Route::get('/itstaff/evidence', function () {
     return view('itstaff.evidence');
 });
+Route::get('/itstaff/laporan', function () {
+    return view('itstaff.laporan');
+});
+Route::get('/itstaff/evidence/edit_evidence', function () {
+    return view('itstaff.edit_evidence');
+});
 

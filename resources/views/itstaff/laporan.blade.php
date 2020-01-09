@@ -56,13 +56,11 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/superadmin/adminHome" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/home" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						
-						<li><a href="#" class="active"><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+						<li><a href="#" class="active"><i class="lnr lnr-list"></i> <span>Laporan Management</span></a></li>
 						
-						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        
-						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+						<li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -78,8 +76,8 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <a href="/register" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Pengguna</a>
-									</div>
+                                    <a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
+								</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
 								@if (session('status'))
@@ -88,19 +86,20 @@
 								</div>
 								@endif
 								<div class="panel-body">
-									<table class="table">
-										<thead>
-											<tr>
-                                                <th>No</th>
-												<th>Nama</th>
-												<th>E-Mail</th>
-												<th>Keterangan</th>
-												<th>Aksi</th>
-											</tr>
-                                        </thead>
-                                    </table>
-									Halaman :  <br/>
-									Jumlah Data :  <br/>
+									<ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                          Nama Laporan 1
+                                          <a href="#" class="badge badge-info">Detail</a>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Nama Laporan 12
+                                            <a href="#" class="badge badge-info">Detail</a>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Nama Laporan 13
+                                            <a href="#" class="badge badge-info">Detail</a>
+                                        </li>
+                                      </ul>
 									
 								</div>
 							</div>

@@ -73,13 +73,12 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Tata Kelola TI</h3>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading"> 
-									<a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Data</a>
+									<a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Tata Kelola</a>
 								</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
@@ -92,14 +91,16 @@
 									<table class="table">
 										<thead>
 											<tr>
+                                                <th>Sub Domain</th>
                                                 <th>Kode Output</th>
+                                                <th>Output dari Proses</th>
 												<th>Deskripsi</th>  
+                                                <th>Aksi</th>
 											</tr>
                                         </thead>
                                     </table>
 									Halaman :  <br/>
 									Jumlah Data :  <br/>
-									Data per Halaman :  <br/>
 									
 								</div>
 							</div>

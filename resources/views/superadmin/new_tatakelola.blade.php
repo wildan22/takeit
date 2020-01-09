@@ -72,7 +72,6 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h3 class="page-title">Tata Kelola TI</h3>
                     <div class="row">
                         <div class="co-12">
                             <!-- BASIC TABLE -->
@@ -86,6 +85,40 @@
 
                                 <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
                                     @csrf
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Sub Domain</label>
+                                        </div>
+                                        <select class="form-control" id="inputGroupSelect01" required>
+                                          <option selected>Pilih Sub Domain</option>
+                                          <option value="1">EDM01</option>
+                                          <option value="2">EDM02</option>
+                                          <option value="3">EDM03</option>
+                                          <option value="4">EDM04</option>
+                                          <option value="5">EDM05</option>
+                                          <option value="5">APO01</option>
+                                          <option value="5">APO2</option>
+                                        </select>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="kodeoutput">Kode Output</label>
+                                        <input type="text" name="kodeoutput" class="form-control" placeholder="Sub Domain"> @if ($errors->has('kodeoutput'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('kodeoutput')}}
+                                        </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="output_proses">Output dari Proses</label>
+                                      <input type="text" name="output_proses" class="form-control" placeholder="Sub Domain"> @if ($errors->has('output_proses'))
+                                      <div class="text-danger">
+                                          {{ $errors->first('output_proses')}}
+                                      </div>
+                                      @endif
+                                  </div>
 
                                     <div class="form-group">
                                         <label for="output_prosesdeskripsi">Deskripsi</label>

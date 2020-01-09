@@ -75,55 +75,60 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <h5>Terdapat pada dokumen apa</h5>
-									</div>
-								
-								{{-- alert -> tindakan yang dilakukan --}}
-								@if (session('status'))
-								<div class="alert alert-success">
-									{{session('status')}}
+                                    <a href="/itstaff/evidence" class="btn btn-outline-primary"><i class="lnr lnr-cross"></i>  Batal</a>
 								</div>
-								@endif
 								<div class="panel-body">
-									<table class="table">
-										<thead>
-											<tr>
-                                                <th>Kode Output</th>
-												<th>Output dari Proses</th>
-												<th>Deskripsi</th>
-												<th>Terdapat Pada</th>
-												<th>Aksi</th>
-											</tr>
-										</thead>
-										<tBody>
-											<tr>
-												<td>EDM01-WP1</td>
-												<td>Enterprise governance guiding principles</td>
-												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
-												<td>Tambahkan</td>
-												<td><a href="/itstaff/evidence/edit_evidence" class="btn btn-outline-success"><span class="lnr lnr-pencil"></span></a></td>
-											</tr>
-											<tr>
-												<td>EDM01-WP2</td>
-												<td>Enterprise governance guiding principles</td>
-												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
-												<td>Belum ada, IT governance framework baru akan disusun.</td>
-												<td><a href="#" class="btn btn-outline-success"><span class="lnr lnr-pencil"></span></a></td>
-											</tr>
-											<tr>
-												<td>EDM01-WP3</td>
-												<td>Enterprise governance guiding principles</td>
-												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
-												<td>Belum ada, IT governance framework baru akan disusun.</td>
-												<td><a href="#" class="btn btn-outline-success"><span class="lnr lnr-pencil"></span></a></td>
-											</tr>
-										</tBody>
-									</table>
-									
-									Halaman :  <br/>
-									Jumlah Data :  <br/>
-									Data per Halaman :  <br/>
-									
+                                    <form method="post" action="/admin/index/proses"  enctype="multipart/form-data">
+                                        @csrf
+                                
+                                        
+                                      <div class="form-group">
+                                            <label for="kodeoutput">Kode Output</label>
+                                            <input type="text" disabled name="kodeoutput" class="form-control" placeholder="Kode Output ">
+                                
+                                        @if ($errors->has('kodeoutput'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('kodeoutput')}}
+                                            </div>
+                                        @endif
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="output_proses">Output dari Proses</label>
+                                            <input type="number" disabled name="output_proses" class="form-control" placeholder="Outpur dari Proses">
+                                
+                                        @if ($errors->has('output_proses'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('output_proses')}}
+                                            </div>
+                                        @endif
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="deskripsi">Deskripsi</label>
+                                            <textarea id="deskripsi" disabled name="deskripsi" class="form-control" rows="10" placeholder="Deskripsi" required></textarea> @if ($errors->has('deskripsi'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('deskripsi')}}
+                                            </div>
+                                            @endif
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="nama_laporan">Terdapat pada</label>
+                                            <input type="text" name="nama_laporan" class="form-control" placeholder="Nama Laporan">
+                                
+                                        @if ($errors->has('nama_laporan'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('nama_laporan')}}
+                                            </div>
+                                        @endif
+                                        </div> 
+                                
+                                        <div class="form-group mt-3">
+                                            <input type="submit" class="btn btn-outline-success" value="Simpan">    
+                                        </div>
+                                    </form>
+                                </div>
 								</div>
 							</div>
 							<!-- END BASIC TABLE -->
