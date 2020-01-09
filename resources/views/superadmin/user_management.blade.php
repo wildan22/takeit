@@ -78,7 +78,7 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <a href="/register" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Pengguna</a>
+                                    <a href="/superadmin/user_management/new_user" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Pengguna</a>
 									</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
@@ -91,13 +91,23 @@
 									<table class="table">
 										<thead>
 											<tr>
-                                                <th>No</th>
 												<th>Nama</th>
-												<th>E-Mail</th>
+												<th>Alamat E-Mail</th>
 												<th>Keterangan</th>
 												<th>Aksi</th>
 											</tr>
-                                        </thead>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Fikri</td>
+												<td>fikri@mail.com</td>
+												<td>admin</td>
+												<td>
+													<a href="" class="btn btn-outline-primary"><i class="lnr lnr-upload"></i></a>
+													<a href="" class="btn btn-outline-primary"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+										</tbody>
                                     </table>
 									Halaman :  <br/>
 									Jumlah Data :  <br/>

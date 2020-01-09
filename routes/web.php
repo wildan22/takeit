@@ -27,6 +27,10 @@ Route::get('/superadmin/adminHome', function () {
 Route::get('/superadmin/user_management', function () {
     return view('superadmin.user_management');
 });
+Route::get('/superadmin/user_management/new_user', function () {
+    return view('superadmin.new_user');
+});
+
 Route::get('/superadmin/cobit5', function () {
     return view('superadmin.cobit5');
 });
