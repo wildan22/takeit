@@ -56,11 +56,10 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/home" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						
-						<li><a href="#" class="active"><i class="lnr lnr-list"></i> <span>Laporan Management</span></a></li>
-						
-						<li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
+						<li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/auditor/audit" class=""><i class="lnr lnr-list"></i> <span>Audit Tata Kelola TI</span></a></li>
+					
+						<li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -71,13 +70,14 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
+					<h3 class="page-title">Selamat Datang Auditor</h3>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
-								</div>
+									<h3 class="panel-title" class="">Data Report</h3>
+									</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
 								@if (session('status'))
@@ -86,20 +86,19 @@
 								</div>
 								@endif
 								<div class="panel-body">
-									<ul class="list-group">
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                          Nama Laporan 1
-                                          <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 12
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 13
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                      </ul>
+									<table class="table">
+										<thead>
+											<tr>
+                                                <th>Cobit 5</th>
+												<th>Proses</th>
+												<th>Kematangan Level %</th>
+												<th>Keterangan</th>
+											</tr>
+                                        </thead>
+                                    </table>
+									Halaman :  <br/>
+									Jumlah Data :  <br/>
+									Data per Halaman :  <br/>
 									
 								</div>
 							</div>

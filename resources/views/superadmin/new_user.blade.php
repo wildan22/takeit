@@ -86,6 +86,20 @@
                                 <form method="post" action="#" enctype="multipart/form-data">
                                     @csrf
 
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Level</label>
+                                        </div>
+                                        <select class="form-control" id="inputGroupSelect01" required>
+                                          <option selected>Pilih Level</option>
+                                          <option value="1">Admin</option>
+                                          <option value="2">CEO</option>
+                                          <option value="3">CFO</option>
+                                          <option value="4">CFD</option>
+                                          <option value="5">CFC</option>
+                                        </select>
+                                      </div>
+
                                       <div class="form-group">
                                         <label for="name">Nama</label>
                                         <input type="text" name="name" class="form-control" placeholder="Nama Anda"> @if ($errors->has('name'))

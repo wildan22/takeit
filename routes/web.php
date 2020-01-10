@@ -80,6 +80,9 @@ Route::get('/itstaff/evidence', function () {
 Route::get('/itstaff/laporan', function () {
     return view('itstaff.laporan');
 });
+Route::get('/itstaff/laporan/new_laporan', function () {
+    return view('itstaff.new_laporan');
+});
 Route::get('/itstaff/evidence/edit_evidence', function () {
     return view('itstaff.edit_evidence');
 });

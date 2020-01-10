@@ -56,10 +56,9 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/home" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						
+						<li><a href="/itstaff/dashboard" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="#" class="active"><i class="lnr lnr-list"></i> <span>Laporan Management</span></a></li>
-						
+					
 						<li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
 						</ul>
 				</nav>
@@ -76,31 +75,55 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
-								</div>
+									<h3 class="panel-title" class="">Laporan Baru</h3>
+									<a href="/itstaff/laporan" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
+                                
+									</div>
 								
-								{{-- alert -> tindakan yang dilakukan --}}
-								@if (session('status'))
-								<div class="alert alert-success">
-									{{session('status')}}
-								</div>
-								@endif
-								<div class="panel-body">
-									<ul class="list-group">
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                          Nama Laporan 1
-                                          <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 12
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 13
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                      </ul>
-									
+                                    <div class="panel-body">
+                                        {{-- form new Product --}}
+        
+                                        <form method="post" action="/itstaff/laporan" enctype="multipart/form-data">
+                                            @csrf
+        
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                  <label class="input-group-text" for="inputGroupSelect01">Sub Domain</label>
+                                                </div>
+                                                <select class="form-control" id="inputGroupSelect01" required>
+                                                  <option selected>Pilih Sub Domain</option>
+                                                  <option value="1">EDM01</option>
+                                                  <option value="2">EDM02</option>
+                                                  <option value="3">EDM03</option>
+                                                  <option value="4">EDM04</option>
+                                                  <option value="5">EDM05</option>
+                                                  <option value="5">APO01</option>
+                                                  <option value="5">APO2</option>
+                                                </select>
+                                              </div>
+        
+                                              <div class="form-group">
+                                                <label for="nama_laporan">Judul Laporan</label>
+                                                <input type="text" name="nama_laporan" class="form-control" placeholder="Judul Laporan"> @if ($errors->has('nama_laporan'))
+                                                <div class="text-danger">
+                                                    {{ $errors->first('nama_laporan')}}
+                                                </div>
+                                                @endif
+                                            </div>
+        
+											<div class="custom-file">
+												<label class="custom-file-label" for="customFile">Upload File Laporan (PDF/Docx)</label>
+											  
+												<input type="file" class="custom-file-input form-control" id="customFile">
+												</div>
+												<br>
+                                            <div class="form-group mt-3">
+                                                <input type="submit" class="btn btn-outline-success" value="Simpan">
+                                            </div>
+                                        </form>
+        
+                                        {{-- akhir form --}}
+                                        </div>
 								</div>
 							</div>
 							<!-- END BASIC TABLE -->
