@@ -71,8 +71,8 @@
     </div>
 </div>
 <footer>
-    <div class="container-fluid position-relative mt-5">
-            <center> <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+    <div class="container-fluid position-relative mt-5 text-muted">
+            <center> Powered By :<p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
         </div>
 </footer>
 

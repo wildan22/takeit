@@ -96,8 +96,43 @@
                                                 <th>Proses</th>
                                                 <th>Aksi</th>
 											</tr>
-                                        </thead>
-                                    </table>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EDM</td>
+												<td>EDM02</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+											<tr>
+												<td>EDM</td>
+												<td>EDM03</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+											<tr>
+												<td>EDM</td>
+												<td>EDM04</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+											<tr>
+												<td>EDM</td>
+												<td>EDM05</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+										</tbody>
+									</table>
+									
 									Halaman :  <br/>
 									Jumlah Data :  <br/>
 									

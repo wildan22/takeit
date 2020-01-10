@@ -97,7 +97,37 @@
 												<th>Deskripsi</th>  
                                                 <th>Aksi</th>
 											</tr>
-                                        </thead>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EDM01</td>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+											<tr>
+												<td>EDM01</td>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+											<tr>
+												<td>EDM01</td>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+											</tr>
+											
+										</tbody>
                                     </table>
 									Halaman :  <br/>
 									Jumlah Data :  <br/>

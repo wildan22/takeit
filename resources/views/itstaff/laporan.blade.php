@@ -76,7 +76,7 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
+                                    <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"	><i class="lnr lnr-plus-circle"></i>  Laporan</a>
 								</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
@@ -89,7 +89,7 @@
 									<ul class="list-group">
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
                                           Nama Laporan 1
-                                          <a href="#" class="badge badge-info">Detail</a>
+                                          <a href="#" class="badge badge-primary" >Detail</a>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
                                             Nama Laporan 12

@@ -79,7 +79,7 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-									<h3 class="panel-title" class="">Data Report</h3>
+									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2013</h3>
 									</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}

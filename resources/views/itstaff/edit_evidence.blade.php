@@ -75,7 +75,7 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-                                    <a href="/itstaff/evidence" class="btn btn-outline-primary"><i class="lnr lnr-cross"></i>  Batal</a>
+                                    <a href="/itstaff/evidence" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
 								</div>
 								<div class="panel-body">
                                     <form method="post" action="/admin/index/proses"  enctype="multipart/form-data">
@@ -125,7 +125,7 @@
                                         </div> 
                                 
                                         <div class="form-group mt-3">
-                                            <input type="submit" class="btn btn-outline-success" value="Simpan">    
+                                            <input type="submit" class="btn btn-success" value="Simpan">    
                                         </div>
                                     </form>
                                 </div>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Tata Kelola TI</title>
+   
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -102,11 +103,11 @@
                     <img src={{ ('/image/logo_ptpn7.png') }} width="590px">
                 </div>
                 
-<footer>
-    <div class="container-fluid position-relative">
-            <center> Powered By : <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
-        </div>
-</footer>
+                <footer>
+                    <div class="container-fluid position-relative mt-5 text-muted">
+                            <center> Powered By :<p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                        </div>
+                </footer>
             </div>
         </div>
     </body>

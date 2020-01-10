@@ -104,7 +104,7 @@
 
                                       <div class="form-group">
                                         <label for="kodeoutput">Kode Output</label>
-                                        <input type="text" name="kodeoutput" class="form-control" placeholder="Sub Domain"> @if ($errors->has('kodeoutput'))
+                                        <input type="text" name="kodeoutput" class="form-control" placeholder="Kode Output"> @if ($errors->has('kodeoutput'))
                                         <div class="text-danger">
                                             {{ $errors->first('kodeoutput')}}
                                         </div>
@@ -113,7 +113,7 @@
 
                                     <div class="form-group">
                                       <label for="output_proses">Output dari Proses</label>
-                                      <input type="text" name="output_proses" class="form-control" placeholder="Sub Domain"> @if ($errors->has('output_proses'))
+                                      <input type="text" name="output_proses" class="form-control" placeholder="Output dari Proses"> @if ($errors->has('output_proses'))
                                       <div class="text-danger">
                                           {{ $errors->first('output_proses')}}
                                       </div>
@@ -122,14 +122,14 @@
 
                                     <div class="form-group">
                                         <label for="output_prosesdeskripsi">Deskripsi</label>
-                                        <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Output dari Proses" required></textarea> @if ($errors->has('deskripsi'))
+                                        <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Deskripsi" required></textarea> @if ($errors->has('deskripsi'))
                                         <div class="text-danger">
                                             {{ $errors->first('deskripsi')}}
                                         </div>
                                         @endif
                                     </div>
                                     <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-outline-success" value="Simpan">
+                                        <input type="submit" class="btn btn-success" value="Simpan">
                                     </div>
                                 </form>
 

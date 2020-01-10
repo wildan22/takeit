@@ -101,21 +101,21 @@
 												<td>Enterprise governance guiding principles</td>
 												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
 												<td>Tambahkan</td>
-												<td><a href="/itstaff/evidence/edit_evidence" class="btn btn-outline-success"><span class="lnr lnr-pencil"></span></a></td>
+												<td><a href="/itstaff/evidence/edit_evidence" class="btn btn-warning"><span class="lnr lnr-pencil"></span></a></td>
 											</tr>
 											<tr>
 												<td>EDM01-WP2</td>
 												<td>Enterprise governance guiding principles</td>
 												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
 												<td>Belum ada, IT governance framework baru akan disusun.</td>
-												<td><a href="#" class="btn btn-outline-success"><span class="lnr lnr-pencil"></span></a></td>
+												<td><a href="#" class="btn btn-warning"><span class="lnr lnr-pencil"></span></a></td>
 											</tr>
 											<tr>
 												<td>EDM01-WP3</td>
 												<td>Enterprise governance guiding principles</td>
 												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
 												<td>Belum ada, IT governance framework baru akan disusun.</td>
-												<td><a href="#" class="btn btn-outline-success"><span class="lnr lnr-pencil"></span></a></td>
+												<td><a href="#" class="btn btn-warning"><span class="lnr lnr-pencil"></span></a></td>
 											</tr>
 										</tBody>
 									</table>

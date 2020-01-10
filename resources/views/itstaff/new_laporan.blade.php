@@ -118,7 +118,7 @@
 												</div>
 												<br>
                                             <div class="form-group mt-3">
-                                                <input type="submit" class="btn btn-outline-success" value="Simpan">
+                                                <input type="submit" class="btn btn-success" value="Simpan">
                                             </div>
                                         </form>
         
