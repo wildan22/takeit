@@ -19,6 +19,6 @@ class IsAuditor
         return $next($request);
         }
 
-    return redirect(‘home’)->with(‘error’,"Anda Belum Login/Bukan IT Staff");
+    return redirect('home')->with('error',"Anda Belum Login/Bukan IT Staff");
     }
 }
