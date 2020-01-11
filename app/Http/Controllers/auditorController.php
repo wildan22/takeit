@@ -10,4 +10,15 @@ class auditorController extends Controller{
         $this->middleware('auth');
     }
 
+    public function showDashboard(){   
+        return view('auditor.dashboard');
+    }
+
+    public function showAudit(){   
+        return view('auditor.audit');
+    }
+
+    public function showLaporan(){   
+        return view('itstaff.laporan');
+    }
 }

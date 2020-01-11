@@ -15,6 +15,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -57,14 +59,18 @@ Route::middleware('is_staff')->group(function (){
 
 //Route Group Untuk Auditor
 Route::middleware('is_auditor')->group(function (){
-
+    //Menampilkan Dashboard
+    Route::get('/auditor','auditorController@showDashboard')->name('auditor.home');
+    //Menampilkan Halaman Audit
+    Route::get('/auditor/audit','auditorController@showAudit')->name('auditor.audit');
+    //Menampilkan Halaman Laporan
+    Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.home');
 });
 
 
 //Route Group Untuk Eksekutif
 Route::middleware('is_eksekutif')->group(function (){
-
-
+    
 });
 
 
