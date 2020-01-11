@@ -39,12 +39,24 @@ Route::middleware('is_admin')->group(function (){
 
 //Route Group Untuk IT Staff
 Route::middleware('is_staff')->group(function (){
+    //Menampilkan Dashboard
+    Route::get('/itstaff','staffController@showDashboard')->name('itstaff.home');
 
+    //Menampilkan Halaman Evidence
+    Route::get('/itstaff/evidence','staffController@showEvidence')->name('itstaff.evidence');
+    //Menampilkan Halaman Edit Laporan
+    Route::get('/itstaff/evidence/edit_evidence','staffController@showEditEvidence')->name('itstaff.edit_evidence');
+
+    //Menampilkan Halaman Laporan
+    Route::get('/itstaff/laporan','staffController@showLaporan')->name('itstaff.laporan');
+    //Menampilkan Halaman Tambah Laporan
+    Route::get('/itstaff/laporan/new_laporan','staffController@showNewLaporan')->name('itstaff.new_laporan');
+    
+    
 });
 
 //Route Group Untuk Auditor
 Route::middleware('is_auditor')->group(function (){
-
 
 });
 
@@ -54,24 +66,6 @@ Route::middleware('is_eksekutif')->group(function (){
 
 
 });
-
-
-/// IT-Staff  ///////////////////////////////////////////////////////////////////////////////
-Route::get('/itstaff/evidence', function () {
-    return view('itstaff.evidence');
-});
-Route::get('/itstaff/laporan', function () {
-    return view('itstaff.laporan');
-});
-Route::get('/itstaff/laporan/new_laporan', function () {
-    return view('itstaff.new_laporan');
-});
-Route::get('/itstaff/evidence/edit_evidence', function () {
-    return view('itstaff.edit_evidence');
-});
-
-
-
 
 
 //-- HANYA UNTUK TESTING --//

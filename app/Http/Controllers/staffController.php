@@ -9,4 +9,23 @@ class staffController extends Controller{
     {
         $this->middleware('auth');
     }
+    public function showDashboard(){   
+        return view('itstaff.dashboard');
+    }
+
+    public function showEvidence(){
+        return view('itstaff.evidence');
+    }
+
+    public function showEditEvidence(){
+        return view('itstaff.edit_evidence');
+    }
+
+    public function showLaporan(){
+        return view('itstaff.laporan');
+    }
+
+    public function showNewLaporan(){
+        return view('itstaff.new_laporan');
+    }
 }
