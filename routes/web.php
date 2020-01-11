@@ -88,7 +88,16 @@ Route::get('/itstaff/evidence/edit_evidence', function () {
 });
 
 
-
+//// Audutor ///////////////////////////////////////////////////////////////////////////////
+Route::get('/auditor/dashboard', function () {
+    return view('auditor.dashboard');
+});
+Route::get('/auditor/laporan', function () {
+    return view('auditor.laporan');
+});
+Route::get('/auditor/audit', function () {
+    return view('auditor.audit');
+});
 
 
 //-- HANYA UNTUK TESTING --//
