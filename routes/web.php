@@ -11,62 +11,45 @@
 |
 */
 
+//Routes Basic Untuk Guest
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/superadmin/adminHome', function () {
-    return view('adminHome');
-});
-Route::get('/superadmin/user_management', function () {
-    return view('superadmin.user_management');
-});
-Route::get('/superadmin/user_management/new_user', function () {
-    return view('superadmin.new_user');
-});
-
-Route::get('/superadmin/cobit5', function () {
-    return view('superadmin.cobit5');
-});
-Route::get('/superadmin/tatakelola', function () {
-    return view('superadmin.tatakelola');
-});
-
-
-Route::get('/superadmin/cobit5/new_cobit5', function () {
-    return view('superadmin.new_cobit5');
-});
-Route::get('/superadmin/tatakelola/new_tatakelola', function () {
-    return view('superadmin.new_tatakelola');
-});
-
-
-//Route Group Untuk Admin
+/*======= ROUTE GROUP UNTUK ADMIN =======*/
 Route::middleware('is_admin')->group(function (){
-
-
+    //Menampilkan Dashboard
+    Route::get('/superadmin','adminController@showDashboard')->name('superadmin.home');
+    //Menampilkan Halaman User Management
+    Route::get('/superadmin/user_management','adminController@showUserManagement')->name('superadmin.showUserManagement');
+    //Menampilkan Halaman Tambah User
+    Route::get('/superadmin/user_management/new_user','adminController@showNewUser')->name('superadmin.showNewUser');
+    //Menampilkan Halaman Cobit 5
+    Route::get('/superadmin/cobit5','adminController@showCobit5')->name('superadmin.showCobit5');
+    //Menampilkan Halaman Tata Kelola
+    Route::get('/superadmin/tatakelola','adminController@showTataKelola')->name('superadmin.showTataKelola');
+    //Menampilkan Halaman Tambah Cobit 5
+    Route::get('/superadmin/cobit5/new_cobit5','adminController@showNewCobit5')->name('superadmin.showNewCobit5');
+    //Menampilkan Halaman Tambah Tata Kelola
+    Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
 });
 
 //Route Group Untuk IT Staff
 Route::middleware('is_staff')->group(function (){
 
-
 });
 
-//Route Group Untuk IT Staff
+//Route Group Untuk Auditor
 Route::middleware('is_auditor')->group(function (){
 
 
 });
 
 
-//Route Group Untuk IT Staff
+//Route Group Untuk Eksekutif
 Route::middleware('is_eksekutif')->group(function (){
 
 
