@@ -76,7 +76,7 @@ Route::middleware('is_auditor')->group(function (){
     //Menampilkan Halaman Audit-MEA01
     Route::get('/auditor/mea01','auditorController@showAuditmea01')->name('auditor.mea01');
     //Menampilkan Halaman Laporan
-    Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.home');
+    Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.laporan');
 });
 
 
