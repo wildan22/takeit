@@ -58,14 +58,14 @@
 					<ul class="nav">
 						<li><a href="/auditor" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li>
-                            <a href="#subDataMaster" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Tata Kelola Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <a href="#subDataMaster" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Tata Kelola TI</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
-                                    <li><a href="/auditor/audit_edm" class="">EDM</a></li>
-                                    <li><a href="/auditor/audit_apo" class="">APO</a></li>
-                                    <li><a href="/auditor/audit_bai" class="">BAI</a></li>
-                                    <li><a href="/auditor/audit_dss" class="">DSS</a></li>
-                                    <li><a href="/auditor/audit_mea" class="">MEA</a></li>
+                                    <li><a href="/auditor/edm01" class="">EDM</a></li>
+                                    <li><a href="/auditor/apo01" class="">APO</a></li>
+                                    <li><a href="/auditor/bai01" class="">BAI</a></li>
+                                    <li><a href="/auditor/dss01" class="">DSS</a></li>
+                                    <li><a href="/auditor/mea01" class="">MEA</a></li>
                                 </ul>
                             </div>
                         </li>

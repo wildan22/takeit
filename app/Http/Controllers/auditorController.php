@@ -18,6 +18,26 @@ class auditorController extends Controller{
         return view('auditor.audit');
     }
 
+    public function showAuditEDM01(){   
+        return view('auditor.edm01');
+    }
+
+    public function showAuditAPO01(){   
+        return view('auditor.apo01');
+    }
+
+    public function showAuditBAI01(){   
+        return view('auditor.bai01');
+    }
+
+    public function showAuditDSS01(){   
+        return view('auditor.dss01');
+    }
+
+    public function showAuditMEA01(){   
+        return view('auditor.mea01');
+    }
+
     public function showLaporan(){   
         return view('auditor.laporan');
     }

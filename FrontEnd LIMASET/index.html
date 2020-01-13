@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 
-    <!-- VENDOR CSS -->
+   <!-- VENDOR CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="assets/vendor/font-awesome/css/all.css">
     <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
     <link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/boot">
     <!-- MDBootstrap Datatables  -->
     <link href="assets/mdbootstrap/datatables.min.css" rel="stylesheet">
     <!-- MAIN CSS -->
@@ -59,15 +61,12 @@
                         <li>
                             <a href="#subDataMaster" data-toggle="collapse" class="active collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
-                                <ul class="nav">
-                                    <li><a href="data-master-kategori.html" class="">Kategori</a></li>
-                                    <li><a href="data-master-jenis-perangkat.html" class="">Jenis Perangkat</a></li>
-                                    <li><a href="data-master-cabang.html" class="">Unit/Cabang</a></li>
-                                    <li><a href="data-master-jabatan.html" class="">Jabatan</a></li>
-                                    <li><a href="data-master-processor.html" class="">Processor</a></li>
-                                    <li><a href="data-master-ram.html" class="">Ram</a></li>
-                                    <li><a href="data-master-penyimpanan.html" class="">Penyimpanan</a></li>
-                                    <li><a href="data-master-sistem-operasi.html" class="">Sistem Operasi</a></li>
+                               <ul class="nav">
+                                    <li><a href="/auditor/audit_edm" class="">EDM</a></li>
+                                    <li><a href="/auditor/audit_apo" class="">APO</a></li>
+                                    <li><a href="/auditor/audit_bai" class="">BAI</a></li>
+                                    <li><a href="/auditor/audit_dss" class="">DSS</a></li>
+                                    <li><a href="/auditor/audit_mea" class="">MEA</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -99,24 +98,95 @@
         <div class="main">
             <!-- MAIN CONTENT -->
             <div class="main-content">
-                <div class="container-fluid">
-                    <h3>Data Master Kategori</h3>
-                    <a class="btn btn-success padding-0" href="#"><i class="fas fa-plus-circle fa-2x"></i><br>
-                        <span class="button-text">Tambah Data</span></a>
-                    <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  </div>
-</div>
-                </div>
+			<div class="panel-heading">                                    
+                                 <div class="panel"  >
+								<div class="panel-heading">                                    
+                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-primary"><i class="lnr lnr-pencil"></i>  EDM01</a>
+                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-pencil"></i>  EDM02</a>
+                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-pencil"></i>  EDM03</a>
+                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-pencil"></i>  EDM04</a>
+                                    <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-pencil"></i>  EDM05</a>
+								</div>
+								<div class="panel-body">
+									<table class="table">
+										<thead>
+											<tr>
+                                                <th>Kode</th>
+                                                <th>Outpur dari Proses</th>
+                                                <th>Deskripsi</th>
+                                                <th>Terdapat/Lokasi</th>
+                                                <th>Aksi</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>Belum ada, IT governance framework baru akan disusun.</td>
+												<td align="center">
+													<div class="form-group">
+														<input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="1">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>Belum ada, IT governance framework baru akan disusun.</td>
+												<td align="center">
+													<div class="form-group">
+														<input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="1">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>Belum ada, IT governance framework baru akan disusun.</td>
+												<td align="center">
+													<div class="form-group">
+														<input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="1">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>Belum ada, IT governance framework baru akan disusun.</td>
+												<td align="center">
+													<div class="form-group">
+														<input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="1">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>EDM01-WP1</td>
+												<td>Enterprise governance guiding principles</td>
+												<td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+												<td>Belum ada, IT governance framework baru akan disusun.</td>
+												<td align="center">
+													<div class="form-group">
+														<input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="1">
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#" class="btn btn-warning"><i class="lnr lnr-done"></i>  Hitung</a>
+								<br>
+									Data Yes : 
+									<br>
+									Data No :
+									<br>
+									Persentase :
+								</div>
+							</div>
+								</div>
             </div>
             <!-- END MAIN CONTENT -->
         </div>
@@ -133,13 +203,14 @@
     <!-- Javascript -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap-toggle.min.js"></script>
     <script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
     <script src="assets/vendor/chartist/js/chartist.min.js"></script>
     <script src="assets/scripts/klorofil-common.js"></script>
-    <!-- MDBootstrap Datatables  -->
-    <script type="text/javascript" src="assets/mdbootstrap/datatables.min.js"></script>
-    <script type="text/javascript">
+   <!-- MDBootstrap Datatables  -->
+    <script type="/text/javascript" src="assets/mdbootstrap/datatables.min.js"></script>
+    <script type="/text/javascript">
         // Basic example
         $(document).ready(function() {
             $('#dtBasicExample').DataTable({
@@ -147,7 +218,37 @@
             });
             $('.dataTables_length').addClass('bs-select');
         });
+    </script>
 
+    <script>
+        $(function() {
+            $('.toggle-event').change(function() {
+                id = $(this).val();
+                console.log(id);
+                if ($(this).prop('checked')) {
+                    console.log("TRUE");
+                    $.ajax({
+                        url: "ubah_status_async.php?id=" + id + "&status=yes",
+                        cache: false,
+                        success: function(html) {
+                            console.log("SUCCESS");
+                            $("#results").append(html);
+                        }
+                    });
+
+                } else {
+                    console.log("FALSE");
+                    $.ajax({
+                        url: "ubah_status_async.php?id=" + id + "&status=no",
+                        cache: false,
+                        success: function(html) {
+                            console.log("SUCCESS");
+                            $("#results").append(html);
+                        }
+                    });
+                }
+            })
+        })
     </script>
 </body>
 
