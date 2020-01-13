@@ -63,7 +63,6 @@
 					<ul class="nav">
 						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li><a href="/superadmin/periode" class=""><i class="lnr lnr-star-half"></i> <span>New Audit Tata Kelola TI</span></a></li>
 						<li><a href="/superadmin/cobit5" class="active"><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
                         <li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
