@@ -19,6 +19,6 @@ class IsEksekutif
         return $next($request);
         }
 
-    return redirect('home')->with('error',"Anda Belum Login/Bukan Eksekutif");
+    return redirect('/')->with('error',"Anda Belum Login/Bukan Eksekutif");
     }
 }

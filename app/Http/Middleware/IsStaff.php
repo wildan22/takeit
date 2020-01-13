@@ -19,6 +19,6 @@ class IsStaff
         return $next($request);
         }
 
-    return redirect('home')->with('error',"Anda Belum Login/Bukan Staff");
+    return redirect('/')->with('error',"Anda Belum Login/Bukan Staff");
     }
 }

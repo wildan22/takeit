@@ -95,22 +95,28 @@
 									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
 										<thead>
 											<tr>
-												<th>Nama</th>
-												<th>Alamat E-Mail</th>
+												<th width="5%">No</th>
+												<th width="35%">Nama</th>
+												<th width="30%">Alamat E-Mail</th>
 												<th>Keterangan</th>
-												<th>Aksi</th>
+												<th width="25%">Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
+										<?php $no = 1;?>
+										@foreach($users as $user)
 											<tr>
-												<td>Fikri</td>
-												<td>fikri@mail.com</td>
-												<td>admin</td>
+											<td>{{$no++}}</td>
+												<td>{{$user->name}}</td>
+												<td>{{$user->email}}</td>
+												<td>{{$user->keterangan_level}}</td>
 												<td>
 													<a href="#" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
 													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
 											</tr>
+
+											@endforeach
 										</tbody>
                                     </table>
 								</div>

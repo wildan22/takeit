@@ -87,7 +87,15 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        @if(Session::get('level')==1)
+                        <a href="{{ url('/superadmin') }}">Home</a>
+                        @elseif(Session::get('level')==2)
+                        <a href="{{ url('/itstaff') }}">Home</a>
+                        @elseif(Session::get('level')==3)
+                        <a href="{{ url('/auditor') }}">Home</a>
+                        @elseif(Session::get('level')==4)
+                        <a href="{{ url('/eksekutif') }}">Home</a>
+                        @endif
                     @else
                         <a href="{{ route('login') }}" class="btn btn-outline-success">Login</a>
 
