@@ -95,15 +95,18 @@
 									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
 										<thead>
 											<tr>
-												<th>Nama</th>
-												<th>Alamat E-Mail</th>
+												<th width="5%">No</th>
+												<th width="35%">Nama</th>
+												<th width="30%">Alamat E-Mail</th>
 												<th>Keterangan</th>
-												<th>Aksi</th>
+												<th width="25%">Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
+										<?php $no = 1;?>
 										@foreach($users as $user)
 											<tr>
+											<td>{{$no++}}</td>
 												<td>{{$user->name}}</td>
 												<td>{{$user->email}}</td>
 												<td>{{$user->keterangan_level}}</td>
