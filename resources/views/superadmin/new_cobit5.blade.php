@@ -55,14 +55,12 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-
-                        <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-
-                        <li><a href="#" class="active"><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-
+						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+						<li><a href="/superadmin/periode" class=""><i class="lnr lnr-star-half"></i> <span>New Audit Tata Kelola TI</span></a></li>
+						<li><a href="/superadmin/cobit5" class="active"><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
                         <li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
-                    </ul>
+						</ul>
                 </nav>
             </div>
         </div>
@@ -85,6 +83,19 @@
 
                                 <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
                                     @csrf
+
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Periode</label>
+                                        </div>
+                                        <select class="form-control" id="inputGroupSelect01" required>
+                                          <option selected>Pilih Periode</option>
+                                          <option value="1">Desember 2013</option>
+                                          <option value="2">Desember 2014</option>
+                                          <option value="3">Desember 2015</option>
+                                        </select>
+                                      </div>
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">

@@ -25,10 +25,14 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::middleware('is_admin')->group(function (){
     //Menampilkan Dashboard
     Route::get('/superadmin','adminController@showDashboard')->name('superadmin.home');
+    //Menampilkan Halaman Audit Baru
+    Route::get('/superadmin/new_audit','adminController@showNewAudit')->name('superadmin.showNewAudit');
     //Menampilkan Halaman User Management
     Route::get('/superadmin/user_management','adminController@showUserManagement')->name('superadmin.showUserManagement');
     //Menampilkan Halaman Tambah User
     Route::get('/superadmin/user_management/new_user','adminController@showNewUser')->name('superadmin.showNewUser');
+    //Menampilkan Halaman Pilih Periode
+    Route::get('/superadmin/periode','adminController@showPeriode')->name('superadmin.showPeriode');
     //Menampilkan Halaman Cobit 5
     Route::get('/superadmin/cobit5','adminController@showCobit5')->name('superadmin.showCobit5');
     //Menampilkan Halaman Tata Kelola
