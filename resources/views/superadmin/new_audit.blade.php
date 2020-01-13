@@ -55,14 +55,12 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-
-                        <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-
-                        <li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-
-                        <li><a href="#" class="active"><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
-                    </ul>
+						<li><a href="/superadmin" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+						<li><a href="/superadmin/periode" class=""><i class="lnr lnr-star-half"></i> <span>New Audit Tata Kelola TI</span></a></li>
+						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
+                        <li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+						</ul>
                 </nav>
             </div>
         </div>
@@ -77,62 +75,32 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Tambah Tata Kelola TI</h3>
-                                    <a href="/superadmin/tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
-                                </div>
+                                    <h3 class="panel-title" class="">Tata Kelola TI</h3>
+                                    <a href="/superadmin" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
+                                
+                                    </div>
                                 <div class="panel-body">
                                 {{-- form new Product --}}
 
-                                <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
+                                <form method="post" action="/superadmin/new_audit/proses" enctype="multipart/form-data">
                                     @csrf
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                          <label for="periode">Periode Pelaksanaan</label>
+                                          <label for="periode">Tanggal</label>
                                           <input type="date" name="periode" class="form-control">
                                         </div>
                                       </div>
+                                      <br>
 
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                          <label class="input-group-text">Sub Domain</label>
-                                        </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>Pilih Sub Domain</option>
-                                          <option value="1">EDM01</option>
-                                          <option value="2">EDM02</option>
-                                          <option value="3">EDM03</option>
-                                          <option value="4">EDM04</option>
-                                          <option value="5">EDM05</option>
-                                          <option value="5">APO01</option>
-                                          <option value="5">APO2</option>
-                                        </select>
-                                      </div>
                                       <div class="form-group">
-                                        <label for="kodeoutput">Kode Output</label>
-                                        <input type="text" name="kodeoutput" class="form-control" placeholder="Kode Output"> @if ($errors->has('kodeoutput'))
+                                        <label for="token">Kode Token</label>
+                                        <input type="text" name="token" class="form-control" placeholder="Token untuk Auditor"> @if ($errors->has('token'))
                                         <div class="text-danger">
-                                            {{ $errors->first('kodeoutput')}}
+                                            {{ $errors->first('token')}}
                                         </div>
                                         @endif
                                     </div>
-
-                                    <div class="form-group">
-                                      <label for="output_proses">Output dari Proses</label>
-                                      <input type="text" name="output_proses" class="form-control" placeholder="Output dari Proses"> @if ($errors->has('output_proses'))
-                                      <div class="text-danger">
-                                          {{ $errors->first('output_proses')}}
-                                      </div>
-                                      @endif
-                                  </div>
-
-                                    <div class="form-group">
-                                        <label for="output_prosesdeskripsi">Deskripsi</label>
-                                        <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Deskripsi" required></textarea> @if ($errors->has('deskripsi'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('deskripsi')}}
-                                        </div>
-                                        @endif
-                                    </div>
+                                        <br>
                                     <div class="form-group mt-3">
                                         <input type="submit" class="btn btn-success" value="Simpan">
                                     </div>

@@ -57,12 +57,10 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						
+						<li><a href="/superadmin/periode" class=""><i class="lnr lnr-star-half"></i> <span>New Audit Tata Kelola TI</span></a></li>
 						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        
-						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+                        <li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -74,12 +72,16 @@
 			<div class="main-content">
 				<div class="container-fluid">
 					<h3 class="page-title">Selamat Datang Admin</h3>
+					<div class="panel-heading">                                    
+						<a href="/superadmin/new_audit" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>  Audit Baru</a>
+					</div>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
+								
 								<div class="panel-heading">
-									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2013</h3>
+									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode Desember 2013</h3>
 									</div>
 								
 								{{-- alert -> tindakan yang dilakukan --}}
@@ -92,6 +94,7 @@
 									<table class="table">
 										<thead>
 											<tr>
+												
                                                 <th>Cobit 5</th>
 												<th>Proses</th>
 												<th>Kematangan Level %</th>

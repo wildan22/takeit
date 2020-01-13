@@ -14,6 +14,10 @@ class adminController extends Controller{
 	public function showDashboard(){   
         return view('superadmin.dashboard');
     }
+
+    public function showNewAudit(){   
+        return view('superadmin.new_audit');
+    }
     
     public function showTataKelola(){
         return view('superadmin.tatakelola');
@@ -21,6 +25,10 @@ class adminController extends Controller{
 
     public function showNewTataKelola(){
         return view('superadmin.new_tatakelola');
+    }
+
+    public function showPeriode(){
+        return view('superadmin.periode');
     }
 
     public function showUserManagement(){
