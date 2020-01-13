@@ -56,9 +56,19 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/auditor/audit" class=""><i class="lnr lnr-list"></i> <span>Audit Tata Kelola TI</span></a></li>
-					
+						<li><a href="/auditor" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li>
+                            <a href="#subDataMaster" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Tata Kelola Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subDataMaster" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="/auditor/audit_edm" class="">EDM</a></li>
+                                    <li><a href="/auditor/audit_apo" class="">APO</a></li>
+                                    <li><a href="/auditor/audit_bai" class="">BAI</a></li>
+                                    <li><a href="/auditor/audit_dss" class="">DSS</a></li>
+                                    <li><a href="/auditor/audit_mea" class="">MEA</a></li>
+                                </ul>
+                            </div>
+                        </li>
 						<li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
 						</ul>
 				</nav>
@@ -76,15 +86,8 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-									<h3 class="panel-title" class="">Data Report</h3>
+									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2013</h3>
 									</div>
-								
-								{{-- alert -> tindakan yang dilakukan --}}
-								@if (session('status'))
-								<div class="alert alert-success">
-									{{session('status')}}
-								</div>
-								@endif
 								<div class="panel-body">
 									<table class="table">
 										<thead>

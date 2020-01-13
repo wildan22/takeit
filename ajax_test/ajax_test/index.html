@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/all.css">
+    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+    <link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/boot">
+    <!-- MDBootstrap Datatables  -->
+    <link href="assets/mdbootstrap/datatables.min.css" rel="stylesheet">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+</head>
+
+<body>
+    <!-- WRAPPER -->
+    <div id="wrapper">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="brand">
+                <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+            </div>
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+                </div>
+                <div id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END NAVBAR -->
+        <!-- LEFT SIDEBAR -->
+        <div id="sidebar-nav" class="sidebar">
+            <div class="sidebar-scroll">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li>
+                            <a href="#subDataMaster" data-toggle="collapse" class="active collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subDataMaster" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="data-master-kategori.html" class="">Kategori</a></li>
+                                    <li><a href="data-master-jenis-perangkat.html" class="">Jenis Perangkat</a></li>
+                                    <li><a href="data-master-cabang.html" class="">Unit/Cabang</a></li>
+                                    <li><a href="data-master-jabatan.html" class="">Jabatan</a></li>
+                                    <li><a href="data-master-processor.html" class="">Processor</a></li>
+                                    <li><a href="data-master-ram.html" class="">Ram</a></li>
+                                    <li><a href="data-master-penyimpanan.html" class="">Penyimpanan</a></li>
+                                    <li><a href="data-master-sistem-operasi.html" class="">Sistem Operasi</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#subManajemenUser" data-toggle="collapse" class="collapsed"><i class="lnr lnr-users"></i> <span>Manajemen User</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subManajemenUser" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="user-tambah.html" class="">Tambah User</a></li>
+                                    <li><a href="user-menunggu-persetujuan.html" class="">Menunggu Persetujuan</a></li>
+                                    <li><a href="user-kelola.html" class="">Kelola User</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#subManajemenBarang" data-toggle="collapse" class="collapsed"><i class="lnr lnr-list"></i> <span>Manajemen Barang</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subManajemenBarang" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="barang-tambah.html" class="">Tambah Barang</a></li>
+                                    <li><a href="barang-kelola.html" class="">Kelola Barang</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- END LEFT SIDEBAR -->
+        <!-- MAIN -->
+        <div class="main">
+            <!-- MAIN CONTENT -->
+            <div class="main-content">
+                <div class="container-fluid">
+                    <h3>Data Master Kategori</h3>
+                    <a class="btn btn-success padding-0" href="#"><i class="fas fa-plus-circle fa-2x"></i><br>
+                        <span class="button-text">Tambah Data</span></a>
+                    <br>
+                    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm" width="5%">ID
+                                </th>
+                                <th class="th-sm">Kategori
+                                </th>
+                                <th class="th-sm" width="15%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Perangkat Jaringan</td>
+                                <td align="center">
+                                    <div class="form-group">
+                                        <input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="1">
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Personal Computer</td>
+                                <td align="center">
+                                    <div class="form-group">
+                                        <input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="2">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Laptop</td>
+                                <td align="center">
+                                    <div class="form-group">
+                                        <input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="3">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Printer</td>
+                                <td align="center">
+                                    <div class="form-group">
+                                        <input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="4">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Lain-lain</td>
+                                <td align="center">
+                                    <div class="form-group">
+                                        <input class="toggle-event" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="5">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT -->
+        </div>
+        <!-- END MAIN -->
+        <div class="clearfix"></div>
+        <footer>
+            <div class="container-fluid">
+                <p class="copyright">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- END WRAPPER -->
+    <!-- Javascript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap-toggle.min.js"></script>
+    <script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="assets/vendor/chartist/js/chartist.min.js"></script>
+    <script src="assets/scripts/klorofil-common.js"></script>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="assets/mdbootstrap/datatables.min.js"></script>
+    <script type="text/javascript">
+        // Basic example
+        $(document).ready(function() {
+            $('#dtBasicExample').DataTable({
+                "searching": true // false to disable search (or any other option)
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+
+    <script>
+        $(function() {
+            $('.toggle-event').change(function() {
+                id = $(this).val();
+                console.log(id);
+                if ($(this).prop('checked')) {
+                    console.log("TRUE");
+                    $.ajax({
+                        url: "ubah_status_async.php?id=" + id + "&status=yes",
+                        cache: false,
+                        success: function(html) {
+                            console.log("SUCCESS");
+                            $("#results").append(html);
+                        }
+                    });
+
+                } else {
+                    console.log("FALSE");
+                    $.ajax({
+                        url: "ubah_status_async.php?id=" + id + "&status=no",
+                        cache: false,
+                        success: function(html) {
+                            console.log("SUCCESS");
+                            $("#results").append(html);
+                        }
+                    });
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
