@@ -102,15 +102,18 @@
 											</tr>
 										</thead>
 										<tbody>
+										@foreach($users as $user)
 											<tr>
-												<td>Fikri</td>
-												<td>fikri@mail.com</td>
-												<td>admin</td>
+												<td>{{$user->name}}</td>
+												<td>{{$user->email}}</td>
+												<td>{{$user->keterangan_level}}</td>
 												<td>
 													<a href="#" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
 													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
 											</tr>
+
+											@endforeach
 										</tbody>
                                     </table>
 								</div>

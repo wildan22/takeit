@@ -83,20 +83,18 @@
                                 <div class="panel-body">
                                 {{-- form new Product --}}
 
-                                <form method="post" action="#" enctype="multipart/form-data">
+                                <form method="post" action="/superadmin/user_management/new_user/proses" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <label class="input-group-text" for="inputGroupSelect01">Level</label>
                                         </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>Pilih Level</option>
-                                          <option value="1">Admin</option>
-                                          <option value="2">CEO</option>
-                                          <option value="3">CFO</option>
-                                          <option value="4">CFD</option>
-                                          <option value="5">CFC</option>
+                                        <select name="level" class="form-control" id="inputGroupSelect01" required>
+                                        <option selected>Pilih Level</option>
+                                        @foreach($level as $l)
+                                        <option value="{{$l->id}}">{{$l->keterangan_level}}</option>
+                                        @endforeach
                                         </select>
                                       </div>
 

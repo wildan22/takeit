@@ -37,6 +37,8 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/cobit5/new_cobit5','adminController@showNewCobit5')->name('superadmin.showNewCobit5');
     //Menampilkan Halaman Tambah Tata Kelola
     Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
+
+    Route::post('/superadmin/user_management/new_user/proses','adminController@prosesTambahUser');
 });
 
 //Route Group Untuk IT Staff
