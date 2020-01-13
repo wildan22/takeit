@@ -60,7 +60,7 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/superadmin/adminHome" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						
 						<li><a href="#" class="active"><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						
@@ -107,15 +107,12 @@
 												<td>fikri@mail.com</td>
 												<td>admin</td>
 												<td>
-													<a href="" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
-													<a href="" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="#" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
+													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
 											</tr>
 										</tbody>
                                     </table>
-									Halaman :  <br/>
-									Jumlah Data :  <br/>
-									
 								</div>
 							</div>
 							<!-- END BASIC TABLE -->
