@@ -56,7 +56,9 @@
                 <nav>
                     <ul class="nav">
                         <li><a href="/home" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                        <li><a href="#" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
+
+                        <li><a href="/itstaff/laporan" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
+
                         <li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
                     </ul>
                 </nav>
@@ -67,60 +69,35 @@
         <div class="main">
             <!-- MAIN CONTENT -->
             <div class="main-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="co-12">
-                            <!-- BASIC TABLE -->
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
-                                </div>
+                <div class="panel-heading">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <a href="/itstaff/laporan" class="btn btn-outline-back"><i class="lnr lnr-arrow-left"></i>  Kembali</a>
+                            <br>
+                            <br>
 
-                                {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{session('status')}}
-                                </div>
-                                @endif
-                                <div class="panel-body">
-                                    <ul class="list-group">
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 1
-                                            <br> 12-12-2012
-                                            <a href="/itstaff/laporan/view_laporan" class="badge badge-primary">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 12
-                                            <br> 12-09-2012
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 13
-                                            <br> 12-07-2012
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                    </ul>
-
-                                </div>
+                            <div class="graph-outline">
+                                <object width="100%" height="700px" data="/file/uiux.pdf" type="application/pdf">
+                                    <embed src="/file/uiux.pdf" type="application/pdf" />
+                                </object>
                             </div>
-                            <!-- END BASIC TABLE -->
                         </div>
-
-                        <!-- BASIC TABLE -->
-
-                        <!-- END MAIN -->
-                        <div class="clearfix"></div>
-                        <footer>
-                            <div class="container-fluid position-relative">
-                                <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
-                            </div>
-                        </footer>
                     </div>
-                    <!-- END WRAPPER -->
-                    <!-- Javascript -->
-                    <script src="/assets/vendor/jquery/jquery.min.js"></script>
-                    <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-                    <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-                    <script src="/assets/scripts/klorofil-common.js"></script>
+                </div>
+                <!-- END MAIN CONTENT -->
+                <div class="clearfix"></div>
+                <footer>
+                    <div class="container-fluid position-relative">
+                        <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                    </div>
+                </footer>
+            </div>
+            <!-- END WRAPPER -->
+            <!-- Javascript -->
+            <script src="/assets/vendor/jquery/jquery.min.js"></script>
+            <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+            <script src="/assets/scripts/klorofil-common.js"></script>
 </body>
 
 </html>

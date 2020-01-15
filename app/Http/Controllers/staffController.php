@@ -25,6 +25,10 @@ class staffController extends Controller{
         return view('itstaff.laporan');
     }
 
+    public function showViewLaporan(){
+        return view('itstaff.view_laporan');
+    }
+
     public function showNewLaporan(){
         return view('itstaff.new_laporan');
     }

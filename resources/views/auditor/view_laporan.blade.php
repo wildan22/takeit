@@ -55,11 +55,20 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-						<li><a href="/superadmin" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/mapping" class=""><i class="lnr lnr-book"></i> <span>Mapping Tujuan TI</span></a></li>
-						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+						<li><a href="/auditor" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li>
+                            <a href="#subDataMaster" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Tata Kelola TI</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subDataMaster" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="/auditor/edm01" class="">EDM</a></li>
+                                    <li><a href="/auditor/apo01" class="">APO</a></li>
+                                    <li><a href="/auditor/bai01" class="">BAI</a></li>
+                                    <li><a href="/auditor/dss01" class="">DSS</a></li>
+                                    <li><a href="/auditor/mea01" class="">MEA</a></li>
+                                </ul>
+                            </div>
+                        </li>
+						<li><a href="#" class="active"><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
 						</ul>
                 </nav>
             </div>
@@ -69,54 +78,35 @@
         <div class="main">
             <!-- MAIN CONTENT -->
             <div class="main-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="co-12">
-                            <!-- BASIC TABLE -->
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Periode Tata Kelola TI</h3>
-                                    </div>
-                                <div class="panel-body">
-                                {{-- form new Product --}}
+                <div class="panel-heading">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <a href="/auditor/laporan" class="btn btn-outline-back"><i class="lnr lnr-arrow-left"></i>  Kembali</a>
+                            <br>
+                            <br>
 
-                                <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                          <label for="periode">Tanggal</label>
-                                          <input type="date" name="periode" class="form-control">
-                                        </div>
-                                      </div>
-                                        <br>
-                                    <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                                </form>
-
-                                {{-- akhir form --}}
-                                </div>
+                            <div class="graph-outline">
+                                <object width="100%" height="700px" data="/file/uiux.pdf" type="application/pdf">
+                                    <embed src="/file/uiux.pdf" type="application/pdf" />
+                                </object>
                             </div>
                         </div>
-                        <!-- END BASIC TABLE -->
                     </div>
-
-                    <!-- BASIC TABLE -->
-
-                    <!-- END MAIN -->
-                    <div class="clearfix"></div>
-                    <footer>
-                        <div class="container-fluid position-relative">
-                            <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
-                        </div>
-                    </footer>
                 </div>
-                <!-- END WRAPPER -->
-                <!-- Javascript -->
-                <script src="/assets/vendor/jquery/jquery.min.js"></script>
-                <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-                <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-                <script src="/assets/scripts/klorofil-common.js"></script>
+                <!-- END MAIN CONTENT -->
+                <div class="clearfix"></div>
+                <footer>
+                    <div class="container-fluid position-relative">
+                        <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                    </div>
+                </footer>
+            </div>
+            <!-- END WRAPPER -->
+            <!-- Javascript -->
+            <script src="/assets/vendor/jquery/jquery.min.js"></script>
+            <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+            <script src="/assets/scripts/klorofil-common.js"></script>
 </body>
 
 </html>

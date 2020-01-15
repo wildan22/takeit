@@ -27,6 +27,15 @@ class adminController extends Controller{
         return view('superadmin.new_tatakelola');
     }
 
+    public function showMapping(){
+        return view('superadmin.mapping');
+    }
+
+    public function showNewMapping(){
+        return view('superadmin.new_mapping');
+    }
+
+
     public function showPeriode(){
         return view('superadmin.periode');
     }

@@ -41,4 +41,8 @@ class auditorController extends Controller{
     public function showLaporan(){   
         return view('auditor.laporan');
     }
+
+    public function showViewLaporan(){   
+        return view('auditor.view_laporan');
+    }
 }

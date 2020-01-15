@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Tata Kelola TI') }}</title>
+    <title>Tata Kelola TI - PTPN7</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

@@ -7,11 +7,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	
-	<!-- VENDOR CSS -->
-    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
-    <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
-	<link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
+	 <!-- VENDOR CSS -->
+	 <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
+	 <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
+	 <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
 	 <!-- MDBootstrap Datatables  -->
 	 <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
 
@@ -64,7 +64,8 @@
 						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li><a href="/superadmin/cobit5" class="active"><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+                        <li><a href="/superadmin/mapping" class=""><i class="lnr lnr-book"></i> <span>Mapping Tujuan TI</span></a></li>
+						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -111,30 +112,7 @@
 													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
 											</tr>
-											<tr>
-												<td>EDM</td>
-												<td>EDM03</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-											</tr>
-											<tr>
-												<td>EDM</td>
-												<td>EDM04</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-											</tr>
-											<tr>
-												<td>EDM</td>
-												<td>EDM05</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-											</tr>
+											
 										</tbody>
 									</table>
 									
@@ -155,23 +133,22 @@
 		</footer>
 	</div>
 	<!-- END WRAPPER -->
-	<!-- Javascript -->
-	<script src="/assets/vendor/jquery/jquery.min.js"></script>
-	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="/assets/scripts/klorofil-common.js"></script>
+	 <!-- Javascript -->
+	 <script src="/assets/vendor/jquery/jquery.min.js"></script>
+	 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	 <script src="/assets/scripts/klorofil-common.js"></script>
 
-	  <!-- MDBootstrap Datatables  -->
-	  <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
-	  <script type="text/javascript">
-		  // Basic example
-		  $(document).ready(function() {
-			  $('#dtBasicExample').DataTable({
-				  "searching": true // false to disable search (or any other option)
-			  });
-			  $('.dataTables_length').addClass('bs-select');
-		  });
-  
-	  </script>
+	 <!-- MDBootstrap Datatables  -->
+	 <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+	 <script type="text/javascript">
+		 // Basic example
+		 $(document).ready(function() {
+			 $('#dtBasicExample').DataTable({
+				 "searching": true // false to disable search (or any other option)
+			 });
+			 $('.dataTables_length').addClass('bs-select');
+		 });
+	 </script>
 </body>
 </html>

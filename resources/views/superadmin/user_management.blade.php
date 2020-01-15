@@ -63,7 +63,8 @@
 						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class="active"><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+                        <li><a href="/superadmin/mapping" class=""><i class="lnr lnr-book"></i> <span>Mapping Tujuan TI</span></a></li>
+						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -110,7 +111,8 @@
 												<td>
 													<a href="#" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
 													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a>
+												</td>
 											</tr>
 
 											@endforeach

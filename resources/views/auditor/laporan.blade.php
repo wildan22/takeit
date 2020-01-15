@@ -90,15 +90,18 @@
 								<div class="panel-body">
 									<ul class="list-group">
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                                          Nama Laporan 1
-                                          <a href="#" class="badge badge-primary" >Detail</a>
+										  Nama Laporan 1
+										  <br> 12-12-2012
+                                          <a href="/auditor/laporan/view_laporan" class="badge badge-primary" >Detail</a>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 12
+											Nama Laporan 12
+											<br> 12-09-2012
                                             <a href="#" class="badge badge-info">Detail</a>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Nama Laporan 13
+											Nama Laporan 13
+											<br> 12-06-2012
                                             <a href="#" class="badge badge-info">Detail</a>
                                         </li>
                                       </ul>
