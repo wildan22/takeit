@@ -103,7 +103,6 @@
 										</thead>
 										<tbody>
 											<?php $no = 1;?>
-											@foreach($cobits as $cobit)
 											<tr>
 												<td>{{$no++}}</td>
 												<td>EDM</td>
