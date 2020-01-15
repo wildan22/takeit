@@ -102,39 +102,17 @@
 										</thead>
 										<tbody>
 											<?php $no = 1;?>
+											@foreach($cobits as $cobit)
 											<tr>
 												<td>{{$no++}}</td>
-												<td>EDM</td>
-												<td>EDM02</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>{{$cobit->kode_domain}}</td>
+												<td>{{$cobit->kode_subdomain}}</td>
+												<td>{{$cobit->proses}}</td>
 												<td>
 													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
 											</tr>
-											<tr>
-												<td>EDM</td>
-												<td>EDM03</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-											</tr>
-											<tr>
-												<td>EDM</td>
-												<td>EDM04</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-											</tr>
-											<tr>
-												<td>EDM</td>
-												<td>EDM05</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-											</tr>
+											@endforeach
 										</tbody>
 									</table>
 									

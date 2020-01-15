@@ -46,7 +46,11 @@ class adminController extends Controller{
     }
 
     public function showCobit5(){
-        return view('superadmin.cobit5');
+        $cobits = DB::table('subdomains')
+                    ->join('domains','subdomains.domain_id','=','domains.id_domain')
+                    ->select('subdomains.kode_subdomain','subdomains.proses','domains.kode_domain')
+                    ->get();
+        return view('superadmin.cobit5',['cobits'=>$cobits]);
     }
 
     public function showNewCobit5(){
@@ -71,6 +75,5 @@ class adminController extends Controller{
         else{
             return redirect('/superadmin/user_management/new_user')->with('failed','Password dan Konfirmasi Password tidak sama');
         }
-        
     }
 }
