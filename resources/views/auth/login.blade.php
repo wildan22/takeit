@@ -6,6 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login - Tata Kelola TI') }}</div>
+                
+                <!-- jumbotron -->
+                <div class="jumbotron-user text-center mt-0">
+                    <img src="{{ ('image/logo_ptpn7.png') }}" width="355px" class="img-fluid">
+                    <br><br>
+                </div>
+                <!-- akhir jumbotron -->
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

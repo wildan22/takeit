@@ -57,7 +57,7 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/itstaff/laporan" class=""><i class="lnr lnr-list"></i> <span>Laporan Management</span></a></li>
+						<li><a href="/itstaff/laporan" class=""><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
 					
 						<li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
 						</ul>
@@ -70,7 +70,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Selamat Datang IT Staff PTPN7</h3>
+					<h3 class="page-title">Selamat Datang IT Staff</h3>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
@@ -78,13 +78,6 @@
 								<div class="panel-heading">
 									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2013</h3>
 									</div>
-								
-								{{-- alert -> tindakan yang dilakukan --}}
-								@if (session('status'))
-								<div class="alert alert-success">
-									{{session('status')}}
-								</div>
-								@endif
 								<div class="panel-body">
 									<table class="table">
 										<thead>
@@ -94,7 +87,39 @@
 												<th>Kematangan Level %</th>
 												<th>Keterangan</th>
 											</tr>
-                                        </thead>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EDM01</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>75% <span class="lnr lnr-star"></span></td>
+												<td>Level 1</td>
+											</tr>
+											<tr>
+												<td>EDM02</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>75% <span class="lnr lnr-star"></span></td>
+												<td>Level 1</td>
+											</tr>
+											<tr>
+												<td>EDM03</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>75% <span class="lnr lnr-star"></span></td>
+												<td>Level 1</td>
+											</tr>
+											<tr>
+												<td>EDM04</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>75% <span class="lnr lnr-star"></span></td>
+												<td>Level 1</td>
+											</tr>
+											<tr>
+												<td>EDM05</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>75% <span class="lnr lnr-star"></span></td>
+												<td>Level 1</td>
+											</tr>
+										</tbody>
                                     </table>
 									Halaman :  <br/>
 									Jumlah Data :  <br/>
@@ -103,6 +128,67 @@
 								</div>
 							</div>
 							<!-- END BASIC TABLE -->
+
+							<!-- BASIC TABLE -->
+							<div class="panel"  >
+								<div class="panel-heading">
+									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2016</h3>
+									</div>
+								<div class="panel-body">
+									<table class="table">
+										<thead>
+											<tr>
+                                                <th>Cobit 5</th>
+												<th>Proses</th>
+												<th>Kematangan Level %</th>
+												<th>Keterangan</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>EDM01</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>35% <span class="lnr lnr-star"></span></td>
+												<td>Level 2</td>
+											</tr>
+											<tr>
+												<td>EDM02</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>35% <span class="lnr lnr-star"></span></td>
+												<td>Level 2</td>
+											</tr>
+											<tr>
+												<td>EDM03</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>35% <span class="lnr lnr-star"></span></td>
+												<td>Level 2</td>
+											</tr>
+											<tr>
+												<td>EDM04</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>35% <span class="lnr lnr-star"></span></td>
+												<td>Level 2</td>
+											</tr>
+											<tr>
+												<td>EDM05</td>
+												<td>Ensure Governance Framework Setting and Maintenance</td>
+												<td>35% <span class="lnr lnr-star"></span></td>
+												<td>Level 2</td>
+											</tr>
+										</tbody>
+                                    </table>
+									Halaman :  <br/>
+									Jumlah Data :  <br/>
+									Data per Halaman :  <br/>
+									
+								</div>
+							</div>
+							<!-- END BASIC TABLE -->
+						</div>
+
+
+
+						<!-- BASIC TABLE -->
 						</div>
 
 

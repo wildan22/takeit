@@ -41,7 +41,11 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/cobit5/new_cobit5','adminController@showNewCobit5')->name('superadmin.showNewCobit5');
     //Menampilkan Halaman Tambah Tata Kelola
     Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
-
+    //Menampilkan Halaman Mapping
+    Route::get('/superadmin/mapping','adminController@showMapping')->name('superadmin.showMapping');
+    //Menampilkan Halaman Tambah Data Mapping
+    Route::get('/superadmin/mapping/new_mapping','adminController@showNewMapping')->name('superadmin.showNewMapping');
+    
     Route::post('/superadmin/user_management/new_user/proses','adminController@prosesTambahUser');
 });
 
@@ -59,6 +63,9 @@ Route::middleware('is_staff')->group(function (){
     Route::get('/itstaff/laporan','staffController@showLaporan')->name('itstaff.laporan');
     //Menampilkan Halaman Tambah Laporan
     Route::get('/itstaff/laporan/new_laporan','staffController@showNewLaporan')->name('itstaff.new_laporan');
+    
+     //Menampilkan Halaman Lihat Laporan
+     Route::get('itstaff/laporan/view_laporan','staffController@showViewLaporan')->name('itstaff.view_laporan');
     
     
 });
@@ -81,6 +88,9 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('/auditor/mea01','auditorController@showAuditmea01')->name('auditor.mea01');
     //Menampilkan Halaman Laporan
     Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.laporan');
+    //Menampilkan Halaman Lihat Laporan
+    Route::get('/auditor/laporan/view_laporan','auditorController@showViewLaporan')->name('auditor.view_laporan');
+
 });
 
 

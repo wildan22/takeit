@@ -56,9 +56,8 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/itstaff/dashboard" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="#" class="active"><i class="lnr lnr-list"></i> <span>Laporan Management</span></a></li>
-					
+						<li><a href="/itstaff" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="#" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
 						<li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
 						</ul>
 				</nav>
@@ -75,7 +74,8 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
-									<h3 class="panel-title" class="">Laporan Baru</h3>
+									<h3 class="panel-title" class="">Input Laporan</h3>
+									<br>
 									<a href="/itstaff/laporan" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 
 									</div>
@@ -84,37 +84,45 @@
                                         {{-- form new Product --}}
         
                                         <form method="post" action="/itstaff/laporan" enctype="multipart/form-data">
-                                            @csrf
+											@csrf
+											
+											<div class="input-group">
+												<div class="input-group-prepend">
+												  <label for="periode">Periode Laporan</label>
+												  <input type="date" name="periode" class="form-control">
+												</div>
+											  </div>
+											  <br>
         
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                  <label class="input-group-text" for="inputGroupSelect01">Sub Domain</label>
+                                                  <label class="input-group-text" for="inputGroupSelect01">Sub Bab</label>
                                                 </div>
                                                 <select class="form-control" id="inputGroupSelect01" required>
-                                                  <option selected>Pilih Sub Domain</option>
-                                                  <option value="1">EDM01</option>
-                                                  <option value="2">EDM02</option>
-                                                  <option value="3">EDM03</option>
-                                                  <option value="4">EDM04</option>
-                                                  <option value="5">EDM05</option>
-                                                  <option value="5">APO01</option>
-                                                  <option value="5">APO2</option>
+                                                  <option selected>Pilih Sub Bab</option>
+                                                  <option value="1">Kerangka Kerja Tata Kelola TI</option>
+                                                  <option value="2">Komite TI</option>
+                                                  <option value="3">Organisasi fungsional TI</option>
+                                                  <option value="4">Koordinasi Pengelolaan Layanan TI dalam Organisasi Fungsional TI</option>
+                                                  <option value="5">Implementasi Pedoman, Standar, dan Prosedur TI</option>
+                                                  <option value="5">Pengelolaan Pedoman Tata Kelola TI</option>
+                                                  <option value="5">Pengelolaan Master Plan TI</option>
                                                 </select>
                                               </div>
-        
+        <br>
                                               <div class="form-group">
-                                                <label for="nama_laporan">Judul Laporan</label>
-                                                <input type="text" name="nama_laporan" class="form-control" placeholder="Judul Laporan"> @if ($errors->has('nama_laporan'))
+                                                <label for="judul_laporan">Judul Laporan</label>
+                                                <input type="text" name="judul_laporan" class="form-control" placeholder="Judul Laporan"> @if ($errors->has('judul_laporan'))
                                                 <div class="text-danger">
-                                                    {{ $errors->first('nama_laporan')}}
+                                                    {{ $errors->first('judul_laporan')}}
                                                 </div>
                                                 @endif
                                             </div>
         
 											<div class="custom-file">
-												<label class="custom-file-label" for="customFile">Upload File Laporan (PDF/Docx)</label>
+												<label class="custom-file-label" for="customFile">Upload File Laporan (PDF)</label>
 											  
-												<input type="file" class="custom-file-input form-control" id="customFile">
+												<input type="file" name="laporan" class="custom-file-input form-control" id="customFile">
 												</div>
 												<br>
                                             <div class="form-group mt-3">
