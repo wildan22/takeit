@@ -6,10 +6,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
+	
+	 <!-- VENDOR CSS -->
+	 <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
+	 <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
+	 <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
+	 <!-- MDBootstrap Datatables  -->
+	 <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
+
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="/assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -88,33 +93,29 @@
 									<h3 class="panel-title" class="">Data Laporan</h3>
 									</div>
 								<div class="panel-body">
-									<ul class="list-group">
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-										  Nama Laporan 1
-										  <br> 12-12-2012
-                                          <a href="/auditor/laporan/view_laporan" class="badge badge-primary" >Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-											Nama Laporan 12
-											<br> 12-09-2012
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-											Nama Laporan 13
-											<br> 12-06-2012
-                                            <a href="#" class="badge badge-info">Detail</a>
-                                        </li>
-                                      </ul>
-									
+									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+										<thead>
+											<tr>
+												<th>Nama Laporan</th>
+												<th width="25%">Bulan</th>
+                                                <th width="10%">Aksi</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Nama Laporan 1</td>
+												<td>12-12-2012</td>
+												<td>
+													<a href="/auditor/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 							<!-- END BASIC TABLE -->
 						</div>
-
-
-
 						<!-- BASIC TABLE -->
-						
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
@@ -124,11 +125,23 @@
 		</footer>
 	</div>
 	<!-- END WRAPPER -->
-	<!-- Javascript -->
-	<script src="/assets/vendor/jquery/jquery.min.js"></script>
-	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="/assets/scripts/klorofil-common.js"></script>
+	 <!-- Javascript -->
+	 <script src="/assets/vendor/jquery/jquery.min.js"></script>
+	 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	 <script src="/assets/scripts/klorofil-common.js"></script>
+
+	 <!-- MDBootstrap Datatables  -->
+	 <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+	 <script type="text/javascript">
+		 // Basic example
+		 $(document).ready(function() {
+			 $('#dtBasicExample').DataTable({
+				 "searching": true // false to disable search (or any other option)
+			 });
+			 $('.dataTables_length').addClass('bs-select');
+		 });
+	 </script>
 </body>
 
 </html>
