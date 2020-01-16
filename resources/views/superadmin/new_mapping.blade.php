@@ -108,7 +108,7 @@
                                       </div>
                                       <div class="form-group">
                                         <label for="tujuan_ti">Tujuan TI</label>
-                                        <input type="text" name="tujuan_ti" class="form-control" placeholder="Tujuan Tknologi Informasi"> @if ($errors->has('tujuan_ti'))
+                                        <input type="text" name="tujuan_ti" class="form-control" placeholder="Contoh: Implementasi Pedoman, Standar, dan Prosedur TI" required> @if ($errors->has('tujuan_ti'))
                                         <div class="text-danger">
                                             {{ $errors->first('tujuan_ti')}}
                                         </div>

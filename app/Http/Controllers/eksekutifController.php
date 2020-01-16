@@ -10,4 +10,8 @@ class eksekutifController extends Controller{
         $this->middleware('auth');
     }
 
+    public function showDashboard(){
+        return view('executive.dashboard');
+    }
+
 }

@@ -57,8 +57,6 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="/home" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						
-						<li><a href="/itstaff/evidence" class=""><i class="lnr lnr-text-align-left"></i> <span>Evidence</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -69,7 +67,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Selamat Datang Executive PTPN7</h3>
+					<h3 class="page-title">Selamat Datang Executive</h3>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->
@@ -120,9 +118,7 @@
 											</tr>
 										</tbody>
                                     </table>
-									Halaman :  <br/>
 									Jumlah Data :  <br/>
-									Data per Halaman :  <br/>
 									
 								</div>
 							</div>
@@ -176,9 +172,7 @@
 											</tr>
 										</tbody>
                                     </table>
-									Halaman :  <br/>
 									Jumlah Data :  <br/>
-									Data per Halaman :  <br/>
 									
 								</div>
 							</div>

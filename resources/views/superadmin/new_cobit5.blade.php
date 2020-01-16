@@ -87,33 +87,19 @@
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                          <label class="input-group-text" for="inputGroupSelect01">Periode</label>
-                                        </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>Pilih Periode</option>
-                                          <option value="1">Desember 2013</option>
-                                          <option value="2">Desember 2014</option>
-                                          <option value="3">Desember 2015</option>
-                                        </select>
-                                      </div>
-
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <label class="input-group-text" for="inputGroupSelect01">Domain</label>
+                                          <label class="input-group-text" for="inputGroupSelect01">Domain Cobit</label>
                                         </div>
                                         <select class="form-control" id="inputGroupSelect01" required>
                                           <option selected>Pilih Domain</option>
-                                          <option value="1">EDM</option>
-                                          <option value="2">APO</option>
-                                          <option value="3">BAI</option>
-                                          <option value="4">DSS</option>
-                                          <option value="5">MEA</option>
+                                          @foreach ($domains as $d)
+                                          <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>
+                                          @endforeach
                                         </select>
                                       </div>
 
                                     <div class="form-group">
                                         <label for="subdomain">Sub Domain</label>
-                                        <input type="text" name="subdomain" class="form-control" placeholder="Sub Domain"> @if ($errors->has('subdomain'))
+                                        <input type="text" name="subdomain"  class="form-control" placeholder="Contoh: EDM02"> @if ($errors->has('subdomain'))
                                         <div class="text-danger">
                                             {{ $errors->first('subdomain')}}
                                         </div>
@@ -122,14 +108,14 @@
 
                                     <div class="form-group">
                                         <label for="proses">Proses</label>
-                                        <textarea id="proses" name="proses" class="form-control" rows="10" placeholder="Proses" required></textarea> @if ($errors->has('proses'))
+                                        <input type="text" name="proses"  class="form-control" placeholder="Contoh: Ensure Benefits Delivery"> @if ($errors->has('proses'))
                                         <div class="text-danger">
                                             {{ $errors->first('proses')}}
                                         </div>
                                         @endif
                                     </div>
                                     <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-outline-success" value="Simpan">
+                                        <input type="submit" class="btn btn-success" value="Simpan">
                                     </div>
                                 </form>
 

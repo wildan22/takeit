@@ -63,7 +63,8 @@ class adminController extends Controller{
     }
 
     public function showNewCobit5(){
-        return view('superadmin.new_cobit5');
+        $domains = DB::table('domains')->get();
+        return view('superadmin.new_cobit5',['domains'=>$domains]);
     }
 
     public function prosesTambahUser(Request $request){

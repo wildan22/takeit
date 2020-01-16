@@ -96,7 +96,8 @@ Route::middleware('is_auditor')->group(function (){
 
 //Route Group Untuk Eksekutif
 Route::middleware('is_eksekutif')->group(function (){
-    
+    //Menampilkan Dashboard
+    Route::get('/executive','eksekutifController@showDashboard')->name('eksekutif.home');
 });
 
 
