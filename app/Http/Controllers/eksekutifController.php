@@ -14,4 +14,7 @@ class eksekutifController extends Controller{
         return view('executive.dashboard');
     }
 
+    public function showLaporan(){
+        return view('executive.laporan');
+    }
 }

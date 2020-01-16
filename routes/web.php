@@ -88,6 +88,8 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('/auditor/mea01','auditorController@showAuditmea01')->name('auditor.mea01');
     //Menampilkan Halaman Laporan
     Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.laporan');
+    //Menampilkan Halaman tambah data keterangan
+    Route::get('/auditor/edm01/keterangan','auditorController@showFormKeteranganEDM01')->name('auditor.keterangan');
     //Menampilkan Halaman Lihat Laporan
     Route::get('/auditor/laporan/view_laporan','auditorController@showViewLaporan')->name('auditor.view_laporan');
 
@@ -98,6 +100,8 @@ Route::middleware('is_auditor')->group(function (){
 Route::middleware('is_eksekutif')->group(function (){
     //Menampilkan Dashboard
     Route::get('/executive','eksekutifController@showDashboard')->name('eksekutif.home');
+    //Menampilkan laporan
+    Route::get('/executive/laporan','eksekutifController@showLaporan')->name('eksekutif.laporan');
 });
 
 

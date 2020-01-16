@@ -22,6 +22,10 @@ class auditorController extends Controller{
         return view('auditor.edm01');
     }
 
+    public function showFormKeteranganEDM01(){   
+        return view('auditor.keterangan');
+    }
+
     public function showAuditAPO01(){   
         return view('auditor.apo01');
     }
