@@ -80,8 +80,18 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('/auditor','auditorController@showDashboard')->name('auditor.home');
     //Menampilkan Halaman Audit
     Route::get('/auditor/audit','auditorController@showAudit')->name('auditor.audit');
+    
     //Menampilkan Halaman Audit-EDM01
     Route::get('/auditor/edm01','auditorController@showAuditEDM01')->name('auditor.edm01');
+    //Menampilkan Halaman Audit-EDM02
+    Route::get('/auditor/edm02','auditorController@showAuditEDM02')->name('auditor.edm02');
+    //Menampilkan Halaman Audit-EDM03
+    Route::get('/auditor/edm03','auditorController@showAuditEDM03')->name('auditor.edm03');
+    //Menampilkan Halaman Audit-EDM04
+    Route::get('/auditor/edm04','auditorController@showAuditEDM04')->name('auditor.edm04');
+    //Menampilkan Halaman Audit-EDM05
+    Route::get('/auditor/edm05','auditorController@showAuditEDM05')->name('auditor.edm05');
+
     //Menampilkan Halaman Audit-APO01
     Route::get('/auditor/apo01','auditorController@showAuditAPO01')->name('auditor.apo01');
     //Menampilkan Halaman Audit-BAI01

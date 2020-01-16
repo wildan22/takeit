@@ -105,7 +105,7 @@
                                         
                                       <div class="form-group">
                                             <label for="kodeoutput">Kode Output</label>
-                                            <input type="text" disabled name="kodeoutput" class="form-control" placeholder="Kode Output ">
+                                            <input type="text" disabled name="kodeoutput" class="form-control" placeholder="Contoh: EDM01-WP1 ">
                                 
                                         @if ($errors->has('kodeoutput'))
                                             <div class="text-danger">
@@ -116,7 +116,7 @@
                                 
                                         <div class="form-group">
                                             <label for="output_proses">Output dari Proses</label>
-                                            <input type="number" disabled name="output_proses" class="form-control" placeholder="Outpur dari Proses">
+                                            <input type="number" disabled name="output_proses" class="form-control" placeholder="Contoh: Enterprise governance guiding principles">
                                 
                                         @if ($errors->has('output_proses'))
                                             <div class="text-danger">
@@ -127,7 +127,7 @@
                                 
                                         <div class="form-group">
                                             <label for="deskripsi">Deskripsi</label>
-                                            <textarea id="deskripsi" disabled name="deskripsi" class="form-control" rows="10" placeholder="Deskripsi" required></textarea> @if ($errors->has('deskripsi'))
+                                            <textarea id="deskripsi" disabled name="deskripsi" class="form-control" rows="10" placeholder="Contoh: Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5" required></textarea> @if ($errors->has('deskripsi'))
                                             <div class="text-danger">
                                                 {{ $errors->first('deskripsi')}}
                                             </div>
@@ -136,7 +136,7 @@
                                 
                                         <div class="form-group">
                                             <label for="nama_laporan">Terdapat pada</label>
-                                            <input type="text" name="nama_laporan" class="form-control" placeholder="Nama Laporan">
+                                            <input type="text" name="nama_laporan" class="form-control" placeholder="Contoh: Belum ada, IT governance framework baru akan disusun.">
                                 
                                         @if ($errors->has('nama_laporan'))
                                             <div class="text-danger">
