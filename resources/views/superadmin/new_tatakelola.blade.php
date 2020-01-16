@@ -58,8 +58,9 @@
 						<li><a href="#" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/mapping" class=""><i class="lnr lnr-book"></i> <span>Mapping Tujuan TI</span></a></li>
-						<li><a href="/superadmin/tatakelola" class="active"><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+                        <li><a href="/superadmin/tujuan_ti" class=""><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
+						<li><a href="/superadmin/mapping" class=""><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
+						<li><a href="/superadmin/tatakelola" class="active"><i class="lnr lnr-layers"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
                 </nav>
             </div>
@@ -89,7 +90,7 @@
                                           <input type="date" name="periode" class="form-control" required>
                                         </div>
                                       </div>
-
+                                      <br>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <label class="input-group-text">Sub Domain</label>
@@ -105,6 +106,7 @@
                                           <option value="5">APO2</option>
                                         </select>
                                       </div>
+                                      <br>
                                       <div class="form-group">
                                         <label for="kodeoutput">Kode Output</label>
                                         <input type="text" name="kodeoutput" class="form-control" placeholder="Contoh: EDM02-WP1" required> @if ($errors->has('kodeoutput'))

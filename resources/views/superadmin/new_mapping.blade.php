@@ -64,8 +64,9 @@
 						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/mapping" class="active"><i class="lnr lnr-book"></i> <span>Mapping Tujuan TI</span></a></li>
-						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+                        <li><a href="/superadmin/tujuan_ti" class=""><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
+						<li><a href="/superadmin/mapping" class="active"><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
+						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-layers"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -87,7 +88,7 @@
                                 <div class="panel-body">
                             
                                     {{-- form new Product --}}
-                                <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
+                                <form method="post" action="/superadmin/mapping/proses" enctype="multipart/form-data">
                                     @csrf
                                    
 
@@ -106,14 +107,20 @@
                                           <option value="5">APO2</option>
                                         </select>
                                       </div>
-                                      <div class="form-group">
-                                        <label for="tujuan_ti">Tujuan TI</label>
-                                        <input type="text" name="tujuan_ti" class="form-control" placeholder="Contoh: Implementasi Pedoman, Standar, dan Prosedur TI" required> @if ($errors->has('tujuan_ti'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('tujuan_ti')}}
+<br>
+                                      <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text"> Tujuan Teknologi Informasi</label>
                                         </div>
-                                        @endif
-                                    </div>
+                                        <select class="form-control" id="inputGroupSelect01" required>
+                                          <option selected>Pilih Tujuan TI</option>
+                                          <option value="1">Komite TI</option>
+                                          <option value="2">Organisasi fungsional TI</option>
+                                          <option value="3">Koordinasi Pengelolaan Layanan TI dalam Organisasi Fungsional TI</option>
+                                          <option value="4">Implementasi Pedoman, Standar, dan Prosedur TI</option>
+                                        </select>
+                                      </div>
+                                      <br>
                                     <div class="form-group mt-3">
                                         <input type="submit" class="btn btn-success" value="Simpan">
                                     </div>

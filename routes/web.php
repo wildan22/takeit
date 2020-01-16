@@ -41,6 +41,10 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/cobit5/new_cobit5','adminController@showNewCobit5')->name('superadmin.showNewCobit5');
     //Menampilkan Halaman Tambah Tata Kelola
     Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
+    //Menampilkan Halaman Tujuan TI
+    Route::get('/superadmin/tujuan_ti','adminController@showTujuanTI')->name('superadmin.showTujuanTI');
+    //Menampilkan Halaman Tambah Tujuan TI
+    Route::get('/superadmin/tujuan_ti/new_tujuan_ti','adminController@showNewTujuanTI')->name('superadmin.showNewTujuanTI');
     //Menampilkan Halaman Mapping
     Route::get('/superadmin/mapping','adminController@showMapping')->name('superadmin.showMapping');
     //Menampilkan Halaman Tambah Data Mapping

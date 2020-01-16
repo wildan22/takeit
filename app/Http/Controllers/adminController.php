@@ -27,6 +27,14 @@ class adminController extends Controller{
         return view('superadmin.new_tatakelola');
     }
 
+    public function showTujuanTI(){
+        return view('superadmin.tujuan_ti');
+    }
+
+    public function showNewTujuanTI(){
+        return view('superadmin.new_tujuan_ti');
+    }
+
     public function showMapping(){
         return view('superadmin.mapping');
     }

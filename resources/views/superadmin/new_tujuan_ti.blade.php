@@ -64,8 +64,8 @@
 						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/tujuan_ti" class=""><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
-						<li><a href="/superadmin/mapping" class="active"><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
+                        <li><a href="/superadmin/tujuan_ti" class="active"><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
+						<li><a href="/superadmin/mapping" class=""><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
 						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-layers"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
 				</nav>
@@ -82,69 +82,25 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <a href="/superadmin/mapping/new_mapping" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Mapping Tujuan TI</a>
+                                    <h3 class="panel-title" class="">Tujuan Teknologi Informasi</h3>
+                                    <a href="/superadmin/tujuan_ti" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i> Batal</a>
                                 </div>
-
-                                {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{session('status')}}
-                                </div>
-                                @endif
                                 <div class="panel-body">
-                                    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th width="10%">No</th>
-                                                <th width="13%">Sub Domain</th>
-                                                <th>Tujuan Teknologi Informasi</th>
-                                                <th width="18%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>EDM01</td>
-                                                <td>Kerangka Kerja Tata Kelola TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>EDM01</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>EDM01</td>
-                                                <td>Kerangka Kerja Tata Kelola TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>EDM01</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>EDM01</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                           
-
-
-                                        </tbody>
-                                    </table>
-                                    Halaman :
-                                    <br/> Jumlah Data :
-                                    <br/>
-
+                                    <form method="post" action="/superadmin/" enctype="multipart/form-data">
+                                        @csrf
+    
+                                    <div class="form-group">
+                                        <label for="tujuan">Tujuan Teknologi Informasi</label>
+                                        <input type="text" name="tujuan" class="form-control" placeholder="Contoh: Pengelolaan Ketersediaan dan Kapasitas Layanan TI"> @if ($errors->has('tujuan'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('tujuan')}}
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <input type="submit" class="btn btn-success" value="Simpan">
+                                    </div>  
+                                    </form> 
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->

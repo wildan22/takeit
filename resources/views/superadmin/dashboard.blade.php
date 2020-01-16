@@ -59,8 +59,9 @@
 						<li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/mapping" class=""><i class="lnr lnr-book"></i> <span>Mapping Tujuan TI</span></a></li>
-						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-map"></i> <span>Tata kelola Management</span></a></li>
+                        <li><a href="/superadmin/tujuan_ti" class=""><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
+						<li><a href="/superadmin/mapping" class=""><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
+						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-layers"></i> <span>Tata kelola Management</span></a></li>
 						</ul>
 				</nav>
 			</div>

@@ -125,64 +125,7 @@
 							</div>
 							<!-- END BASIC TABLE -->
 
-							<!-- BASIC TABLE -->
-							<div class="panel"  >
-								<div class="panel-heading">
-									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2016</h3>
-									</div>
-								<div class="panel-body">
-									<table class="table">
-										<thead>
-											<tr>
-                                                <th>Cobit 5</th>
-												<th>Proses</th>
-												<th>Kematangan Level %</th>
-												<th>Keterangan</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>EDM01</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>35% <span class="lnr lnr-star"></span></td>
-												<td>Level 2</td>
-											</tr>
-											<tr>
-												<td>EDM02</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>35% <span class="lnr lnr-star"></span></td>
-												<td>Level 2</td>
-											</tr>
-											<tr>
-												<td>EDM03</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>35% <span class="lnr lnr-star"></span></td>
-												<td>Level 2</td>
-											</tr>
-											<tr>
-												<td>EDM04</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>35% <span class="lnr lnr-star"></span></td>
-												<td>Level 2</td>
-											</tr>
-											<tr>
-												<td>EDM05</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>35% <span class="lnr lnr-star"></span></td>
-												<td>Level 2</td>
-											</tr>
-										</tbody>
-                                    </table>
-									Jumlah Data :  <br/>
-									
-								</div>
-							</div>
-							<!-- END BASIC TABLE -->
-						</div>
-
-
-
-						<!-- BASIC TABLE -->
+							
 						</div>
 
 
