@@ -88,6 +88,10 @@
                         <div class="co-12">
                             <!-- BASIC TABLE -->
                             <div class="panel">
+                                <center>
+									<h3>Mapping Proses TI</h3>
+									<hr width="20%">
+								</center>
                                 <div class="panel-heading">
                                     <a href="/superadmin/mapping/new_mapping" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Mapping Proses TI</a>
                                 </div>

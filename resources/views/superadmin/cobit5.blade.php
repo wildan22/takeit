@@ -88,6 +88,10 @@
 						<div class="co-12">
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
+								<center>
+									<h3>COBIT 5</h3>
+									<hr width="20%">
+								</center>
 								<div class="panel-heading">
                                     <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  COBIT</a>
 								</div>

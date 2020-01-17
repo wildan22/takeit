@@ -87,6 +87,10 @@
                         <div class="co-12">
                             <!-- BASIC TABLE -->
                             <div class="panel">
+                                <center>
+									<h3>Work Point</h3>
+									<hr width="20%">
+								</center>
                                 <div class="panel-heading">
                                     <a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Work Point</a>
                                 </div>

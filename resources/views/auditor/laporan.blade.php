@@ -73,7 +73,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#" class="active"><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
+                        {{-- <li><a href="#" class="active"><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li> --}}
                     </ul>
                 </nav>
             </div>

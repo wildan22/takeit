@@ -88,6 +88,10 @@
                         <div class="co-12">
                             <!-- BASIC TABLE -->
                             <div class="panel">
+                                <center>
+									<h3>Proses TI Perusahan</h3>
+									<hr width="20%">
+								</center>
                                 <div class="panel-heading">
                                     <a href="/superadmin/tujuan_ti/new_tujuan_ti" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Proses TI</a>
                                 </div>

@@ -74,7 +74,7 @@
                                 </ul>
                             </div>
                         </li>
-						<li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
+						{{-- <li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li> --}}
 						</ul>
 				</nav>
 			</div>

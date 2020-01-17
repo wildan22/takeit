@@ -74,7 +74,7 @@
                                 </ul>
                             </div>
                         </li>
-						<li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
+						{{-- <li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li> --}}
 						</ul>
 				</nav>
 			</div>
@@ -193,12 +193,66 @@
 							</div>
 							<!-- END BASIC TABLE -->
 						</div>
+		{{-- Sektor Laporan per Domain/Subdomain --}}
+		<div class="panel">
+			<div class="panel-body">
+				<div class="accordion" id="accordionExample">
 
+					<div class="card">
+						<div class="card-header" id="headingTwo">
+							<h2 class="mb-0">
+						  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							Nama Laporan 1
+						  </button>
+						</h2>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div class="card-body">
+								<div class="graph-outline">
+									<object width="100%" height="700px" data="/file/uiux.pdf" type="application/pdf">
+										<embed src="/file/uiux.pdf" type="application/pdf" />
+									</object>
+								</div>
+							</div>
+						</div>
+					</div>
 
+					<div class="card">
+						<div class="card-header" id="headingThree">
+							<h2 class="mb-0">
+						  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							Collapsible Group Item #3
+						  </button>
+						</h2>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div class="card-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							</div>
+						</div>
+					</div>
+				</div>
 
-						<!-- BASIC TABLE -->
-						
-		<!-- END MAIN -->
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h2 class="mb-0">
+						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collaps4" aria-expanded="false" aria-controls="collaps4">
+						  Collapsible Group Item #4
+						</button>
+					  </h2>
+					</div>
+					<div id="collaps4" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div class="card-body">
+							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		{{-- Sektor Laporan per Domain/Subdomain --}}
+					</div>
+						<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative">
