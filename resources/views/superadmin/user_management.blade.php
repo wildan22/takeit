@@ -87,6 +87,10 @@
 						<div class="co-12">
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
+								<center>
+									<h3 style="font-family: lora; color: #1B2690;">Pengguna Aplikasi Tata Kelola TI</h3>
+									<hr width="40%">
+								</center>
 								<div class="panel-heading">
                                     <a href="/superadmin/user_management/new_user" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Pengguna</a>
 									</div>

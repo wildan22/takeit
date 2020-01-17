@@ -88,7 +88,7 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <center>
-									<h3>Work Point</h3>
+									<h3 style="font-family: lora; color: #1B2690;">Work Point</h3>
 									<hr width="20%">
 								</center>
                                 <div class="panel-heading">

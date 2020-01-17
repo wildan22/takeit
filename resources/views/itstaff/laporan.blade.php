@@ -76,8 +76,11 @@
                         <div class="co-12">
                             <!-- BASIC TABLE -->
                             <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Data Laporan</h3>
+                                <center>
+									<h3 style="font-family: lora; color: #1B2690;">Laporan Proses TI</h3>
+									<hr width="20%">
+								</center>
+                                <div class="panel-heading mt-0">
                                 </div>
                                 <div class="panel-heading">
                                     <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
