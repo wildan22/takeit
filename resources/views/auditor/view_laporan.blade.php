@@ -83,8 +83,6 @@
                         <div class="panel-heading">
                             <a href="/auditor/laporan" class="btn btn-outline-back"><i class="lnr lnr-arrow-left"></i>  Kembali</a>
                             <br>
-                            <br>
-
                             <div class="graph-outline">
                                 <object width="100%" height="700px" data="/file/uiux.pdf" type="application/pdf">
                                     <embed src="/file/uiux.pdf" type="application/pdf" />

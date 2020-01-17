@@ -54,15 +54,22 @@
         <div id="sidebar-nav" class="sidebar">
             <div class="sidebar-scroll">
                 <nav>
-                    <ul class="nav">
-						<li><a href="#" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+					<ul class="nav">
+						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/tujuan_ti" class=""><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
-						<li><a href="/superadmin/mapping" class=""><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
-						<li><a href="/superadmin/tatakelola" class="active"><i class="lnr lnr-layers"></i> <span>Tata kelola Management</span></a></li>
-						</ul>
-                </nav>
+						<li>
+                            <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subDataMaster" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
+                                    <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
+                                    <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
+                                    <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
+                                </ul>
+                            </div>
+						</li>
+					</ul>
+				</nav>
             </div>
         </div>
         <!-- END LEFT SIDEBAR -->
@@ -76,7 +83,7 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Tambah Tata Kelola TI</h3>
+                                    <h3 class="panel-title" class="">Tambah Work Point</h3>
                                     <a href="/superadmin/tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 </div>
                                 <div class="panel-body">
@@ -96,7 +103,7 @@
                                           <label class="input-group-text">Sub Domain</label>
                                         </div>
                                         <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>Pilih Sub Domain</option>
+                                          <option selected>---Pilih---</option>
                                           <option value="1">EDM01</option>
                                           <option value="2">EDM02</option>
                                           <option value="3">EDM03</option>

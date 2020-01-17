@@ -63,11 +63,18 @@
 					<ul class="nav">
 						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li><a href="/superadmin/cobit5" class=""><i class="lnr lnr-chart-bars"></i> <span>Cobit 5 Management</span></a></li>
-                        <li><a href="/superadmin/tujuan_ti" class="active"><i class="lnr lnr-graduation-hat"></i> <span>Tujuan TI</span></a></li>
-						<li><a href="/superadmin/mapping" class=""><i class="lnr lnr-map"></i> <span>Mapping Tujuan TI</span></a></li>
-						<li><a href="/superadmin/tatakelola" class=""><i class="lnr lnr-layers"></i> <span>Tata kelola Management</span></a></li>
-						</ul>
+						<li>
+                            <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subDataMaster" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
+                                    <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
+                                    <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
+                                    <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
+                                </ul>
+                            </div>
+						</li>
+					</ul>
 				</nav>
 			</div>
 		</div>
@@ -82,7 +89,7 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Tujuan Teknologi Informasi</h3>
+                                    <h3 class="panel-title" class="">Proses Teknologi Informasi</h3>
                                     <a href="/superadmin/tujuan_ti" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i> Batal</a>
                                 </div>
                                 <div class="panel-body">
@@ -90,10 +97,10 @@
                                         @csrf
     
                                     <div class="form-group">
-                                        <label for="tujuan">Tujuan Teknologi Informasi</label>
-                                        <input type="text" name="tujuan" class="form-control" placeholder="Contoh: Pengelolaan Ketersediaan dan Kapasitas Layanan TI"> @if ($errors->has('tujuan'))
+                                        <label for="proses_ti">Proses Teknologi Informasi</label>
+                                        <input type="text" name="proses_ti" class="form-control" placeholder="Contoh: Pengelolaan Ketersediaan dan Kapasitas Layanan TI"> @if ($errors->has('proses_ti'))
                                         <div class="text-danger">
-                                            {{ $errors->first('tujuan')}}
+                                            {{ $errors->first('proses_ti')}}
                                         </div>
                                         @endif
                                     </div>

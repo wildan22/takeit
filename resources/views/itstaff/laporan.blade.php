@@ -102,7 +102,7 @@
                                                 <td>Nama Laporan 1</td>
                                                 <td>12-12-2012</td>
                                                 <td>
-                                                    <a href="/auditor/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>
+                                                    <a href="/itstaff/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>
                                                 </td>
                                             </tr>
                                         </tbody>

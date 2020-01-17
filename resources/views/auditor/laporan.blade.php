@@ -96,13 +96,15 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Laporan</th>
+                                                <th>Sub Domain</th>
                                                 <th width="25%">Bulan</th>
-                                                <th width="10%">Aksi</th>
+                                                <th width="10%">Aksi</th> 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Nama Laporan 1</td>
+                                                <td width>EDM02</td>
                                                 <td>12-12-2012</td>
                                                 <td>
                                                     <a href="/auditor/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>

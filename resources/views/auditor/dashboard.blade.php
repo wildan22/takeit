@@ -69,7 +69,7 @@
                                 </ul>
                             </div>
                         </li>
-						<li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
+						{{-- <li><a href="/auditor/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li> --}}
 						</ul>
 				</nav>
 			</div>
@@ -83,60 +83,6 @@
 					<h3 class="page-title">Selamat Datang Auditor</h3>
 					<div class="row">
 						<div class="co-12">
-							<!-- BASIC TABLE -->
-							<div class="panel"  >
-								<div class="panel-heading">
-									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2013</h3>
-									</div>
-								<div class="panel-body">
-									<table class="table">
-										<thead>
-											<tr>
-                                                <th>Cobit 5</th>
-												<th>Proses</th>
-												<th>Kematangan Level %</th>
-												<th>Keterangan</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>EDM01</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM02</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM03</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM04</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM05</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-										</tbody>
-                                    </table>
-									Jumlah Data :  <br/>
-									
-								</div>
-							</div>
-							<!-- END BASIC TABLE -->
-
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">

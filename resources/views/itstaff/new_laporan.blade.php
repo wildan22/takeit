@@ -95,10 +95,10 @@
         
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                  <label class="input-group-text" for="inputGroupSelect01">Sub Bab</label>
+                                                  <label class="input-group-text" for="inputGroupSelect01">Proses Teknologi Informasi</label>
                                                 </div>
                                                 <select class="form-control" id="inputGroupSelect01" required>
-                                                  <option selected>Pilih Sub Bab</option>
+                                                  <option selected>---Pilih---</option>
                                                   <option value="1">Kerangka Kerja Tata Kelola TI</option>
                                                   <option value="2">Komite TI</option>
                                                   <option value="3">Organisasi fungsional TI</option>
