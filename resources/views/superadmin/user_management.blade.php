@@ -91,7 +91,7 @@
 									<h3 style="font-family: lora; color: #1B2690;">Pengguna Aplikasi Tata Kelola TI</h3>
 									<hr width="40%">
 								</center>
-								<div class="panel-heading">
+								<div class="panel-heading mt-0">
                                     <a href="/superadmin/user_management/new_user" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Pengguna</a>
 									</div>
 								
