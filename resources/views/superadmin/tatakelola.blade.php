@@ -101,8 +101,14 @@
                                         {{session('status')}}
                                     </div>
                                     </div>
+
+                                    <div class="panel-body">
+                                        <div class="alert alert-danger">
+                                            {{session('status')}}
+                                        </div>
+                                        </div>
                                     {{-- alert -> tindakan yang dilakukan --}}
-                                    
+
                                 @endif
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
