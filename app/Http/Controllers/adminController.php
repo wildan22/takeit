@@ -51,10 +51,20 @@ class adminController extends Controller{
     public function showUserManagement(){
         $users = DB::table('users')
                     ->join('level','users.is_admin','=','level.id')
-                    ->select('users.name','users.email','level.keterangan_level as keterangan_level')
+                    ->select('users.id','users.name','users.email','level.keterangan_level as keterangan_level')
                     ->get();
 
         return view('superadmin.user_management',['users'=>$users]);
+    }
+
+    public function showEditUser($id){
+        $users = DB::table('users')
+            ->join('level','users.is_admin','=','level.id')
+            ->select('users.id','users.name','users.email','level.keterangan_level as keterangan_level')
+            ->where('users.id',$id)
+            ->get();
+            $level = DB::table('level')->get();
+        return view('superadmin.edit_user',['users'=>$users,'level'=>$level]);
     }
 
     public function showNewUser(){

@@ -83,7 +83,7 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Tambah User</h3>
+                                    <h3 class="panel-title" class="">Edit User</h3>
                                     <a href="/superadmin/user_management" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 </div>
                                 <div class="panel-body">
@@ -103,10 +103,10 @@
                                         @endforeach
                                         </select>
                                       </div>
-
+                                        @foreach($users as $user)
                                       <div class="form-group">
                                         <label for="name">Nama Pengguna</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Nama Anda"> @if ($errors->has('name'))
+                                        <input type="text" name="name" class="form-control" placeholder="{{$user->name}}"> @if ($errors->has('name'))
                                         <div class="text-danger">
                                             {{ $errors->first('name')}}
                                         </div>
@@ -115,7 +115,7 @@
 
                                     <div class="form-group">
                                       <label for="email">Alamat E-Mail</label>
-                                      <input type="email" name="email" class="form-control" placeholder="Alamat E-Mail"> @if ($errors->has('email'))
+                                      <input type="email" name="email" class="form-control" placeholder="{{$user->email}}"> @if ($errors->has('email'))
                                       <div class="text-danger">
                                           {{ $errors->first('email')}}
                                       </div>
@@ -142,6 +142,7 @@
                                         <input type="submit" class="btn btn-success" value="Simpan">
                                     </div>
                                 </form>
+                                @endforeach
 
                                 {{-- akhir form --}}
                                 </div>
