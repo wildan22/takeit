@@ -107,7 +107,7 @@
                                       <br>
                                     <div class="form-group">
                                         <label for="subdomain">Sub Domain</label>
-                                        <input type="text" name="subdomain"  class="form-control" placeholder="Contoh: EDM02"> @if ($errors->has('subdomain'))
+                                        <input type="text" name="subdomain"  class="form-control" placeholder="{{$d->subdomain}}"> @if ($errors->has('subdomain'))
                                         <div class="text-danger">
                                             {{ $errors->first('subdomain')}}
                                         </div>
@@ -116,7 +116,7 @@
 
                                     <div class="form-group">
                                         <label for="proses">Proses</label>
-                                        <input type="text" name="proses"  class="form-control" placeholder="Contoh: Ensure Benefits Delivery"> @if ($errors->has('proses'))
+                                        <input type="text" name="proses"  class="form-control" placeholder="{{$d->proses}}"> @if ($errors->has('proses'))
                                         <div class="text-danger">
                                             {{ $errors->first('proses')}}
                                         </div>
