@@ -54,22 +54,22 @@
         <div id="sidebar-nav" class="sidebar">
             <div class="sidebar-scroll">
                 <nav>
-					<ul class="nav">
-						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li>
+                    <ul class="nav">
+                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+                        <li>
                             <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
-                                    <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
+                                    <li><a href="/superadmin/cobit5"><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
                                     <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
                                     <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
                                     <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
                                 </ul>
                             </div>
-						</li>
-					</ul>
-				</nav>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <!-- END LEFT SIDEBAR -->
@@ -83,59 +83,55 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Edit COBIT 5</h3> <br>
+                                    <h3 class="panel-title" class="">Edit COBIT 5</h3>
+                                    <br>
                                     <a href="/superadmin/cobit5" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 </div>
                                 <div class="panel-body">
-                                {{-- form new Product --}}
+                                    {{-- form new Product --}}
 
-                                <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
-                                    @csrf
+                                    <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
+                                        @csrf
 
-
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <label class="input-group-text" for="inputGroupSelect01">Domain Cobit</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="inputGroupSelect01">Domain Cobit</label>
+                                            </div>
+                                            <select class="form-control" id="inputGroupSelect01" required>
+                                                <option selected>Pilih Domain</option>
+                                                @foreach ($domains as $d)
+                                                <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>Pilih Domain</option>
-                                          @foreach ($domains as $d)
-                                          <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>
-                                          @endforeach
-                                        </select>
-                                      </div>
-                                      <br>
-                                    <div class="form-group">
-                                        <label for="subdomain">Sub Domain</label>
-                                        <input type="text" name="subdomain"  class="form-control" placeholder="{{$d->subdomain}}"> @if ($errors->has('subdomain'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('subdomain')}}
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="subdomain">Sub Domain</label>
+                                            <input type="text" name="subdomain" class="form-control" placeholder="{{$d->subdomain}}"> @if ($errors->has('subdomain'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('subdomain')}}
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="proses">Proses</label>
-                                        <input type="text" name="proses"  class="form-control" placeholder="{{$d->proses}}"> @if ($errors->has('proses'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('proses')}}
+                                        <div class="form-group">
+                                            <label for="proses">Proses</label>
+                                            <input type="text" name="proses" class="form-control" placeholder="{{$d->proses}}"> @if ($errors->has('proses'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('proses')}}
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                                </form>
-
-                                {{-- akhir form --}}
+                                        <div class="form-group mt-3">
+                                            <input type="submit" class="btn btn-success" value="Simpan">
+                                        </div>
+                                    </form>
+                                    {{-- akhir form --}}
                                 </div>
                             </div>
                         </div>
-                        <!-- END BASIC TABLE -->
+                        <!-- BASIC TABLE -->
                     </div>
-
-                    <!-- BASIC TABLE -->
-
                     <!-- END MAIN -->
                     <div class="clearfix"></div>
                     <footer>
