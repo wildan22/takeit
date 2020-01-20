@@ -45,6 +45,8 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/tatakelola','adminController@showTataKelola')->name('superadmin.showTataKelola');
     //Menampilkan Halaman Tambah Cobit 5
     Route::get('/superadmin/cobit5/new_cobit5','adminController@showNewCobit5')->name('superadmin.showNewCobit5');
+    //Menampilkan Halaman Edit Cobit 5
+    Route::get('/superadmin/cobit5/edit_cobit5/{id}','adminController@showEditCobit5')->name('superadmin.showEditCobit5');
     //Menampilkan Halaman Tambah Tata Kelola
     Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
     //Menampilkan Halaman Tujuan TI
@@ -61,6 +63,9 @@ Route::middleware('is_admin')->group(function (){
     Route::post('/superadmin/user_management/hapus/','adminController@prosesHapusUser');
     Route::post('/superadmin/cobit5/proses','adminController@prosesTambahCobit5');
     Route::post('/superadmin/cobit5/hapus','adminController@prosesHapusCobit5');
+    Route::post('/superadmin/cobit5/edit/proses','adminController@prosesEditCobit5');
+
+    
     
     
 });

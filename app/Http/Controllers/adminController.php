@@ -112,6 +112,25 @@ class adminController extends Controller{
         return view('superadmin.cobit5',['cobits'=>$cobits]);
     }
 
+    public function showEditCobit5($id){
+        $domains = DB::table('domains')->get();
+        $cobits = DB::table('subdomains')->where('id_subdomain',$id)->get();
+        return view('superadmin.edit_cobit5',['domains'=>$domains,'cobits'=>$cobits]);
+    }
+
+    public function prosesEditCobit5(Request $request){
+        $editcobit = DB::table('subdomains')->where('id_subdomain',$request->id)->update([
+            'domain_id'=>$request->domain,
+            'kode_subdomain'=>$request->subdomain,
+            'proses'=>$request->proses
+        ]);
+        if($editcobit == 1){
+            return redirect('/superadmin/cobit5')->with('status','Data Cobit Berhasil Diperbaharui');
+        }else{
+            return redirect('/superadmin/cobit5')->with('status','Data Cobit Gagal Diperbaharui');
+        }
+    }
+
     public function showNewCobit5(){
         $domains = DB::table('domains')->get();
         return view('superadmin.new_cobit5',['domains'=>$domains]);
