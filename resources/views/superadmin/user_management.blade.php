@@ -121,9 +121,9 @@
 												<td>{{$user->email}}</td>
 												<td>{{$user->keterangan_level}}</td>
 												<td>
-													<a href="#" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
-													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a>
+													<a href="/superadmin/user_management/" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
+													<a href="/superadmin/user_management/" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<a href="/superadmin/user_management/hapus/{{$user->id}}" class="btn btn-danger"><i class="lnr lnr-trash"></i></a>
 												</td>
 											</tr>
 
