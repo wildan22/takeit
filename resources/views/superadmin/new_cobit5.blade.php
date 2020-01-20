@@ -97,7 +97,7 @@
                                         <div class="input-group-prepend">
                                           <label class="input-group-text" for="inputGroupSelect01">Domain Cobit</label>
                                         </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
+                                        <select name="domain" class="form-control" id="inputGroupSelect01" required>
                                           <option selected>Pilih Domain</option>
                                           @foreach ($domains as $d)
                                           <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>

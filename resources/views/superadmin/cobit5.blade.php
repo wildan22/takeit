@@ -123,7 +123,11 @@
 												<td>{{$cobit->proses}}</td>
 												<td>
 													<a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$cobit->id}}">
+                                                        <i class="lnr lnr-trash"></i>
+                                                    </button>
+													
+													</td>
 											</tr>
 											@endforeach
 										</tbody>
@@ -136,7 +140,30 @@
 							</div>
 							<!-- END BASIC TABLE -->
 						</div>
-						<!-- BASIC TABLE -->						
+						<!-- BASIC TABLE -->
+
+						<!-- Delete Modal -->
+						@foreach($cobits as $cobit)
+                        <div class="modal fade" id="deleteModal-{{$cobit->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Anda Yakin akan Menghapus Data ini?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/superadmin/cobit5/hapus/">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$cobit->id}}">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						@endforeach
+                        <!-- Delete Modal -->
+
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>

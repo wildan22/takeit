@@ -78,24 +78,24 @@ class adminController extends Controller{
                 'password'=>Hash::make($request->password),
             ]);
             if($ubah == 1 ){
-                return redirect('/superadmin/user_management')->with('success','User Berhasil Ditambahkan');
+                return redirect('/superadmin/user_management')->with('status','User Berhasil DiUbah');
             }
             else{
-                return redirect('/superadmin/user_management')->with('failed','User Gagal Ditambahkan');
+                return redirect('/superadmin/user_management')->with('status','User Gagal DiUbah');
             }
         }
         else{
-            return redirect('/superadmin/user_management')->with('failed','Data Gagal Diubah');
+            return redirect('/superadmin/user_management')->with('status','Data Gagal Diubah');
         }
     }
 
     public function prosesHapusUser(Request $request){
         $hapus = DB::table('users')->where('id',$request->id)->delete();
 		if($hapus == 1){
-			return redirect()->route('superadmin.showUserManagement')->with('success','Data Berhasil Dihapus');
+			return redirect()->route('superadmin.showUserManagement')->with('status','Data Berhasil Dihapus');
 		}
 		else{
-			return redirect()->route('superadmin.showUserManagement')->with('failed','Data Gagal Dihapus');
+			return redirect()->route('superadmin.showUserManagement')->with('status','Data Gagal Dihapus');
 		}
     }
 
@@ -107,7 +107,7 @@ class adminController extends Controller{
     public function showCobit5(){
         $cobits = DB::table('subdomains')
                     ->join('domains','subdomains.domain_id','=','domains.id_domain')
-                    ->select('subdomains.kode_subdomain','subdomains.proses','domains.kode_domain')
+                    ->select('subdomains.id_subdomain as id','subdomains.kode_subdomain','subdomains.proses','domains.kode_domain')
                     ->get();
         return view('superadmin.cobit5',['cobits'=>$cobits]);
     }
@@ -115,6 +115,30 @@ class adminController extends Controller{
     public function showNewCobit5(){
         $domains = DB::table('domains')->get();
         return view('superadmin.new_cobit5',['domains'=>$domains]);
+    }
+
+    public function prosesTambahCobit5(Request $request){
+        $tambahcobit = DB::table('subdomains')->insert([
+            'domain_id'=>$request->domain,
+            'kode_subdomain'=>$request->subdomain,
+            'proses'=>$request->proses
+        ]);
+        if($tambahcobit == 1){
+            return redirect('/superadmin/cobit5')->with('status','Cobit Berhasil Ditambahkan');
+        }
+        else{
+            return redirect('/superadmin/cobit5')->with('status','Cobit Gagal Ditambahkan');
+        }
+    }
+
+    public function prosesHapusCobit5(Request $request){
+        $hapus = DB::table('subdomains')->where('id_subdomain',$request->id)->delete();
+		if($hapus == 1){
+			return redirect()->route('superadmin.showCobit5')->with('success','Data Berhasil Dihapus');
+		}
+		else{
+			return redirect()->route('superadmin.showCobit5')->with('status','Data Gagal Dihapus');
+		}
     }
 
     public function prosesTambahUser(Request $request){
@@ -126,14 +150,14 @@ class adminController extends Controller{
                 'password'=>Hash::make($request->password),
             ]);
             if($tambah == 1 ){
-                return redirect('/superadmin/user_management')->with('success','User Berhasil Ditambahkan');
+                return redirect('/superadmin/user_management')->with('status','User Berhasil Ditambahkan');
             }
             else{
-                return redirect('/superadmin/user_management')->with('failed','User Gagal Ditambahkan');
+                return redirect('/superadmin/user_management')->with('status','User Gagal Ditambahkan');
             }
         }
         else{
-            return redirect('/superadmin/user_management/new_user')->with('failed','Password dan Konfirmasi Password tidak sama');
+            return redirect('/superadmin/user_management/new_user')->with('status','Password dan Konfirmasi Password tidak sama');
         }
     }
 }

@@ -59,7 +59,9 @@ Route::middleware('is_admin')->group(function (){
     Route::post('/superadmin/user_management/new_user/proses','adminController@prosesTambahUser');
     Route::post('/superadmin/user_management/edit_user/proses','adminController@prosesEditUser');
     Route::post('/superadmin/user_management/hapus/','adminController@prosesHapusUser');
-
+    Route::post('/superadmin/cobit5/proses','adminController@prosesTambahCobit5');
+    Route::post('/superadmin/cobit5/hapus','adminController@prosesHapusCobit5');
+    
     
 });
 
