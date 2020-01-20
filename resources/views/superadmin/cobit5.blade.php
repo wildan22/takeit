@@ -96,11 +96,14 @@
                                     <a href="/superadmin/cobit5/new_cobit5" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  COBIT</a>
 								</div>
 								
-								{{-- alert -> tindakan yang dilakukan --}}
-								@if (session('status'))
-								<div class="alert alert-success">
-									{{session('status')}}
-								</div>
+								{{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
+                                <div class="panel-body">
+									<div class="alert alert-success">
+										{{session('status')}}
+									</div>
+									</div>
+									{{-- alert -> tindakan yang dilakukan --}}
+									
 								@endif
 								<div class="panel-body">
 									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">

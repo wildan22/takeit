@@ -99,7 +99,9 @@
 								<div class="alert alert-success">
                                     {{session('status')}}
                                 </div>
-								</div>
+                                </div>
+                                {{-- alert -> tindakan yang dilakukan --}}
+                                
                                 @endif
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">

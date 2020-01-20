@@ -96,10 +96,14 @@
                                     <a href="/superadmin/mapping/new_mapping" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Mapping Proses TI</a>
                                 </div>
 
-                                {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-                                <div class="alert alert-success">
+                               {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
+                               <div class="panel-body">
+								<div class="alert alert-success">
                                     {{session('status')}}
                                 </div>
+                                </div>
+                                {{-- alert -> tindakan yang dilakukan --}}
+                                
                                 @endif
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
