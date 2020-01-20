@@ -67,6 +67,38 @@ class adminController extends Controller{
         return view('superadmin.edit_user',['users'=>$users,'level'=>$level]);
     }
 
+    public function prosesEditUser(Request $request){
+        if($request->password == $request->konfirmasi_password){
+            $ubah = DB::table('users')
+            ->where('id',$request->id)
+            ->update([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'is_admin'=>$request->level,
+                'password'=>Hash::make($request->password),
+            ]);
+            if($ubah == 1 ){
+                return redirect('/superadmin/user_management')->with('success','User Berhasil Ditambahkan');
+            }
+            else{
+                return redirect('/superadmin/user_management')->with('failed','User Gagal Ditambahkan');
+            }
+        }
+        else{
+            return redirect('/superadmin/user_management')->with('failed','Data Gagal Diubah');
+        }
+    }
+
+    public function prosesHapusUser(Request $request){
+        $hapus = DB::table('users')->where('id',$request->id)->delete();
+		if($hapus == 1){
+			return redirect()->route('superadmin.showUserManagement')->with('success','Data Berhasil Dihapus');
+		}
+		else{
+			return redirect()->route('superadmin.showUserManagement')->with('failed','Data Gagal Dihapus');
+		}
+    }
+
     public function showNewUser(){
         $level = DB::table('level')->get();
         return view('superadmin.new_user',['level'=>$level]);

@@ -33,6 +33,8 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/user_management/new_user','adminController@showNewUser')->name('superadmin.showNewUser');
     //Menampilkan Halam Edit User
     Route::get('/superadmin/user_management/edit/{id}','adminController@showEditUser')->name('superadmin.showEditUser');
+    //Proses Update User
+
 
 
     //Menampilkan Halaman Pilih Periode
@@ -55,6 +57,10 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/mapping/new_mapping','adminController@showNewMapping')->name('superadmin.showNewMapping');
     
     Route::post('/superadmin/user_management/new_user/proses','adminController@prosesTambahUser');
+    Route::post('/superadmin/user_management/edit_user/proses','adminController@prosesEditUser');
+    Route::post('/superadmin/user_management/hapus/','adminController@prosesHapusUser');
+
+    
 });
 
 //Route Group Untuk IT Staff

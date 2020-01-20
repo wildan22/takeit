@@ -123,7 +123,9 @@
 												<td>
 													<a href="/superadmin/user_management/" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
 													<a href="/superadmin/user_management/edit/{{$user->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<a href="/superadmin/user_management/hapus/{{$user->id}}" class="btn btn-danger"><i class="lnr lnr-trash"></i></a>
+													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$user->id}}">
+														<i class="lnr lnr-trash"></i>
+													</button>
 												</td>
 											</tr>
 
@@ -138,6 +140,27 @@
 
 
 						<!-- BASIC TABLE -->
+						@foreach($users as $user)
+						            <!-- Delete Modal -->
+									<div class="modal fade" id="deleteModal-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            Apakah Anda Yakin akan Menghapus Data ini?
+                        </div>
+                        <div class="modal-footer">
+							<form method="POST" action="/superadmin/user_management/hapus/">
+							@csrf
+								<input type="hidden" name="id" value="{{$user->id}}">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-danger">Hapus</a>
+							</form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Delete Modal -->
+			@endforeach
 						
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
