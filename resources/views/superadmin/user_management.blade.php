@@ -120,8 +120,7 @@
 												<td>{{$user->name}}</td>
 												<td>{{$user->email}}</td>
 												<td>{{$user->keterangan_level}}</td>
-												<td>
-													<a href="/superadmin/user_management/" class="btn btn-primary"><i class="lnr lnr-upload"></i></a>
+												<td width="14%">
 													<a href="/superadmin/user_management/edit/{{$user->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$user->id}}">
 														<i class="lnr lnr-trash"></i>
