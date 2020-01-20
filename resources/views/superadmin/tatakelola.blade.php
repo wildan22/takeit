@@ -59,22 +59,22 @@
         <div id="sidebar-nav" class="sidebar">
             <div class="sidebar-scroll">
                 <nav>
-					<ul class="nav">
-						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li>
+                    <ul class="nav">
+                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+                        <li>
                             <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
-                                    <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
+                                    <li><a href="/superadmin/cobit5"><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
                                     <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
                                     <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
                                     <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
                                 </ul>
                             </div>
-						</li>
-					</ul>
-				</nav>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <!-- END LEFT SIDEBAR -->
@@ -88,9 +88,9 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <center>
-									<h3 style="font-family: lora; color: #1B2690;">Work Point</h3>
-									<hr width="20%">
-								</center>
+                                    <h3 style="font-family: lora; color: #1B2690;">Work Point</h3>
+                                    <hr width="20%">
+                                </center>
                                 <div class="panel-heading">
                                     <a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Work Point</a>
                                 </div>
@@ -100,16 +100,14 @@
                                     <div class="alert alert-success">
                                         {{session('status')}}
                                     </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="alert alert-danger">
+                                        {{session('status')}}
                                     </div>
-
-                                    <div class="panel-body">
-                                        <div class="alert alert-danger">
-                                            {{session('status')}}
-                                        </div>
-                                        </div>
-                                    {{-- alert -> tindakan yang dilakukan --}}
-
-                                @endif
+                                </div>
+                                {{-- alert -> tindakan yang dilakukan --}} @endif
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
@@ -152,17 +150,10 @@
 
                                         </tbody>
                                     </table>
-                                    Halaman :
-                                    <br/> Jumlah Data :
-                                    <br/>
-
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
                         </div>
-
-                        <!-- BASIC TABLE -->
-
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
                         <footer>

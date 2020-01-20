@@ -92,7 +92,6 @@
 
                                     <form method="post" action="/superadmin/user_management/edit_user/proses" enctype="multipart/form-data">
                                         @csrf
-                                        
 
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
@@ -107,7 +106,7 @@
                                         </div>
 
                                         @foreach($users as $user)
-                                        <input type="hidden" name="id" value="{{$user->id}}" >
+                                        <input type="hidden" name="id" value="{{$user->id}}">
                                         <div class="form-group">
                                             <label for="name">Nama Pengguna</label>
                                             <input type="text" name="name" class="form-control" placeholder="{{$user->name}}"> @if ($errors->has('name'))
@@ -152,14 +151,12 @@
                         </div>
                         <!-- END BASIC TABLE -->
                     </div>
-
                     <!-- BASIC TABLE -->
-                
                     <!-- END MAIN -->
                     <div class="clearfix"></div>
                     <footer>
                         <div class="container-fluid position-relative">
-                            <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                            <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                         </div>
                     </footer>
                 </div>

@@ -103,7 +103,7 @@
 									</div>
 									</div>
 									{{-- alert -> tindakan yang dilakukan --}}
-									
+
 								@endif
 								<div class="panel-body">
 									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -135,10 +135,6 @@
 											@endforeach
 										</tbody>
 									</table>
-									
-									Halaman :  <br/>
-									Jumlah Data :  <br/>
-									
 								</div>
 							</div>
 							<!-- END BASIC TABLE -->
@@ -171,7 +167,7 @@
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative">
-						<p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+						<p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
 					</div>
 		</footer>
 	</div>
