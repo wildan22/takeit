@@ -54,22 +54,22 @@
         <div id="sidebar-nav" class="sidebar">
             <div class="sidebar-scroll">
                 <nav>
-					<ul class="nav">
-						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/superadmin/user_management" class="active"><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li>
+                    <ul class="nav">
+                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/user_management" class="active"><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+                        <li>
                             <a href="#subDataMaster" class="" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
-                                    <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
+                                    <li><a href="/superadmin/cobit5"><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
                                     <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
                                     <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
                                     <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
                                 </ul>
                             </div>
-						</li>
-					</ul>
-				</nav>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <!-- END LEFT SIDEBAR -->
@@ -83,68 +83,68 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Edit User</h3>
+                                    <h3 class="panel-title" class="">Edit Pengguna</h3>
+                                    <br>
                                     <a href="/superadmin/user_management" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 </div>
                                 <div class="panel-body">
-                                {{-- form new Product --}}
+                                    {{-- form new Product --}}
 
-                                <form method="post" action="/superadmin/user_management/edit_user/proses" enctype="multipart/form-data">
-                                    @csrf
+                                    <form method="post" action="/superadmin/user_management/edit_user/proses" enctype="multipart/form-data">
+                                        @csrf
 
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <label class="input-group-text" for="inputGroupSelect01">Level</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="inputGroupSelect01">Level</label>
+                                            </div>
+                                            <select name="level" class="form-control" id="inputGroupSelect01" required>
+                                                <option selected>Pilih Level</option>
+                                                @foreach($level as $l)
+                                                <option value="{{$l->id}}">{{$l->keterangan_level}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <select name="level" class="form-control" id="inputGroupSelect01" required>
-                                        <option selected>Pilih Level</option>
-                                        @foreach($level as $l)
-                                        <option value="{{$l->id}}">{{$l->keterangan_level}}</option>
-                                        @endforeach
-                                        </select>
-                                      </div>
+
                                         @foreach($users as $user)
-                                      <div class="form-group">
-                                        <label for="name">Nama Pengguna</label>
-                                        <input type="text" name="name" class="form-control" placeholder="{{$user->name}}"> @if ($errors->has('name'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('name')}}
+                                        <div class="form-group">
+                                            <label for="name">Nama Pengguna</label>
+                                            <input type="text" name="name" class="form-control" placeholder="{{$user->name}}"> @if ($errors->has('name'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('name')}}
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
-                                    </div>
 
-                                    <div class="form-group">
-                                      <label for="email">Alamat E-Mail</label>
-                                      <input type="email" name="email" class="form-control" placeholder="{{$user->email}}"> @if ($errors->has('email'))
-                                      <div class="text-danger">
-                                          {{ $errors->first('email')}}
-                                      </div>
-                                      @endif
-                                  </div>
+                                        <div class="form-group">
+                                            <label for="email">Alamat E-Mail</label>
+                                            <input type="email" name="email" class="form-control" placeholder="{{$user->email}}"> @if ($errors->has('email'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('email')}}
+                                            </div>
+                                            @endif
+                                        </div>
 
-                                  <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password"> @if ($errors->has('password'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('password')}}
-                                    </div>
-                                    @endif
-                                </div>
-                                <div class="form-group">
-                                    <label for="konfirmasi_password">Konfirmasi Password</label>
-                                    <input type="password" name="konfirmasi_password" class="form-control" placeholder="Konfirmasi Password"> @if ($errors->has('konfirmasi_password'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('konfirmasi_password')}}
-                                    </div>
-                                    @endif
-                                </div>
-                                    <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                                </form>
-                                @endforeach
-
-                                {{-- akhir form --}}
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" class="form-control" placeholder="Password"> @if ($errors->has('password'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('password')}}
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="konfirmasi_password">Konfirmasi Password</label>
+                                            <input type="password" name="konfirmasi_password" class="form-control" placeholder="Konfirmasi Password"> @if ($errors->has('konfirmasi_password'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('konfirmasi_password')}}
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <input type="submit" class="btn btn-success" value="Simpan">
+                                        </div>
+                                    </form>
+                                    @endforeach {{-- akhir form --}}
                                 </div>
                             </div>
                         </div>
