@@ -112,42 +112,48 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $no = 1;?>
+                                            @foreach ($proses_ti as $p)
+                                                
+                                            
                                             <tr>
-                                                <td>1</td>
-                                                <td>Kerangka Kerja Tata Kelola TI</td>
+                                                <td>{{$no++}}</td>
+                                                <td>{{$p->proses_ti}}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Kerangka Kerja Tata Kelola TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$p->id}}">
+                                                        <i class="lnr lnr-trash"></i>
+                                                    </button>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
                         </div>
+
+                        <!-- Delete Modal -->
+						@foreach($proses_ti as $p)
+                        <div class="modal fade" id="deleteModal-{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Anda Yakin akan Menghapus Data ini?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/superadmin/tujuan_ti/hapus">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$p->id}}">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						@endforeach
+                        <!-- Delete Modal -->
+
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
                         <footer>

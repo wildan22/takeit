@@ -31,12 +31,43 @@ class adminController extends Controller{
         return view('superadmin.edit_tatakelola');
     }
 
+    // public function showNewTujuanTI(){
+    //     return view('superadmin.new_tujuan_ti');
+    // }
+
     public function showTujuanTI(){
-        return view('superadmin.tujuan_ti');
+        $proses_ti = DB::table('proses_ti')
+                    ->select('proses_ti.proses_ti', 'proses_ti.id')
+                    ->get();
+
+        return view('superadmin.tujuan_ti',['proses_ti'=>$proses_ti]);
     }
 
     public function showNewTujuanTI(){
-        return view('superadmin.new_tujuan_ti');
+        $proses_ti = DB::table('proses_ti')->get();
+        return view('superadmin.new_tujuan_ti',['proses_ti'=>$proses_ti]);
+    }
+
+    public function prosesNewTujuanTI(Request $request){
+            $tambah = DB::table('proses_ti')->insert([
+                'proses_ti'=>$request->proses_ti
+            ]);
+            if($tambah == 1 ){
+                return redirect('/superadmin/tujuan_ti')->with('status','Proses TI Berhasil Ditambahkan');
+            }
+            else{
+                return redirect('/superadmin/tujuan_ti')->with('status','Proses TI Gagal Ditambahkan');
+            }
+    }
+
+    public function prosesHapusTujuanTI(Request $request){
+        $hapus = DB::table('proses_ti')->where('id',$request->id)->delete();
+		if($hapus == 1){
+			return redirect()->route('superadmin.showTujuanTI')->with('status','Data Berhasil Dihapus');
+		}
+		else{
+			return redirect()->route('superadmin.showTujuanTI')->with('status','Data Gagal Dihapus');
+		}
     }
 
     public function showMapping(){

@@ -93,7 +93,7 @@
                                     <a href="/superadmin/tujuan_ti" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i> Batal</a>
                                 </div>
                                 <div class="panel-body">
-                                    <form method="post" action="/superadmin/tujuan_ti/proses" enctype="multipart/form-data">
+                                    <form method="post" action="/superadmin/tujuan_ti/new_tujuan_ti/proses" enctype="multipart/form-data">
                                         @csrf
     
                                     <div class="form-group">
