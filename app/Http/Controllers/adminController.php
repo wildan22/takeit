@@ -27,6 +27,10 @@ class adminController extends Controller{
         return view('superadmin.new_tatakelola');
     }
 
+    public function showEditTataKelola(){
+        return view('superadmin.edit_tatakelola');
+    }
+
     public function showTujuanTI(){
         return view('superadmin.tujuan_ti');
     }

@@ -55,8 +55,8 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/home" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                        <li><a href="/itstaff/laporan" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
+                        <li><a href="/executive" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/executive/laporan" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -69,7 +69,7 @@
                 <div class="panel-heading">
                     <div class="panel">
                         <div class="panel-heading">
-                            <a href="/itstaff/laporan" class="btn btn-outline-back"><i class="lnr lnr-arrow-left"></i>  Kembali</a>
+                            <a href="/executive/laporan" class="btn btn-outline-back"><i class="lnr lnr-arrow-left"></i>  Kembali</a>
                             <br>
                             <p>Laporan 1</p>
                             <div class="graph-outline">

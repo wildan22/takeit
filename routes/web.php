@@ -49,6 +49,8 @@ Route::middleware('is_admin')->group(function (){
     Route::get('/superadmin/cobit5/edit_cobit5/{id}','adminController@showEditCobit5')->name('superadmin.showEditCobit5');
     //Menampilkan Halaman Tambah Tata Kelola
     Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
+    //Menampilkan Halaman Edit Tata Kelola
+    Route::get('/superadmin/tatakelola/edit_tatakelola','adminController@showEditTataKelola')->name('superadmin.showEditTataKelola');
     //Menampilkan Halaman Tujuan TI
     Route::get('/superadmin/tujuan_ti','adminController@showTujuanTI')->name('superadmin.showTujuanTI');
     //Menampilkan Halaman Tambah Tujuan TI
@@ -131,8 +133,10 @@ Route::middleware('is_auditor')->group(function (){
 Route::middleware('is_eksekutif')->group(function (){
     //Menampilkan Dashboard
     Route::get('/executive','eksekutifController@showDashboard')->name('eksekutif.home');
-    //Menampilkan laporan
+    //Menampilkan halaman laporan
     Route::get('/executive/laporan','eksekutifController@showLaporan')->name('eksekutif.laporan');
+     //Menampilkan Halaman Lihat Laporan
+     Route::get('/executive/laporan/view_laporan','eksekutifController@showViewLaporan')->name('eksekutif.view_laporan');
 });
 
 

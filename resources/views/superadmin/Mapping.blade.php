@@ -112,7 +112,7 @@
                                                 <th width="10%">No</th>
                                                 <th width="13%">Sub Domain</th>
                                                 <th>Proses Teknologi Informasi</th>
-                                                <th width="18%">Aksi</th>
+                                                <th width="11%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>

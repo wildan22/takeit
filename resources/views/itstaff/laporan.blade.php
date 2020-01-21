@@ -100,7 +100,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Laporan</th>
-                                                <th width="25%">Bulan</th>
+                                                <th width="18%">Bulan</th>
                                                 <th width="10%">Aksi</th>
                                             </tr>
                                         </thead>
@@ -108,8 +108,9 @@
                                             <tr>
                                                 <td>Nama Laporan 1</td>
                                                 <td>12-12-2012</td>
-                                                <td>
+                                                <td width="18%">
                                                     <a href="/itstaff/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>
+                                                    <a href="/itstaff/laporan/hapus" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
                                                 </td>
                                             </tr>
                                         </tbody>

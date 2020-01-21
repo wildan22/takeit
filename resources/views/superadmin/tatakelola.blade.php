@@ -112,11 +112,11 @@
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th width="5%">Sub Domain</th>
+                                                <th width="2%">Sub Domain</th>
                                                 <th>Kode Output</th>
                                                 <th>Output dari Proses</th>
                                                 <th>Deskripsi</th>
-                                                <th>Aksi</th>
+                                                <th width="5%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -126,8 +126,8 @@
                                                 <td>Enterprise governance guiding principles</td>
                                                 <td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+                                                    <a href="/superadmin/tatakelola/edit_tatakelola" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+                                                    <a href="/superadmin/tatakelola/hapus" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td>EDM01</td>

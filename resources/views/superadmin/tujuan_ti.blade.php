@@ -108,7 +108,7 @@
                                             <tr>
                                                 <th width="10%">No</th>
                                                 <th>Proses Teknologi Informasi</th>
-                                                <th width="18%">Aksi</th>
+                                                <th width="10%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>

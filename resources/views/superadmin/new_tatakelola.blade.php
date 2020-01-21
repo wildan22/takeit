@@ -89,7 +89,7 @@
                                 <div class="panel-body">
                                 {{-- form new Product --}}
 
-                                <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
+                                <form method="post" action="/superadmin/tatakelola/proses" enctype="multipart/form-data">
                                     @csrf
                                     <div class="input-group">
                                         <div class="input-group-prepend">

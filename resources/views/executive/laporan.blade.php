@@ -84,7 +84,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Laporan</th>
-                                                <th width="25%">Bulan</th>
+                                                <th width="18%">Bulan</th>
                                                 <th width="10%">Aksi</th>
                                             </tr>
                                         </thead>
