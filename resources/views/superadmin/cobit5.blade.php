@@ -113,7 +113,7 @@
 												<th>Domain</th>
 												<th>Sub Domain</th>
                                                 <th>Proses</th>
-                                                <th>Aksi</th>
+                                                <th width="18%">Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
