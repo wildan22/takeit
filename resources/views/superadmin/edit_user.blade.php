@@ -98,7 +98,7 @@
                                                 <label class="input-group-text" for="inputGroupSelect01">Level</label>
                                             </div>
                                             <select name="level" class="form-control" id="inputGroupSelect01" required>
-                                                <option selected>Pilih Level</option>
+                                                <option value hidden disable>Pilih Level</option>
                                                 @foreach($level as $l)
                                                 <option value="{{$l->id}}">{{$l->keterangan_level}}</option>
                                                 @endforeach

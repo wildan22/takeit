@@ -104,7 +104,7 @@
                                           <label class="input-group-text">Sub Domain</label>
                                         </div>
                                         <select required class="form-control"  >
-                                          <option value="" >---Pilih---</option>
+                                          <option value hidden disable >---Pilih---</option>
                                           <option value="1">EDM01</option>
                                           <option value="2">EDM02</option>
                                           <option value="3">EDM03</option>
@@ -120,7 +120,7 @@
                                           <label class="input-group-text">Proses Teknologi Informasi</label>
                                         </div>
                                         <select class="form-control"  required>
-                                          <option value="">---Pilih---</option>
+                                          <option value hidden disable>---Pilih---</option>
                                           <option value="1">Komite TI</option>
                                           <option value="2">Organisasi fungsional TI</option>
                                           <option value="3">Koordinasi Pengelolaan Layanan TI dalam Organisasi Fungsional TI</option>
