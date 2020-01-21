@@ -103,8 +103,8 @@
                                         <div class="input-group-prepend">
                                           <label class="input-group-text">Sub Domain</label>
                                         </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>---Pilih---</option>
+                                        <select required class="form-control"  >
+                                          <option value="" >---Pilih---</option>
                                           <option value="1">EDM01</option>
                                           <option value="2">EDM02</option>
                                           <option value="3">EDM03</option>
@@ -119,8 +119,8 @@
                                         <div class="input-group-prepend">
                                           <label class="input-group-text">Proses Teknologi Informasi</label>
                                         </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>---Pilih---</option>
+                                        <select class="form-control"  required>
+                                          <option value="">---Pilih---</option>
                                           <option value="1">Komite TI</option>
                                           <option value="2">Organisasi fungsional TI</option>
                                           <option value="3">Koordinasi Pengelolaan Layanan TI dalam Organisasi Fungsional TI</option>

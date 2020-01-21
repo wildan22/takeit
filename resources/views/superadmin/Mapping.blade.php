@@ -103,7 +103,7 @@
                                 </div>
                                 </div>
                                 {{-- alert -> tindakan yang dilakukan --}}
-                                
+
                                 @endif
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -121,7 +121,7 @@
                                                 <td>EDM01</td>
                                                 <td>Kerangka Kerja Tata Kelola TI</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
@@ -149,29 +149,19 @@
                                                 <td>EDM04</td>
                                                 <td>Komite TI</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+                                                <a href="/superadmin/mapping/hapus/id " class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
                                             </tr>
-                                           
-
-
                                         </tbody>
                                     </table>
-                                    Halaman :
-                                    <br/> Jumlah Data :
-                                    <br/>
-
-                                </div>
+                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
                         </div>
-
-                        <!-- BASIC TABLE -->
-
                         <!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative">
-						<p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+						<p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
 					</div>
 		</footer>
 	</div>

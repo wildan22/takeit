@@ -98,7 +98,7 @@
     
                                     <div class="form-group">
                                         <label for="proses_ti">Proses Teknologi Informasi</label>
-                                        <input type="text" name="proses_ti" class="form-control" placeholder="Contoh: Pengelolaan Ketersediaan dan Kapasitas Layanan TI"> @if ($errors->has('proses_ti'))
+                                        <input type="text" name="proses_ti" class="form-control" placeholder="Contoh: Pengelolaan Ketersediaan dan Kapasitas Layanan TI" required> @if ($errors->has('proses_ti'))
                                         <div class="text-danger">
                                             {{ $errors->first('proses_ti')}}
                                         </div>

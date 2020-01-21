@@ -98,7 +98,7 @@
                                           <label class="input-group-text" for="inputGroupSelect01">Domain Cobit</label>
                                         </div>
                                         <select name="domain" class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>Pilih Domain</option>
+                                          <option value="">Pilih Domain</option>
                                           @foreach ($domains as $d)
                                           <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>
                                           @endforeach
@@ -107,7 +107,7 @@
                                       <br>
                                     <div class="form-group">
                                         <label for="subdomain">Sub Domain</label>
-                                        <input type="text" name="subdomain"  class="form-control" placeholder="Contoh: EDM02"> @if ($errors->has('subdomain'))
+                                        <input type="text" name="subdomain"  class="form-control" placeholder="Contoh: EDM02" required> @if ($errors->has('subdomain'))
                                         <div class="text-danger">
                                             {{ $errors->first('subdomain')}}
                                         </div>
@@ -116,7 +116,7 @@
 
                                     <div class="form-group">
                                         <label for="proses">Proses</label>
-                                        <input type="text" name="proses"  class="form-control" placeholder="Contoh: Ensure Benefits Delivery"> @if ($errors->has('proses'))
+                                        <input type="text" name="proses"  class="form-control" placeholder="Contoh: Ensure Benefits Delivery" required> @if ($errors->has('proses'))
                                         <div class="text-danger">
                                             {{ $errors->first('proses')}}
                                         </div>

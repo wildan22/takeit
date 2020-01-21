@@ -103,7 +103,7 @@
                                           <label class="input-group-text">Sub Domain</label>
                                         </div>
                                         <select class="form-control" id="inputGroupSelect01" required>
-                                          <option selected>---Pilih---</option>
+                                          <option value="">---Pilih---</option>
                                           <option value="1">EDM01</option>
                                           <option value="2">EDM02</option>
                                           <option value="3">EDM03</option>

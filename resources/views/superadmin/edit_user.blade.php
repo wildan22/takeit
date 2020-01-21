@@ -109,7 +109,7 @@
                                         <input type="hidden" name="id" value="{{$user->id}}">
                                         <div class="form-group">
                                             <label for="name">Nama Pengguna</label>
-                                            <input type="text" name="name" class="form-control" placeholder="{{$user->name}}"> @if ($errors->has('name'))
+                                            <input type="text" name="name" class="form-control" placeholder="{{$user->name}}" required> @if ($errors->has('name'))
                                             <div class="text-danger">
                                                 {{ $errors->first('name')}}
                                             </div>
@@ -118,7 +118,7 @@
 
                                         <div class="form-group">
                                             <label for="email">Alamat E-Mail</label>
-                                            <input type="email" name="email" class="form-control" placeholder="{{$user->email}}"> @if ($errors->has('email'))
+                                            <input type="email" name="email" class="form-control" placeholder="{{$user->email}}" required> @if ($errors->has('email'))
                                             <div class="text-danger">
                                                 {{ $errors->first('email')}}
                                             </div>
@@ -127,7 +127,7 @@
 
                                         <div class="form-group">
                                             <label for="password">Password</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Password"> @if ($errors->has('password'))
+                                            <input type="password" name="password" class="form-control" placeholder="Password" required> @if ($errors->has('password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('password')}}
                                             </div>
@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="konfirmasi_password">Konfirmasi Password</label>
-                                            <input type="password" name="konfirmasi_password" class="form-control" placeholder="Konfirmasi Password"> @if ($errors->has('konfirmasi_password'))
+                                            <input type="password" name="konfirmasi_password" class="form-control" placeholder="Konfirmasi Password" required> @if ($errors->has('konfirmasi_password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('konfirmasi_password')}}
                                             </div>

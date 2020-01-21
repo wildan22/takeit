@@ -97,7 +97,7 @@
                                                 <label class="input-group-text" for="inputGroupSelect01">Level</label>
                                             </div>
                                             <select name="level" class="form-control" id="inputGroupSelect01" required>
-                                                <option selected>Pilih Level</option>
+                                                <option value="">---Pilih---</option>
                                                 @foreach($level as $l)
                                                 <option value="{{$l->id}}">{{$l->keterangan_level}}</option>
                                                 @endforeach
@@ -106,7 +106,7 @@
 
                                         <div class="form-group">
                                             <label for="name">Nama</label>
-                                            <input type="text" name="name" class="form-control" placeholder="Nama Anda"> @if ($errors->has('name'))
+                                            <input type="text" name="name" class="form-control" placeholder="Contoh: Saputra" required> @if ($errors->has('name'))
                                             <div class="text-danger">
                                                 {{ $errors->first('name')}}
                                             </div>
@@ -115,7 +115,7 @@
 
                                         <div class="form-group">
                                             <label for="email">Alamat E-Mail</label>
-                                            <input type="email" name="email" class="form-control" placeholder="Alamat E-Mail"> @if ($errors->has('email'))
+                                            <input type="email" name="email" class="form-control" placeholder="Contoh: saputra@mail.co.id" required> @if ($errors->has('email'))
                                             <div class="text-danger">
                                                 {{ $errors->first('email')}}
                                             </div>
@@ -123,8 +123,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Password"> @if ($errors->has('password'))
+                                            <label for="password">Password (Min. 8 Digit)</label>
+                                            <input type="password" name="password" class="form-control" placeholder="Password" required> @if ($errors->has('password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('password')}}
                                             </div>
@@ -132,7 +132,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="konfirmasi_password">Konfirmasi Password</label>
-                                            <input type="password" name="konfirmasi_password" class="form-control" placeholder="Konfirmasi Password"> @if ($errors->has('konfirmasi_password'))
+                                            <input type="password" name="konfirmasi_password" class="form-control" placeholder="Tulis Ulang Password" required> @if ($errors->has('konfirmasi_password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('konfirmasi_password')}}
                                             </div>

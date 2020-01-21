@@ -153,7 +153,7 @@ class adminController extends Controller{
     public function prosesHapusCobit5(Request $request){
         $hapus = DB::table('subdomains')->where('id_subdomain',$request->id)->delete();
 		if($hapus == 1){
-			return redirect()->route('superadmin.showCobit5')->with('success','Data Berhasil Dihapus');
+			return redirect()->route('superadmin.showCobit5')->with('status','Data Berhasil Dihapus');
 		}
 		else{
 			return redirect()->route('superadmin.showCobit5')->with('status','Data Gagal Dihapus');

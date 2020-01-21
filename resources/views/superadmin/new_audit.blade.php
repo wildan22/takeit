@@ -95,14 +95,14 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <label for="periode">Tanggal</label>
-                                          <input type="date" name="periode" class="form-control">
+                                          <input type="date" name="periode" class="form-control" required>
                                         </div>
                                       </div>
                                       <br>
 
                                       <div class="form-group">
                                         <label for="token">Kode Token</label>
-                                        <input type="text" name="token" class="form-control" placeholder="Token untuk Auditor"> @if ($errors->has('token'))
+                                        <input type="text" name="token" class="form-control" placeholder="Token untuk Auditor" required> @if ($errors->has('token'))
                                         <div class="text-danger">
                                             {{ $errors->first('token')}}
                                         </div>
@@ -110,7 +110,7 @@
                                     </div>
                                         <br>
                                     <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
+                                        <input type="submit" class="btn btn-success" value="Simpan" >
                                     </div>
                                 </form>
 
