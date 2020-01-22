@@ -150,5 +150,4 @@
                 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
 </body>
-
 </html>

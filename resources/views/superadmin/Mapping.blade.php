@@ -95,13 +95,14 @@
                                     <a href="/superadmin/mapping/new_mapping" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Mapping Proses TI</a>
                                 </div>
 
-                                {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-                                <div class="panel-body">
-                                    <div class="alert alert-success">
-                                        {{session('status')}}
+                                    {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
+                                    <div class="panel-body">
+                                        <div class="alert alert-success">
+                                            {{session('status')}}
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- alert -> tindakan yang dilakukan --}} @endif
+                                    {{-- alert -> tindakan yang dilakukan --}} @endif
+                                    
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
@@ -119,12 +120,10 @@
                                                 <td>{{$m->kode_subdomain}}</td>
                                                 <td>{{$m->proses_ti}}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a></td>
+                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a>
+                                                </td>
                                             </tr>
-<<<<<<< HEAD
-=======
                                             @endforeach
->>>>>>> 2daf6a4f9882563e1d583226f5dd2b9c39d36066
                                         </tbody>
                                     </table>
                                 </div>
@@ -156,34 +155,12 @@
                         </div>
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
-                        <footer>
-                            <div class="container-fluid position-relative">
-                                <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
-                            </div>
-                        </footer>
-                    </div>
-
-                    <!-- Delete Modal -->
-                    @foreach($users as $user)
-                    <div class="modal fade" id="deleteModal-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    Apakah Anda Yakin akan Menghapus Data ini?
+                            <footer>
+                                <div class="container-fluid position-relative">
+                                    <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                                 </div>
-                                <div class="modal-footer">
-                                    <form method="POST" action="/superadmin/user_management/hapus/">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{$user->id}}">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-danger">Hapus</a>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                            </footer>
                     </div>
-                    @endforeach
-                    <!-- Delete Modal -->
                     <!-- END WRAPPER -->
                     <!-- Javascript -->
                     <script src="/assets/vendor/jquery/jquery.min.js"></script>

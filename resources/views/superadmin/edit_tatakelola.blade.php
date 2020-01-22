@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- SELECT2  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
@@ -91,26 +95,20 @@
 
                                 <form method="post" action="/superadmin/tatakelola/edit_tatakelola/proses" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="input-group">
+                                    {{-- <div class="input-group">
                                         <div class="input-group-prepend">
                                           <label for="periode">Periode Pelaksanaan</label>
                                           <input type="date" name="periode" class="form-control" required>
                                         </div>
                                       </div>
-                                      <br>
+                                      <br> --}}
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <label class="input-group-text">Sub Domain</label>
                                         </div>
-                                        <select class="form-control" id="inputGroupSelect01" required>
+                                        <select name="subdomain" class="form-control select2" id="inputGroupSelect01" required>
                                           <option value hidden disable>---Pilih---</option>
                                           <option value="1">EDM01</option>
-                                          <option value="2">EDM02</option>
-                                          <option value="3">EDM03</option>
-                                          <option value="4">EDM04</option>
-                                          <option value="5">EDM05</option>
-                                          <option value="5">APO01</option>
-                                          <option value="5">APO2</option>
                                         </select>
                                       </div>
                                       <br>
@@ -164,6 +162,18 @@
                 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
                 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
+
+                <!-- MDBootstrap Datatables  -->
+      <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+      <!-- SELECT2  -->
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
+                {{-- Select2 --}}
+                <script>
+                    $(".select2").select2({
+                      tags: true
+                    });
+                  </script>
 </body>
 
 </html>
