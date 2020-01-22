@@ -97,7 +97,7 @@
                                                 <label class="input-group-text" for="inputGroupSelect01">Proses Teknologi Informasi</label>
                                             </div>
                                             <select class="form-control" id="inputGroupSelect01" required>
-                                                <option value="">---Pilih---</option>
+                                                <option value hidden disable>---Pilih---</option>
                                                 <option value="1">Kerangka Kerja Tata Kelola TI</option>
                                                 <option value="2">Komite TI</option>
                                                 <option value="3">Organisasi fungsional TI</option>

@@ -65,11 +65,11 @@
                             <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Tata Kelola TI</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
-                                    <li><a href="/auditor/edm01" class="">EDM</a></li>
-                                    <li><a href="/auditor/apo01" class="">APO</a></li>
-                                    <li><a href="/auditor/bai01" class="">BAI</a></li>
-                                    <li><a href="/auditor/dss01" class="">DSS</a></li>
-                                    <li><a href="/auditor/mea01" class="">MEA</a></li>
+                                    <li><a href="/auditor/edm01" class=""><i class="lnr lnr-screen"></i><span>EDM</span></a></li>
+                                    <li><a href="/auditor/apo01" class=""><i class="lnr lnr-pie-chart"></i><span>APO</span></a></li>
+                                    <li><a href="/auditor/bai01" class=""><i class="lnr lnr-apartment"></i><span>BAI</span></a></li>
+                                    <li><a href="/auditor/dss01" class=""><i class="lnr lnr-cog"></i><span>DSS</span></a></li>
+                                    <li><a href="/auditor/mea01" class=""><i class="lnr lnr-eye"></i><span>MEA</span></a></li>
                                 </ul>
                             </div>
                         </li>
