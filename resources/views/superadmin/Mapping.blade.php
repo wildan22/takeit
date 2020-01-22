@@ -120,7 +120,13 @@
                                                 <td>{{$m->kode_subdomain}}</td>
                                                 <td>{{$m->proses_ti}}</td>
                                                 <td>
+<<<<<<< HEAD
                                                     <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a>
+=======
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$m->id}}">
+                                                    <i class="lnr lnr-trash"></i>
+                                                </button>
+>>>>>>> df3ac50d6485287ef875caa70654fecf03922edc
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -131,17 +137,17 @@
                             <!-- END BASIC TABLE -->
 
                             <!-- Delete Modal -->
-						@foreach($cobits as $cobit)
-                        <div class="modal fade" id="deleteModal-{{$cobit->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						@foreach($mapping as $m)
+                        <div class="modal fade" id="deleteModal-{{$m->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         Apakah Anda Yakin akan Menghapus Data ini?
                                     </div>
                                     <div class="modal-footer">
-                                        <form method="POST" action="/superadmin/cobit5/hapus/">
+                                        <form method="POST" action="/superadmin/mapping/hapus/">
                                             @csrf
-                                            <input type="hidden" name="id" value="{{$cobit->id}}">
+                                            <input type="hidden" name="id" value="{{$m->id}}">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-danger">Hapus</a>
                                         </form>
@@ -155,11 +161,19 @@
                         </div>
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
+<<<<<<< HEAD
                             <footer>
                                 <div class="container-fluid position-relative">
                                     <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                                 </div>
                             </footer>
+=======
+                        <footer>
+                            <div class="container-fluid position-relative">
+                                <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                            </div>
+                        </footer>
+>>>>>>> df3ac50d6485287ef875caa70654fecf03922edc
                     </div>
                     <!-- END WRAPPER -->
                     <!-- Javascript -->
@@ -179,6 +193,7 @@
                             $('.dataTables_length').addClass('bs-select');
                         });
                     </script>
+                
 </body>
 
 </html>

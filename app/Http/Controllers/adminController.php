@@ -74,7 +74,7 @@ class adminController extends Controller{
          $mapping = DB::table('mapping')
                     ->join('proses_ti','proses_ti.id','=','mapping.id_proses_ti')
                     ->join('subdomains','subdomains.id_subdomain','=','mapping.id_subdomain')
-                    ->select('proses_ti.proses_ti','subdomains.kode_subdomain')
+                    ->select('mapping.id','proses_ti.proses_ti','subdomains.kode_subdomain')
                     ->get();
         return view('superadmin.mapping',['mapping'=>$mapping]);
     }
