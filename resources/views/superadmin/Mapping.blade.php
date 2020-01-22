@@ -119,12 +119,12 @@
                                                 <td>{{$m->kode_subdomain}}</td>
                                                 <td>{{$m->proses_ti}}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a></td>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$m->id}}">
+                                                    <i class="lnr lnr-trash"></i>
+                                                </button>
+                                                </td>
                                             </tr>
-<<<<<<< HEAD
-=======
                                             @endforeach
->>>>>>> 2daf6a4f9882563e1d583226f5dd2b9c39d36066
                                         </tbody>
                                     </table>
                                 </div>
@@ -132,17 +132,17 @@
                             <!-- END BASIC TABLE -->
 
                             <!-- Delete Modal -->
-						@foreach($cobits as $cobit)
-                        <div class="modal fade" id="deleteModal-{{$cobit->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						@foreach($mapping as $m)
+                        <div class="modal fade" id="deleteModal-{{$m->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         Apakah Anda Yakin akan Menghapus Data ini?
                                     </div>
                                     <div class="modal-footer">
-                                        <form method="POST" action="/superadmin/cobit5/hapus/">
+                                        <form method="POST" action="/superadmin/mapping/hapus/">
                                             @csrf
-                                            <input type="hidden" name="id" value="{{$cobit->id}}">
+                                            <input type="hidden" name="id" value="{{$m->id}}">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-danger">Hapus</a>
                                         </form>
@@ -162,28 +162,6 @@
                             </div>
                         </footer>
                     </div>
-
-                    <!-- Delete Modal -->
-                    @foreach($users as $user)
-                    <div class="modal fade" id="deleteModal-{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    Apakah Anda Yakin akan Menghapus Data ini?
-                                </div>
-                                <div class="modal-footer">
-                                    <form method="POST" action="/superadmin/user_management/hapus/">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{$user->id}}">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-danger">Hapus</a>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    <!-- Delete Modal -->
                     <!-- END WRAPPER -->
                     <!-- Javascript -->
                     <script src="/assets/vendor/jquery/jquery.min.js"></script>
@@ -202,6 +180,7 @@
                             $('.dataTables_length').addClass('bs-select');
                         });
                     </script>
+                
 </body>
 
 </html>

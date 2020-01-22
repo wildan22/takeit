@@ -70,6 +70,9 @@ Route::middleware('is_admin')->group(function (){
     Route::post('/superadmin/tujuan_ti/hapus','adminController@prosesHapusTujuanTI');
 
     Route::post('/superadmin/mapping/proses','adminController@prosesNewMapping');
+    Route::post('/superadmin/mapping/hapus','adminController@prosesHapusMapping');
+
+    
     
 });
 
