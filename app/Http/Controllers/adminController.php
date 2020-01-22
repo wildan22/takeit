@@ -71,13 +71,42 @@ class adminController extends Controller{
     }
 
     public function showMapping(){
-        return view('superadmin.mapping');
+         $mapping = DB::table('mapping')
+                    ->join('proses_ti','proses_ti.id','=','mapping.id_proses_ti')
+                    ->join('subdomains','subdomains.id_subdomain','=','mapping.id_subdomain')
+                    ->select('proses_ti.proses_ti','subdomains.kode_subdomain')
+                    ->get();
+        return view('superadmin.mapping',['mapping'=>$mapping]);
     }
 
     public function showNewMapping(){
-        return view('superadmin.new_mapping');
+        $subdomain = DB::table('subdomains')->select('id_subdomain','kode_subdomain')->get();
+        $proses_ti = DB::table('proses_ti')->select('id','proses_ti')->get();
+        return view('superadmin.new_mapping',['subdomain'=>$subdomain,'proses_ti'=>$proses_ti]);
     }
 
+    public function prosesNewMapping(Request $request){
+        $mapping = DB::table('mapping')->insert([
+            'id_proses_ti'=>$request->proses_ti,
+            'id_subdomain'=>$request->subdomain
+        ]);
+        if($mapping == 1){
+            return redirect('/superadmin/mapping')->with('status','Data Mapping Berhasil Ditambahkan');
+        }
+        else{
+            return redirect('/superadmin/mapping')->with('status','Data Mapping Ditambahkan');
+        }
+    }
+
+    public function prosesHapusMapping(Request $request){
+        $hapus = DB::table('mapping')->where('id',$request->id)->delete();
+		if($hapus == 1){
+			return redirect()->route('superadmin.showMapping')->with('status','Data Berhasil Dihapus');
+		}
+		else{
+			return redirect()->route('superadmin.showMapping')->with('status','Data Gagal Dihapus');
+		}
+    }
 
     public function showPeriode(){
         return view('superadmin.periode');
