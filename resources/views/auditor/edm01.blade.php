@@ -181,11 +181,23 @@
                                             </tr>
                                         </tbody>
                                     </table>
-
-                                    <a href="#" class="btn btn-warning"><i class="lnr lnr-done"></i>  Hitung</a>
-                                    <br> Data Yes :
-                                    <br> Data No :
-                                    <br> Persentase :
+                                    <b>
+                                        <br> Data Yes :
+                                        <br> Data No :
+                                        <br> Persentase :
+                                        <br> <br>
+                                    </b>
+                                    <div class="form-group">
+                                        <label for="argumen">Argumen</label>
+                                        <textarea id="argumen" name="argumen" class="form-control" rows="10" placeholder="Contoh: Jadwal operasional layanan belum terdokumentasi dan belum disosialisasikan, namun jadwal pemeliharaan komponen layanan khususnya di area infrastruktur sudah dibuat. Diperlukan konsistensi pelaksanaan, monitoring, dan review hasil pelaksanaan operasional layanan maupun pemeliharaan sesuai rencana, baik di area infrastruktur dan aplikasi. Diperlukan juga kebijakan, prosedur, dan standar baku mengenai quality assurance maupun quality control atas output dari proses-proses operasional layanan TI. Dalam hal awareness mengenai keselamatan, kesehatan, dan lingkungan (SHE), TI menginduk pada kebijakan SMK 3, namun diperlukan penyusunan SMK3 yang spesifik di area operasional TI baik di lingkungan internal organisasi TI maupun lingkungan unit bisnis sebagai pengguna layanan TI. Selain itu, diperlukan juga rencana audit terhadap operasional TI hingga aspek SHE-nya" required></textarea> @if ($errors->has('argumen'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('argumen')}}
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-success" value="Simpan">    
+                                    </div>
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->

@@ -123,39 +123,34 @@
                                                 <td>
                                                     <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a></td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>EDM01</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>EDM02</td>
-                                                <td>Kerangka Kerja Tata Kelola TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>EDM03</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>EDM04</td>
-                                                <td>Komite TI</td>
-                                                <td>
-                                                <a href="/superadmin/mapping/hapus/id " class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                  </div>
                             </div>
                             <!-- END BASIC TABLE -->
+
+                            <!-- Delete Modal -->
+						@foreach($cobits as $cobit)
+                        <div class="modal fade" id="deleteModal-{{$cobit->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Anda Yakin akan Menghapus Data ini?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/superadmin/cobit5/hapus/">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$cobit->id}}">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						@endforeach
+                        <!-- Delete Modal -->
+
                         </div>
                         <!-- END MAIN -->
 		<div class="clearfix"></div>
