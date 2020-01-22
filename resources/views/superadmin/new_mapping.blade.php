@@ -14,6 +14,10 @@
      <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
      <!-- MDBootstrap Datatables  -->
      <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
+
+      <!-- SELECT2  -->
+     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
      
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="/assets/css/main.css">
@@ -103,15 +107,11 @@
                                         <div class="input-group-prepend">
                                           <label class="input-group-text">Sub Domain</label>
                                         </div>
-                                        <select required class="form-control"  >
+                                        <select name="subdomain" width="100%" required class="form-control select2">
                                           <option value hidden disable >---Pilih---</option>
-                                          <option value="1">EDM01</option>
-                                          <option value="2">EDM02</option>
-                                          <option value="3">EDM03</option>
-                                          <option value="4">EDM04</option>
-                                          <option value="5">EDM05</option>
-                                          <option value="5">APO01</option>
-                                          <option value="5">APO2</option>
+                                          @foreach($subdomain as $s)
+                                          <option value="{{$s->id_subdomain}}">{{$s->kode_subdomain}}</option>
+                                          @endforeach
                                         </select>
                                       </div>
 <br>
@@ -119,12 +119,11 @@
                                         <div class="input-group-prepend">
                                           <label class="input-group-text">Proses Teknologi Informasi</label>
                                         </div>
-                                        <select class="form-control"  required>
+                                        <select name="proses_ti" class="form-control select2"  required>
                                           <option value hidden disable>---Pilih---</option>
-                                          <option value="1">Komite TI</option>
-                                          <option value="2">Organisasi fungsional TI</option>
-                                          <option value="3">Koordinasi Pengelolaan Layanan TI dalam Organisasi Fungsional TI</option>
-                                          <option value="4">Implementasi Pedoman, Standar, dan Prosedur TI</option>
+                                          @foreach($proses_ti as $p)
+                                          <option value="{{$p->id}}">{{$p->proses_ti}}</option>
+                                          @endforeach
                                         </select>
                                       </div>
                                       <br>
@@ -159,6 +158,15 @@
 
       <!-- MDBootstrap Datatables  -->
       <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+      <!-- SELECT2  -->
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
+
+      <script>
+        $(".select2").select2({
+          tags: true
+        });
+      </script>
       <script type="text/javascript">
           // Basic example
           $(document).ready(function() {
