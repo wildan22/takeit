@@ -82,5 +82,8 @@
             <center> Powered By :<p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
         </div>
 </footer>
+<nav class="navbar navbar-dark" style="background-color:black; position: fixed; bottom: 0; width: 100%;" >
+    <a class="navbar-brand" href="https://api.whatsapp.com/send?phone=085274544239&text=Permisi, Mohon Bantuan untuk Aplikasi Tata Kelola TI - PTPN7">Bantuan : <i class="fa fa-phone"></i> +6285274544239 </a>
+</nav>
 
 @endsection

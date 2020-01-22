@@ -83,8 +83,7 @@
     <body>
         <nav class="navbar navbar-dark" style="background-color:black;" height="1px" >
             <a class="navbar-brand" href="https://api.whatsapp.com/send?phone=085274544239&text=Permisi, Mohon Bantuan untuk Aplikasi Tata Kelola TI - PTPN7">Bantuan : <i class="fa fa-phone"></i> +6285274544239 </a>
-            
-          </nav>
+        </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
