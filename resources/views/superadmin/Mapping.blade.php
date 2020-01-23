@@ -120,13 +120,9 @@
                                                 <td>{{$m->kode_subdomain}}</td>
                                                 <td>{{$m->proses_ti}}</td>
                                                 <td>
-<<<<<<< HEAD
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"><cite title="Hapus"> </cite></i></a>
-=======
                                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$m->id}}">
                                                     <i class="lnr lnr-trash"></i>
                                                 </button>
->>>>>>> df3ac50d6485287ef875caa70654fecf03922edc
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -161,19 +157,11 @@
                         </div>
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
-<<<<<<< HEAD
-                            <footer>
-                                <div class="container-fluid position-relative">
-                                    <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
-                                </div>
-                            </footer>
-=======
                         <footer>
                             <div class="container-fluid position-relative">
                                 <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                             </div>
                         </footer>
->>>>>>> df3ac50d6485287ef875caa70654fecf03922edc
                     </div>
                     <!-- END WRAPPER -->
                     <!-- Javascript -->

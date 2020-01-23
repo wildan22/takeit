@@ -106,9 +106,11 @@
                                         <div class="input-group-prepend">
                                           <label name="subdomain" class="input-group-text">Sub Domain</label>
                                         </div>
-                                        <select class="form-control select2" id="inputGroupSelect01" required>
+                                        <select name="subdomain" class="form-control select2" id="inputGroupSelect01" required>
                                           <option value hidden disable>---Pilih---</option>
-                                          <option value="1">EDM01</option>
+                                          @foreach($subdomain as $s)
+                                          <option value="{{$s->id_subdomain}}">{{$s->kode_subdomain}}</option>
+                                          @endforeach
                                         </select>
                                       </div>
                                       <br>

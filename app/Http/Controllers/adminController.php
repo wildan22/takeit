@@ -20,20 +20,25 @@ class adminController extends Controller{
     }
     
     public function showTataKelola(){
-        return view('superadmin.tatakelola');
+        $tatakelola = DB::table('wp_level_1')
+                        ->join('subdomains','subdomains.id_subdomain','=','wp_level_1.subdomain')
+                        ->select('subdomains.kode_subdomain','wp_level_1.id','wp_level_1.kode_wp','wp_level_1.wp_name','wp_level_1.wp_deskripsi')
+                        ->get();
+        return view('superadmin.tatakelola',['tatakelola'=>$tatakelola]);
     }
 
     public function showNewTataKelola(){
-        return view('superadmin.new_tatakelola');
+        $subdomain = DB::table('subdomains')->select('id_subdomain','kode_subdomain')->get();
+        return view('superadmin.new_tatakelola',['subdomain'=>$subdomain]);
+    }
+
+    public function prosesTataKelola(){
+        
     }
 
     public function showEditTataKelola(){
         return view('superadmin.edit_tatakelola');
     }
-
-    // public function showNewTujuanTI(){
-    //     return view('superadmin.new_tujuan_ti');
-    // }
 
     public function showTujuanTI(){
         $proses_ti = DB::table('proses_ti')

@@ -120,34 +120,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($tatakelola as $t)
                                             <tr>
-                                                <td>EDM01</td>
-                                                <td>EDM01-WP1</td>
-                                                <td>Enterprise governance guiding principles</td>
-                                                <td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
+                                                <td>{{$t->kode_subdomain}}</td>
+                                                <td>{{$t->kode_wp}}</td>
+                                                <td>{{$t->wp_name}}</td>
+                                                <td>{{$t->wp_deskripsi}}</td>
                                                 <td>
                                                     <a href="/superadmin/tatakelola/edit_tatakelola" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-                                                    <a href="/superadmin/tatakelola/hapus" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+                                                    <a href="/superadmin/tatakelola/hapus" class="btn btn-danger"><i class="lnr lnr-trash"></i></a>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>EDM01</td>
-                                                <td>EDM01-WP1</td>
-                                                <td>Enterprise governance guiding principles</td>
-                                                <td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>EDM01</td>
-                                                <td>EDM01-WP1</td>
-                                                <td>Enterprise governance guiding principles</td>
-                                                <td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-                                                    <a href="#" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
-                                            </tr>
-
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
