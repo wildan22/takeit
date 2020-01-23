@@ -57,6 +57,7 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="/superadmin" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/superadmin/periode_audit" class=""><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li>
                             <a href="#subDataMaster" class="" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>

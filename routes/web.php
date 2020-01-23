@@ -37,8 +37,10 @@ Route::middleware('is_admin')->group(function (){
 
 
 
-    //Menampilkan Halaman Pilih Periode
-    Route::get('/superadmin/periode','adminController@showPeriode')->name('superadmin.showPeriode');
+    //Menampilkan Halaman List Periode Audit tersedia
+    Route::get('/superadmin/periode_audit','adminController@showPeriodeAudit')->name('superadmin.showPeriodeAudit');
+    //Menampilkan Halaman New Periode
+    Route::get('/superadmin/periode_audit/new_audit','adminController@showNewAudit')->name('superadmin.showNewAudit');
     //Menampilkan Halaman Cobit 5
     Route::get('/superadmin/cobit5','adminController@showCobit5')->name('superadmin.showCobit5');
     //Menampilkan Halaman Tata Kelola

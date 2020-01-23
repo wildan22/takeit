@@ -58,22 +58,23 @@
         <div id="sidebar-nav" class="sidebar">
             <div class="sidebar-scroll">
                 <nav>
-					<ul class="nav">
-						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
-						<li>
+                    <ul class="nav">
+                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/periode_audit" class=""><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
+                        <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
+                        <li>
                             <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
-                                    <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
+                                    <li><a href="/superadmin/cobit5"><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
                                     <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
                                     <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
                                     <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
                                 </ul>
                             </div>
-						</li>
-					</ul>
-				</nav>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <!-- END LEFT SIDEBAR -->
@@ -91,69 +92,59 @@
                                     <a href="/superadmin/tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 </div>
                                 <div class="panel-body">
-                                {{-- form new Product --}}
+                                    {{-- form new Product --}}
 
-                                <form method="post" action="/superadmin/tatakelola/proses" enctype="multipart/form-data">
-                                    @csrf
-                                    {{-- <div class="input-group">
-                                        <div class="input-group-prepend">
-                                          <label for="periode">Periode Pelaksanaan</label>
-                                          <input type="date" name="periode" class="form-control" required>
+                                    <form method="post" action="/superadmin/tatakelola/proses" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <label name="subdomain" class="input-group-text">Sub Domain</label>
+                                            </div>
+                                            <select name="subdomain" class="form-control select2" id="inputGroupSelect01" required>
+                                                <option value hidden disable>---Pilih---</option>
+                                                @foreach($subdomain as $s)
+                                                <option value="{{$s->id_subdomain}}">{{$s->kode_subdomain}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                      </div>
-                                      <br> --}}
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                          <label name="subdomain" class="input-group-text">Sub Domain</label>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="kodeoutput">Kode Output</label>
+                                            <input type="text" name="kodeoutput" class="form-control" placeholder="Contoh: EDM02-WP1" required> @if ($errors->has('kodeoutput'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('kodeoutput')}}
+                                            </div>
+                                            @endif
                                         </div>
-                                        <select name="subdomain" class="form-control select2" id="inputGroupSelect01" required>
-                                          <option value hidden disable>---Pilih---</option>
-                                          @foreach($subdomain as $s)
-                                          <option value="{{$s->id_subdomain}}">{{$s->kode_subdomain}}</option>
-                                          @endforeach
-                                        </select>
-                                      </div>
-                                      <br>
-                                      <div class="form-group">
-                                        <label for="kodeoutput">Kode Output</label>
-                                        <input type="text" name="kodeoutput" class="form-control" placeholder="Contoh: EDM02-WP1" required> @if ($errors->has('kodeoutput'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('kodeoutput')}}
-                                        </div>
-                                        @endif
-                                    </div>
 
-                                    <div class="form-group">
-                                      <label for="output_proses">Output dari Proses</label>
-                                      <input type="text" name="output_proses" class="form-control" placeholder="Contoh: Evaluation of strategic alignment" required> @if ($errors->has('output_proses'))
-                                      <div class="text-danger">
-                                          {{ $errors->first('output_proses')}}
-                                      </div>
-                                      @endif
-                                  </div>
-
-                                    <div class="form-group">
-                                        <label for="output_prosesdeskripsi">Deskripsi</label>
-                                        <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Contoh: Hasil dari aktifitas Tata Kelola yang nampak dari deskripsi dari tujuan perusahaan beserta kontribusi yang berkaitan dengan sasaran perusahaan" required></textarea> @if ($errors->has('deskripsi'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('deskripsi')}}
+                                        <div class="form-group">
+                                            <label for="output_proses">Output dari Proses</label>
+                                            <input type="text" name="output_proses" class="form-control" placeholder="Contoh: Evaluation of strategic alignment" required> @if ($errors->has('output_proses'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('output_proses')}}
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                                </form>
 
-                                {{-- akhir form --}}
+                                        <div class="form-group">
+                                            <label for="output_prosesdeskripsi">Deskripsi</label>
+                                            <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Contoh: Hasil dari aktifitas Tata Kelola yang nampak dari deskripsi dari tujuan perusahaan beserta kontribusi yang berkaitan dengan sasaran perusahaan" required></textarea> @if ($errors->has('deskripsi'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('deskripsi')}}
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <input type="submit" class="btn btn-success" value="Simpan">
+                                        </div>
+                                    </form>
+
+                                    {{-- akhir form --}}
                                 </div>
                             </div>
                         </div>
                         <!-- END BASIC TABLE -->
                     </div>
-
-                    <!-- BASIC TABLE -->
-
                     <!-- END MAIN -->
                     <div class="clearfix"></div>
                     <footer>
@@ -169,17 +160,17 @@
                 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
 
-                 <!-- MDBootstrap Datatables  -->
-      <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
-      <!-- SELECT2  -->
-      <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+                <!-- MDBootstrap Datatables  -->
+                <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+                <!-- SELECT2  -->
+                <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 
                 {{-- Select2 --}}
                 <script>
                     $(".select2").select2({
-                      tags: true
+                        tags: true
                     });
-                  </script>
+                </script>
 </body>
 
 </html>

@@ -61,6 +61,7 @@
                 <nav>
                     <ul class="nav">
                         <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/periode_audit" class=""><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
                         <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
                         <li>
                             <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -95,14 +96,14 @@
                                     <a href="/superadmin/mapping/new_mapping" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Mapping Proses TI</a>
                                 </div>
 
-                                    {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-                                    <div class="panel-body">
-                                        <div class="alert alert-success">
-                                            {{session('status')}}
-                                        </div>
+                                {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
+                                <div class="panel-body">
+                                    <div class="alert alert-success">
+                                        {{session('status')}}
                                     </div>
-                                    {{-- alert -> tindakan yang dilakukan --}} @endif
-                                    
+                                </div>
+                                {{-- alert -> tindakan yang dilakukan --}} @endif
+
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
@@ -114,18 +115,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($mapping as $m)
-                                            <tr>
-                                                <td>1</td>
-                                                <td>{{$m->kode_subdomain}}</td>
-                                                <td>{{$m->proses_ti}}</td>
-                                                <td>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$m->id}}">
-                                                    <i class="lnr lnr-trash"></i>
-                                                </button>
-                                                </td>
-                                            </tr>
-                                            @endforeach
+                                            <?php $no = 1;?>
+                                                @foreach($mapping as $m)
+                                                <tr>
+                                                    <td>{{$no++}}</td>
+                                                    <td>{{$m->kode_subdomain}}</td>
+                                                    <td>{{$m->proses_ti}}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$m->id}}">
+                                                            <i class="lnr lnr-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -133,26 +135,26 @@
                             <!-- END BASIC TABLE -->
 
                             <!-- Delete Modal -->
-						@foreach($mapping as $m)
-                        <div class="modal fade" id="deleteModal-{{$m->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        Apakah Anda Yakin akan Menghapus Data ini?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form method="POST" action="/superadmin/mapping/hapus/">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{$m->id}}">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-danger">Hapus</a>
-                                        </form>
+                            @foreach($mapping as $m)
+                            <div class="modal fade" id="deleteModal-{{$m->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            Apakah Anda Yakin akan Menghapus Data ini?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form method="POST" action="/superadmin/mapping/hapus/">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{$m->id}}">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-danger">Hapus</a>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-						@endforeach
-                        <!-- Delete Modal -->
+                            @endforeach
+                            <!-- Delete Modal -->
 
                         </div>
                         <!-- END MAIN -->
@@ -181,7 +183,7 @@
                             $('.dataTables_length').addClass('bs-select');
                         });
                     </script>
-                
+
 </body>
 
 </html>

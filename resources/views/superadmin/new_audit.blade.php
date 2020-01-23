@@ -6,19 +6,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
     <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-    <link rel="stylesheet" href="/assets/css/demo.css">
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-    <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ ('/image/logo_ptpn7.png') }}">
+    <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
+    
+   <!-- MAIN CSS -->
+   <link rel="stylesheet" href="/assets/css/main.css">
+   <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+   <link rel="stylesheet" href="/assets/css/demo.css">
+   <!-- GOOGLE FONTS -->
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+   <!-- ICONS -->
+   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="{{ ('/image/logo_ptpn7.png') }}">
+
 </head>
 
 <body>
@@ -55,10 +61,11 @@
             <div class="sidebar-scroll">
                 <nav>
 					<ul class="nav">
-						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/periode_audit" class="active"><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li>
-                            <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <a href="#subDataMaster" class="" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
                                     <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
@@ -83,32 +90,37 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Tata Kelola TI</h3>
-                                    <a href="/superadmin" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
+                                    <h3 class="panel-title" class="">Periode Tata Kelola TI</h3>
+                                    <a href="/superadmin/periode_audit" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
                                 
                                     </div>
                                 <div class="panel-body">
                                 {{-- form new Product --}}
 
-                                <form method="post" action="/superadmin/new_audit/proses" enctype="multipart/form-data">
+                                <form method="post" action="/superadmin/periode_audit/new_audit/proses" enctype="multipart/form-data">
                                     @csrf
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                          <label for="periode">Tanggal</label>
-                                          <input type="date" name="periode" class="form-control" required>
+                                          <label for="periode">Periode</label>
+                                          <input type="month" name="periode" class="form-control" required>
                                         </div>
                                       </div>
                                       <br>
 
-                                      <div class="form-group">
-                                        <label for="token">Kode Token</label>
-                                        <input type="text" name="token" class="form-control" placeholder="Token untuk Auditor" required> @if ($errors->has('token'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('token')}}
+                                      {{-- <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Status</label>
                                         </div>
-                                        @endif
-                                    </div>
+                                        <select name="status" class="form-control" id="inputGroupSelect01" required>
+                                          <option value hidden disable>Pilih Status</option>
+                                          <option value="11">Aktif</option>
+                                          @foreach ($domains as $d)
+                                          <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>
+                                          @endforeach
+                                        </select>
+                                      </div> --}}
                                         <br>
+
                                     <div class="form-group mt-3">
                                         <input type="submit" class="btn btn-success" value="Simpan" >
                                     </div>
@@ -120,9 +132,6 @@
                         </div>
                         <!-- END BASIC TABLE -->
                     </div>
-
-                    <!-- BASIC TABLE -->
-
                     <!-- END MAIN -->
                     <div class="clearfix"></div>
                     <footer>
@@ -137,6 +146,18 @@
                 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
                 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
+
+                <!-- MDBootstrap Datatables  -->
+      <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+      <script type="text/javascript">
+          // Basic example
+          $(document).ready(function() {
+              $('#dtBasicExample').DataTable({
+                  "searching": true // false to disable search (or any other option)
+              });
+              $('.dataTables_length').addClass('bs-select');
+          });
+      </script>
 </body>
 
 </html>
