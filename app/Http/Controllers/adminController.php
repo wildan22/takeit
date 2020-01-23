@@ -66,7 +66,7 @@ class adminController extends Controller{
     public function prosesEditTataKelola(Request $request){
         $edit = DB::table('wp_level_1')->where('id',$request->id)->update([
                 'subdomain'=>$request->subdomain,
-                'kode_wp'=>$request->kode_output,
+                'kode_wp'=>$request->kodeoutput,
                 'wp_name'=>$request->output_proses,
                 'wp_deskripsi'=>$request->deskripsi
         ]);
