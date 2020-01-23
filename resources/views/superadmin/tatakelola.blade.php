@@ -116,12 +116,13 @@
                                                 <th>Kode Output</th>
                                                 <th>Output dari Proses</th>
                                                 <th>Deskripsi</th>
-                                                <th width="5%">Aksi</th>
+                                                <th width="20%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($tatakelola as $t)
                                             <tr>
+<<<<<<< HEAD
                                                 <td>{{$t->kode_subdomain}}</td>
                                                 <td>{{$t->kode_wp}}</td>
                                                 <td>{{$t->wp_name}}</td>
@@ -132,12 +133,46 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+=======
+                                                <td>EDM01</td>
+                                                <td>EDM01-WP1</td>
+                                                <td>Enterprise governance guiding principles</td>
+                                                <td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5<td>
+                                                    <a href="/superadmin/tatakelola/edit_tatakelola" class="btn btn-warning"><i class="lnr lnr-pencil d-inline"></i></a>
+                                                    <button type="button" class="btn btn-danger d-inline" data-toggle="modal" data-target="#deleteModal-id">
+                                                        <i class="lnr lnr-trash"></i>
+                                            </tr>
+
+>>>>>>> 6d133169cac1d2612ea51856b7ebd800f667ce36
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
                         </div>
+
+                        <!-- Delete Modal -->
+						{{-- @foreach($ as $) --}}
+                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Anda Yakin akan Menghapus Data ini?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/superadmin/tatakelola/hapus/">
+                                            @csrf
+                                            <input type="hidden" name="id" value="">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						{{-- @endforeach --}}
+                        <!-- Delete Modal -->
+
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
                         <footer>
