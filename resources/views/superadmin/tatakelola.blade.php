@@ -101,13 +101,8 @@
                                         {{session('status')}}
                                     </div>
                                 </div>
-
-                                <div class="panel-body">
-                                    <div class="alert alert-danger">
-                                        {{session('status')}}
-                                    </div>
-                                </div>
-                                {{-- alert -> tindakan yang dilakukan --}} @endif
+                                @endif
+                                {{-- alert -> tindakan yang dilakukan --}} 
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
@@ -122,28 +117,16 @@
                                         <tbody>
                                         @foreach($tatakelola as $t)
                                             <tr>
-<<<<<<< HEAD
                                                 <td>{{$t->kode_subdomain}}</td>
                                                 <td>{{$t->kode_wp}}</td>
                                                 <td>{{$t->wp_name}}</td>
-                                                <td>{{$t->wp_deskripsi}}</td>
-                                                <td>
-                                                    <a href="/superadmin/tatakelola/edit_tatakelola" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-                                                    <a href="/superadmin/tatakelola/hapus" class="btn btn-danger"><i class="lnr lnr-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-=======
-                                                <td>EDM01</td>
-                                                <td>EDM01-WP1</td>
-                                                <td>Enterprise governance guiding principles</td>
-                                                <td>Dokumen yang berisi prinsip-prinsip dasar yang mempunyai kesamaan dengan ISO 38500 seperti halnya kerangka kerja COBIT 5<td>
-                                                    <a href="/superadmin/tatakelola/edit_tatakelola" class="btn btn-warning"><i class="lnr lnr-pencil d-inline"></i></a>
+                                                <td>{{$t->wp_deskripsi}}<td>
+                                                    <a href="/superadmin/tatakelola/edit_tatakelola/{{$t->id}}" class="btn btn-warning"><i class="lnr lnr-pencil d-inline"></i></a>
                                                     <button type="button" class="btn btn-danger d-inline" data-toggle="modal" data-target="#deleteModal-id">
                                                         <i class="lnr lnr-trash"></i>
                                             </tr>
+                                        @endforeach
 
->>>>>>> 6d133169cac1d2612ea51856b7ebd800f667ce36
                                         </tbody>
                                     </table>
                                 </div>
@@ -152,7 +135,7 @@
                         </div>
 
                         <!-- Delete Modal -->
-						{{-- @foreach($ as $) --}}
+						{{-- @foreach($tatakelola as $t) --}}
                         <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -162,7 +145,7 @@
                                     <div class="modal-footer">
                                         <form method="POST" action="/superadmin/tatakelola/hapus/">
                                             @csrf
-                                            <input type="hidden" name="id" value="">
+                                            <input type="hidden" name="id" value="{{$t->id}}">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-danger">Hapus</a>
                                         </form>

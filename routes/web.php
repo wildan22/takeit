@@ -50,7 +50,7 @@ Route::middleware('is_admin')->group(function (){
     //Menampilkan Halaman Tambah Tata Kelola
     Route::get('/superadmin/tatakelola/new_tatakelola','adminController@showNewTataKelola')->name('superadmin.showNewTataKelola');
     //Menampilkan Halaman Edit Tata Kelola
-    Route::get('/superadmin/tatakelola/edit_tatakelola','adminController@showEditTataKelola')->name('superadmin.showEditTataKelola');
+    Route::get('/superadmin/tatakelola/edit_tatakelola/{id}','adminController@showEditTataKelola')->name('superadmin.showEditTataKelola');
     //Menampilkan Halaman Tujuan TI
     Route::get('/superadmin/tujuan_ti','adminController@showTujuanTI')->name('superadmin.showTujuanTI');
     //Menampilkan Halaman Tambah Tujuan TI
@@ -71,8 +71,11 @@ Route::middleware('is_admin')->group(function (){
 
     Route::post('/superadmin/mapping/proses','adminController@prosesNewMapping');
     Route::post('/superadmin/mapping/hapus','adminController@prosesHapusMapping');
-
+    Route::post('/superadmin/tatakelola/proses','adminController@prosesNewTataKelola');
     
+    Route::post('/superadmin/tatakelola/hapus/','adminController@prosesHapusTataKelola');
+    Route::post('/superadmin/tatakelola/edit_tatakelola/proses','adminController@prosesEditTataKelola');
+
     
 });
 

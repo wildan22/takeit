@@ -32,12 +32,49 @@ class adminController extends Controller{
         return view('superadmin.new_tatakelola',['subdomain'=>$subdomain]);
     }
 
-    public function prosesTataKelola(){
-        
+    public function prosesNewTataKelola(Request $request){
+        $tatakelola = DB::table('wp_level_1')->insert([
+            'subdomain'=>$request->subdomain,
+            'kode_wp'=>$request->kodeoutput,
+            'wp_name'=>$request->output_proses,
+            'wp_deskripsi'=>$request->deskripsi
+        ]);
+        if($tatakelola == 1){
+            return redirect('/superadmin/tatakelola')->with('status','Work Point Berhasil Ditambahkan');
+        }
+        else{
+            return redirect('/superadmin/tatakelola')->with('status','Work Point Ditambahkan');
+        }
     }
 
-    public function showEditTataKelola(){
-        return view('superadmin.edit_tatakelola');
+    public function prosesHapusTataKelola(Request $request){
+        $hapus = DB::table('wp_level_1')->where('id',$request->id)->delete();
+		if($hapus == 1){
+			return redirect()->route('superadmin.showTataKelola')->with('status','Data Berhasil Dihapus');
+		}
+		else{
+			return redirect()->route('superadmin.showTataKelola')->with('status','Data Gagal Dihapus');
+		}
+    }
+
+    public function showEditTataKelola($id){
+        $subdomain = DB::table('subdomains')->select('id_subdomain','kode_subdomain')->get();
+        $oldtatakelola = DB::table('wp_level_1')->where('id',$id)->get();
+        return view('superadmin.edit_tatakelola',['subdomain'=>$subdomain,'oldtatakelola'=>$oldtatakelola]);
+    }
+
+    public function prosesEditTataKelola(Request $request){
+        $edit = DB::table('wp_level_1')->where('id',$request->id)->update([
+                'subdomain'=>$request->subdomain,
+                'kode_wp'=>$request->kode_output,
+                'wp_name'=>$request->output_proses,
+                'wp_deskripsi'=>$request->deskripsi
+        ]);
+        if($edit == 1){
+            return redirect('/superadmin/tatakelola')->with('status','Data Tata Kelola Berhasil Diperbaharui');
+        }else{
+            return redirect('/superadmin/tatakelola')->with('status','Data Tata Kelola Gagal Diperbaharui');
+        }
     }
 
     public function showTujuanTI(){

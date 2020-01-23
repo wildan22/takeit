@@ -95,6 +95,7 @@
 
                                     <form method="post" action="/superadmin/tatakelola/edit_tatakelola/proses" enctype="multipart/form-data">
                                         @csrf {{--
+                                        
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <label for="periode">Periode Pelaksanaan</label>
@@ -102,19 +103,25 @@
                                             </div>
                                         </div>
                                         <br> --}}
+
+                                        
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text">Sub Domain</label>
                                             </div>
                                             <select name="subdomain" class="form-control select2" id="inputGroupSelect01" required>
                                                 <option value hidden disable>---Pilih---</option>
-                                                <option value="1">EDM01</option>
+                                                @foreach($subdomain as $s)
+                                                <option value="{{$s->id_subdomain}}">{{$s->kode_subdomain}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <br>
+                                        @foreach($oldtatakelola as $o)
+                                        <input type="hidden" name="id" value="{{$o->id}}">
                                         <div class="form-group">
                                             <label for="kodeoutput">Kode Output</label>
-                                            <input type="text" name="kodeoutput" class="form-control" placeholder="Contoh: EDM02-WP1" required> @if ($errors->has('kodeoutput'))
+                                            <input type="text" name="kodeoutput" class="form-control" placeholder="{{$o->kode_wp}}" required> @if ($errors->has('kodeoutput'))
                                             <div class="text-danger">
                                                 {{ $errors->first('kodeoutput')}}
                                             </div>
@@ -123,7 +130,7 @@
 
                                         <div class="form-group">
                                             <label for="output_proses">Output dari Proses</label>
-                                            <input type="text" name="output_proses" class="form-control" placeholder="Contoh: Evaluation of strategic alignment" required> @if ($errors->has('output_proses'))
+                                            <input type="text" name="output_proses" class="form-control" placeholder="{{$o->wp_name}}" required> @if ($errors->has('output_proses'))
                                             <div class="text-danger">
                                                 {{ $errors->first('output_proses')}}
                                             </div>
@@ -132,12 +139,13 @@
 
                                         <div class="form-group">
                                             <label for="output_prosesdeskripsi">Deskripsi</label>
-                                            <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="Contoh: Hasil dari aktifitas Tata Kelola yang nampak dari deskripsi dari tujuan perusahaan beserta kontribusi yang berkaitan dengan sasaran perusahaan" required></textarea> @if ($errors->has('deskripsi'))
+                                            <textarea id="deskripsi" name="deskripsi" class="form-control" rows="10" placeholder="{{$o->wp_deskripsi}}" required></textarea> @if ($errors->has('deskripsi'))
                                             <div class="text-danger">
                                                 {{ $errors->first('deskripsi')}}
                                             </div>
                                             @endif
                                         </div>
+                                        @endforeach
                                         <div class="form-group mt-3">
                                             <input type="submit" class="btn btn-success" value="Simpan">
                                         </div>
