@@ -61,6 +61,7 @@
                 <nav>
                     <ul class="nav">
                         <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/superadmin/periode_audit" class=""><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
                         <li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
                         <li>
                             <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -108,8 +109,8 @@
                                         <thead>
                                             <tr>
                                                 <th width="2%">Sub Domain</th>
-                                                <th>Kode Output</th>
-                                                <th>Output dari Proses</th>
+                                                <th width="7%">Kode Output</th>
+                                                <th width="22%">Output dari Proses</th>
                                                 <th>Deskripsi</th>
                                                 <th width="20%">Aksi</th>
                                             </tr>
@@ -160,7 +161,7 @@
                         <div class="clearfix"></div>
                         <footer>
                             <div class="container-fluid position-relative">
-                                <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                                <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                             </div>
                         </footer>
                     </div>

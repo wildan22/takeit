@@ -56,10 +56,10 @@
                 <nav>
 					<ul class="nav">
                         <li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                        <li><a href="/superadmin/periode_audit" class=""><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
+                        <li><a href="/superadmin/periode_audit" class="active"><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li>
-                            <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <a href="#subDataMaster" class="" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
                                     <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
@@ -82,66 +82,86 @@
                     <div class="row">
                         <div class="co-12">
                             <!-- BASIC TABLE -->
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Tambah COBIT 5</h3>
-                                    <a href="/superadmin/cobit5" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
-                                </div>
+							<div class="panel"  >
+								<center>
+									<h3 style="font-family: lora; color: #1B2690;">Periode Tata Kelola</h3>
+									<hr width="20%">
+								</center>
+								<div class="panel-heading">
+                                    <a href="/superadmin/periode_audit/new_audit" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Periode Audit</a>
+								</div>
+								
+								{{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
                                 <div class="panel-body">
-                                {{-- form new Product --}}
+									<div class="alert alert-success">
+										{{session('status')}}
+									</div>
+									</div>
+									{{-- alert -> tindakan yang dilakukan --}}
 
-                                <form method="post" action="/superadmin/cobit5/proses" enctype="multipart/form-data">
-                                    @csrf
-
-
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <label class="input-group-text" for="inputGroupSelect01">Domain Cobit</label>
-                                        </div>
-                                        <select name="domain" class="form-control" id="inputGroupSelect01" required>
-                                          <option value hidden disable>Pilih Domain</option>
-                                          @foreach ($domains as $d)
-                                          <option value="{{$d->id_domain}}">{{$d->kode_domain}}</option>
-                                          @endforeach
-                                        </select>
-                                      </div>
-                                      <br>
-                                    <div class="form-group">
-                                        <label for="subdomain">Sub Domain</label>
-                                        <input type="text" name="subdomain"  class="form-control" placeholder="Contoh: EDM02" required> @if ($errors->has('subdomain'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('subdomain')}}
-                                        </div>
-                                        @endif
+								@endif
+								<div class="panel-body">
+									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+										<thead>
+											<tr>
+												<th width="5%">No</th>
+                                                <th>Periode</th>
+                                                <th>Status</th>
+                                                <th width="18%">Aksi</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php $no = 1;?>
+											{{-- @foreach($cobits as $cobit) --}}
+											<tr>
+												{{-- <td>{{$no++}}</td>
+												<td>{{$cobit->kode_domain}}</td>
+												<td>{{$cobit->kode_subdomain}}</td>
+												<td>{{$cobit->proses}}</td>
+												<td>
+												<a href="/superadmin/cobit5/edit_cobit5/{{$cobit->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$cobit->id}}">
+                                                        <i class="lnr lnr-trash"></i>
+                                                    </button>
+													
+													</td> --}}
+											</tr>
+											{{-- @endforeach --}}
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END BASIC TABLE -->
+						</div>
+                        <!-- BASIC TABLE -->
+                        
+                        <!-- Delete Modal -->
+						{{-- @foreach($cobits as $cobit) --}}
+                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Anda Yakin akan Menghapus Data ini?
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="proses">Proses</label>
-                                        <input type="text" name="proses"  class="form-control" placeholder="Contoh: Ensure Benefits Delivery" required> @if ($errors->has('proses'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('proses')}}
-                                        </div>
-                                        @endif
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/superadmin/cobit5/hapus/">
+                                            @csrf
+                                            <input type="hidden" name="id" value="id">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</a>
+                                        </form>
                                     </div>
-                                    <div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                                </form>
-
-                                {{-- akhir form --}}
                                 </div>
                             </div>
                         </div>
-                        <!-- END BASIC TABLE -->
-                    </div>
-
-                    <!-- BASIC TABLE -->
+						{{-- @endforeach --}}
+                        <!-- Delete Modal -->
 
                     <!-- END MAIN -->
                     <div class="clearfix"></div>
                     <footer>
                         <div class="container-fluid position-relative">
-                            <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                            <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                         </div>
                     </footer>
                 </div>
