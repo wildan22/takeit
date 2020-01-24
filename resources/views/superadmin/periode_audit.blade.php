@@ -111,9 +111,33 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php $no = 1;?>
+                                            <?php $no = 1;?>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Desember 2020</td>
+                                                <td><span class="label label-default">Proses</span></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
+                                                        <i class="lnr lnr-upload"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Oktober 2020</td>
+                                                <td><span class="label label-success">Selesai</span></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
+                                                        <i class="lnr lnr-upload"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+
 											{{-- @foreach($cobits as $cobit) --}}
 											<tr>
+                                                
 												{{-- <td>{{$no++}}</td>
 												<td>{{$cobit->kode_domain}}</td>
 												<td>{{$cobit->kode_subdomain}}</td>
@@ -141,14 +165,14 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Apakah Anda Yakin akan Menghapus Data ini?
+                                        Apakah Anda Yakin, Audit Tata Kelola TI Periode Desember 2019 telah Selesai ?
                                     </div>
                                     <div class="modal-footer">
-                                        <form method="POST" action="/superadmin/cobit5/hapus/">
+                                        <form method="POST" action="/superadmin/periode/selesai/">
                                             @csrf
                                             <input type="hidden" name="id" value="id">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-danger">Hapus</a>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">belum</button>
+                                            <button type="submit" class="btn btn-success">Selesai</a>
                                         </form>
                                     </div>
                                 </div>
