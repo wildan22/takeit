@@ -99,18 +99,20 @@
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Nama Laporan</th>
-                                                <th width="18%">Bulan</th>
-                                                <th width="10%">Aksi</th>
+                                                <th width="40%">Judul Laporan</th>
+                                                <th width="18%">Periode</th>
+                                                <th width="0%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Nama Laporan 1</td>
-                                                <td>12-12-2012</td>
+                                                <td>Judul Laporan 1</td>
+                                                <td>Oktober 2019</td>
                                                 <td width="18%">
-                                                    <a href="/itstaff/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>
-                                                    <a href="/itstaff/laporan/hapus" class="btn btn-danger"><i class="lnr lnr-trash"></i></a></td>
+                                                    <a href="/itstaff/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-id">
+                                                        <i class="lnr lnr-trash"></i>
+                                                    </button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -120,6 +122,29 @@
                             <!-- END BASIC TABLE -->
                         </div>
                         <!-- BASIC TABLE -->
+
+                         <!-- Delete Modal -->
+						{{-- @foreach($cobits as $cobit) --}}
+                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Anda Yakin, Menghapus Judul Laporan 1 ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/itstaff/laporan/hapus">
+                                            @csrf
+                                            <input type="hidden" name="id" value="id">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-danger">Delete</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						{{-- @endforeach --}}
+                        <!-- Delete Modal -->
+
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
                         <footer>

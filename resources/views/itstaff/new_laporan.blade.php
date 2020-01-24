@@ -6,10 +6,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
     <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
+    <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
+
+    <!-- SELECT2  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -19,6 +27,7 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ ('/image/logo_ptpn7.png') }}">
+
 </head>
 
 <body>
@@ -86,9 +95,17 @@
 
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <label for="periode">Periode Laporan</label>
-                                                <input type="date" name="periode" class="form-control" required>
+                                                <label class="input-group-text" for="inputGroupSelect01">Periode</label>
                                             </div>
+                                            <select name="periode" class="form-control select2" id="inputGroupSelect01" required>
+                                                <option value hidden disable>---Pilih---</option>
+                                                <option value="1">Desember 2020</option>
+                                                <option value="1">Desember 2020</option>
+                                                <option value="1">Desember 2020</option>
+                                                <option value="1">Desember 2020</option>
+                                                <option value="1">Desember 2020</option>
+                                                <option value="1">Desember 2020</option>
+                                            </select>
                                         </div>
                                         <br>
 
@@ -96,21 +113,16 @@
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Proses Teknologi Informasi</label>
                                             </div>
-                                            <select class="form-control" id="inputGroupSelect01" required>
+                                            <select name="proses_ti" class="form-control select2" id="inputGroupSelect02" required>
                                                 <option value hidden disable>---Pilih---</option>
                                                 <option value="1">Kerangka Kerja Tata Kelola TI</option>
                                                 <option value="2">Komite TI</option>
-                                                <option value="3">Organisasi fungsional TI</option>
-                                                <option value="4">Koordinasi Pengelolaan Layanan TI dalam Organisasi Fungsional TI</option>
-                                                <option value="5">Implementasi Pedoman, Standar, dan Prosedur TI</option>
-                                                <option value="5">Pengelolaan Pedoman Tata Kelola TI</option>
-                                                <option value="5">Pengelolaan Master Plan TI</option>
                                             </select>
                                         </div>
                                         <br>
                                         <div class="form-group">
                                             <label for="judul_laporan">Judul Laporan</label>
-                                            <input type="text" name="judul_laporan" class="form-control" placeholder="Judul Laporan" required> @if ($errors->has('judul_laporan'))
+                                            <input type="text" name="judul_laporan" class="form-control" placeholder="Contoh: Proses Pemetaan Lahan Menggunakan Drone" required> @if ($errors->has('judul_laporan'))
                                             <div class="text-danger">
                                                 {{ $errors->first('judul_laporan')}}
                                             </div>
@@ -145,6 +157,26 @@
                 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
                 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
+
+                 <!-- MDBootstrap Datatables  -->
+                 <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
+                 <!-- SELECT2  -->
+                 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
+                 <script>
+                     $(".select2").select2({
+                         tags: true
+                     });
+                 </script>
+                 <script type="text/javascript">
+                     // Basic example
+                     $(document).ready(function() {
+                         $('#dtBasicExample').DataTable({
+                             "searching": true // false to disable search (or any other option)
+                         });
+                         $('.dataTables_length').addClass('bs-select');
+                     });
+                 </script>
 </body>
 
 </html>
