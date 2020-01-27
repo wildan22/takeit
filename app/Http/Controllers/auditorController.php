@@ -65,4 +65,8 @@ class auditorController extends Controller{
     public function showViewLaporan(){   
         return view('auditor.view_laporan');
     }
+
+    public function showUbahPassowrd(){   
+        return view('auditor.ubah_password');
+    }
 }

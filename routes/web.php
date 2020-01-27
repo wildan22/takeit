@@ -104,6 +104,8 @@ Route::middleware('is_staff')->group(function (){
      //Menampilkan Halaman Lihat Laporan
      Route::get('itstaff/laporan/view_laporan','staffController@showViewLaporan')->name('itstaff.view_laporan');
     
+     //Menampilkan halaman ubah password
+    Route::get('itstaff/ubah_password','staffController@showUbahPassowrd')->name('itstaff.ubah_passowrd');
     
 });
 
@@ -140,6 +142,9 @@ Route::middleware('is_auditor')->group(function (){
     //Menampilkan Halaman Lihat Laporan
     Route::get('/auditor/laporan/view_laporan','auditorController@showViewLaporan')->name('auditor.view_laporan');
 
+    //Menampilkan halaman ubah password
+    Route::get('auditor/ubah_password','auditorController@showUbahPassowrd')->name('auditor.ubah_passowrd');
+
 });
 
 
@@ -151,6 +156,8 @@ Route::middleware('is_eksekutif')->group(function (){
     Route::get('/executive/laporan','eksekutifController@showLaporan')->name('eksekutif.laporan');
      //Menampilkan Halaman Lihat Laporan
      Route::get('/executive/laporan/view_laporan','eksekutifController@showViewLaporan')->name('eksekutif.view_laporan');
+     //Menampilkan halaman ubah password
+    Route::get('executive/ubah_password','eksekutifController@showUbahPassowrd')->name('executive.ubah_passowrd');
 });
 
 

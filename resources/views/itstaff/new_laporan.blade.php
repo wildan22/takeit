@@ -49,7 +49,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-user"></i> <span> {{ Auth::user()->name }}!</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
+                                <li><a href="/itstaff/ubah_password"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
                             </ul>
                         </li>
@@ -84,9 +84,7 @@
                                     <h3 class="panel-title" class="">Input Laporan</h3>
                                     <br>
                                     <a href="/itstaff/laporan" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i>  Batal</a>
-
                                 </div>
-
                                 <div class="panel-body">
                                     {{-- form new Product --}}
 
@@ -97,14 +95,8 @@
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Periode</label>
                                             </div>
-                                            <select name="periode" class="form-control select2" id="inputGroupSelect01" required>
-                                                <option value hidden disable>---Pilih---</option>
-                                                <option value="1">Desember 2020</option>
-                                                <option value="1">Desember 2020</option>
-                                                <option value="1">Desember 2020</option>
-                                                <option value="1">Desember 2020</option>
-                                                <option value="1">Desember 2020</option>
-                                                <option value="1">Desember 2020</option>
+                                            <select name="periode" disabled class="form-control select2" id="inputGroupSelect01" required>
+                                                <option value hidden >Desember 2020</option>
                                             </select>
                                         </div>
                                         <br>
@@ -130,7 +122,7 @@
                                         </div>
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="customFile">Upload File Laporan (PDF)</label>
-                                            <input type="file" name="laporan" class="custom-file-input form-control" id="customFile" required>
+                                            <input type="file" name="laporan" class="custom-file-input form-control" id="customFile" accept="application/pdf" required>
                                         </div>
                                         <br>
                                         <div class="form-group mt-3">

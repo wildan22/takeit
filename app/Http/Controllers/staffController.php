@@ -32,4 +32,8 @@ class staffController extends Controller{
     public function showNewLaporan(){
         return view('itstaff.new_laporan');
     }
+
+    public function showUbahPassowrd(){   
+        return view('itstaff.ubah_password');
+    }
 }

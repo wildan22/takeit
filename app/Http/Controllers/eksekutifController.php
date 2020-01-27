@@ -21,4 +21,8 @@ class eksekutifController extends Controller{
     public function showViewLaporan(){   
         return view('executive.view_laporan');
     }
+
+    public function showUbahPassowrd(){   
+        return view('executive.ubah_password');
+    }
 }
