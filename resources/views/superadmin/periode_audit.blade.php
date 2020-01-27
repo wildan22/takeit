@@ -115,8 +115,12 @@
                                             @foreach($periodeaudit as $period)
                                             <tr>
                                                 <td>1</td>
-                                                <td>Desember 2020</td>
+                                                <td>{{$period->tanggal_audit}}</td>
+                                                @if($period->status == 'PROSES')
                                                 <td><span class="label label-default">Proses</span></td>
+                                                @else
+                                                <td><span class="label label-success">Selesai</span></td>
+                                                @endif
                                                 <td>
                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
                                                         <i class="lnr lnr-upload"></i>

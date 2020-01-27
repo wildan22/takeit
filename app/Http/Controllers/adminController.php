@@ -17,7 +17,7 @@ class adminController extends Controller{
 
     public function showPeriodeAudit(){
         $periodeaudit = DB::table('periode_audit')->get();
-        return view('superadmin.periode_audit',['periodeaudit',$periodeaudit]);
+        return view('superadmin.periode_audit',['periodeaudit'=>$periodeaudit]);
     }
 
     public function showNewAudit(){   
