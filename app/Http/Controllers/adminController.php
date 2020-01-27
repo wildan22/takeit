@@ -15,6 +15,10 @@ class adminController extends Controller{
         return view('superadmin.dashboard');
     }
 
+    public function showUbahPassowrd(){   
+        return view('superadmin.ubah_password');
+    }
+
     public function showPeriodeAudit(){
         $periodeaudit = DB::table('periode_audit')->get();
         return view('superadmin.periode_audit',['periodeaudit'=>$periodeaudit]);
