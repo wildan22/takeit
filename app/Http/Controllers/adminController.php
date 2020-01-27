@@ -28,6 +28,17 @@ class adminController extends Controller{
         return view('superadmin.new_audit');
     }
 
+    public function prosesUbahStatusAudit(Request $request){
+        $ubahStatusAudit = DB::table('periode_audit')->where('id_periode_audit',$request->id)->update([
+            'STATUS'=>'SELESAI'
+        ]);
+        if($ubahStatusAudit == 1){
+            return redirect('/superadmin/periode_audit')->with('status','Status Berhasil Diubah');
+        }else{
+            return redirect('/superadmin/periode_audit')->with('status','Status Gagal Diubah');
+        }
+    }
+
     public function prosesNewAudit(Request $request){
         $auditdalamproses = DB::table('periode_audit')->where('status','PROSES')->count();
         $unique_periode = DB::table('periode_audit')->where('tanggal_audit',$request->periode.'-01')->count();

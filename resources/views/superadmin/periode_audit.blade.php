@@ -114,36 +114,26 @@
                                             <?php $no = 1;?>
                                             @foreach($periodeaudit as $period)
                                             <tr>
-                                                <td>1</td>
+                                                <td>{{$no++}}</td>
                                                 <td>{{$period->tanggal_audit}}</td>
                                                 @if($period->status == 'PROSES')
                                                 <td><span class="label label-default">Proses</span></td>
-                                                @else
-                                                <td><span class="label label-success">Selesai</span></td>
-                                                @endif
                                                 <td>
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-{{$period->id_periode_audit}}">
                                                         <i class="lnr lnr-checkmark-circle"></i>
                                                     </button>
                                                 </td>
+                                                @else
+                                                <td><span class="label label-success">Selesai</span></td>
+                                                <td>
+                                                    <button type="button" disabled class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-{{$period->id_periode_audit}}">
+                                                        <i class="lnr lnr-checkmark-circle"></i>
+                                                    </button>
+                                                </td>
+                                                @endif
+                                                
                                             </tr>
                                             @endforeach
-											{{-- @foreach($cobits as $cobit) --}}
-											<tr>
-                                                
-												{{-- <td>{{$no++}}</td>
-												<td>{{$cobit->kode_domain}}</td>
-												<td>{{$cobit->kode_subdomain}}</td>
-												<td>{{$cobit->proses}}</td>
-												<td>
-												<a href="/superadmin/cobit5/edit_cobit5/{{$cobit->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$cobit->id}}">
-                                                        <i class="lnr lnr-trash"></i>
-                                                    </button>
-													
-													</td> --}}
-											</tr>
-											{{-- @endforeach --}}
 										</tbody>
 									</table>
 								</div>
@@ -153,8 +143,8 @@
                         <!-- BASIC TABLE -->
                         
                         <!-- Delete Modal -->
-						{{-- @foreach($cobits as $cobit) --}}
-                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						@foreach($periodeaudit as $period)
+                        <div class="modal fade" id="deleteModal-{{$period->id_periode_audit}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -163,7 +153,7 @@
                                     <div class="modal-footer">
                                         <form method="POST" action="/superadmin/periode/selesai/">
                                             @csrf
-                                            <input type="hidden" name="id" value="id">
+                                            <input type="hidden" name="id" value="{{$period->id_periode_audit}}">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">belum</button>
                                             <button type="submit" class="btn btn-success">Selesai</a>
                                         </form>
@@ -171,7 +161,7 @@
                                 </div>
                             </div>
                         </div>
-						{{-- @endforeach --}}
+						@endforeach
                         <!-- Delete Modal -->
 
                     <!-- END MAIN -->
