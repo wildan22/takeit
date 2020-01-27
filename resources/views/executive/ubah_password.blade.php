@@ -41,7 +41,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-user"></i> <span> {{ Auth::user()->name }}!</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="/executive/ubah_password"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
+								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
 								<li><a href="{{ url('/logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
@@ -68,71 +68,52 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Selamat Datang Executive</h3>
+					<h3 class="page-title">Ubah Password</h3>
 					<div class="row">
 						<div class="co-12">
-							<!-- BASIC TABLE -->
 							<div class="panel"  >
-								<div class="panel-heading">
-									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2013</h3>
-									</div>
 								<div class="panel-body">
-									<table class="table">
-										<thead>
-											<tr>
-                                                <th>Cobit 5</th>
-												<th>Proses</th>
-												<th>Kematangan Level %</th>
-												<th>Keterangan</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>EDM01</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM02</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM03</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM04</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-											<tr>
-												<td>EDM05</td>
-												<td>Ensure Governance Framework Setting and Maintenance</td>
-												<td>75% <span class="lnr lnr-star"></span></td>
-												<td>Level 1</td>
-											</tr>
-										</tbody>
-                                    </table>
-									Jumlah Data :  <br/>
+									
+									<form method="post" action="/superadmin/ubah_password/proses" enctype="multipart/form-data">
+										@csrf
+									<div class="form-group">
+                                        <label for="password">Password Sekarang</label>
+                                        <input type="password" name="password"  class="form-control" placeholder="Password Sekarang" required> @if ($errors->has('password'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('password')}}
+                                        </div>
+                                        @endif
+									</div>
+
+									<div class="form-group">
+                                        <label for="new_password">Password Baru (Min. 8 Digit)</label>
+                                        <input type="password" name="new_password" id="password" class="form-control" placeholder="Password Baru" required> @if ($errors->has('new_password'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('new_password')}}
+                                        </div>
+                                        @endif
+									</div>
+
+									<div class="form-group">
+                                        <label for="konfirmasi_password">Konfirmasi Password (Min. 8 Digit)</label><span id='message'></span>
+                                        <input type="password" name="konfirmasi_password" id="confirm_password" class="form-control" placeholder="Konfirmasi Password" required> @if ($errors->has('konfirmasi_password'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('konfirmasi_password')}}
+                                        </div>
+                                        @endif
+									</div>
+									
+									<div class="form-group mt-3">
+                                        <input type="submit" class="btn btn-success" value="Simpan">
+									</div>
+									</form>
 									
 								</div>
 							</div>
-							<!-- END BASIC TABLE -->
-
-							
-						</div>
-
-
-
-						<!-- BASIC TABLE -->
-						
-		<!-- END MAIN -->
+                        </div>
+                        <!-- BASIC TABLE -->
+                        </div>
+                        <!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative text-muted">
@@ -145,7 +126,15 @@
 	<script src="/assets/vendor/jquery/jquery.min.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="/assets/scripts/klorofil-common.js"></script>
+    <script src="/assets/scripts/klorofil-common.js"></script>
+    <script type="text/javascript">
+		$('#password, #confirm_password').on('keyup', function () {
+  			if ($('#password').val() == $('#confirm_password').val()) {
+    				$('#message').html('Matching').css('color', 'green');
+  				} else 
+    				$('#message').html('Not Matching').css('color', 'red');
+		});
+	</script>
 </body>
 
 </html>
