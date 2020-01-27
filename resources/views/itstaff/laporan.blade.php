@@ -100,6 +100,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="40%">Judul Laporan</th>
+                                                <th>Uploader</th>
                                                 <th width="18%">Periode</th>
                                                 <th width="0%">Aksi</th>
                                             </tr>
@@ -107,6 +108,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>Judul Laporan 1</td>
+                                                <td>Mas Tanto</td>
                                                 <td>Oktober 2019</td>
                                                 <td width="18%">
                                                     <a href="/itstaff/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
