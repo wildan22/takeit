@@ -6,15 +6,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    
-     <!-- VENDOR CSS -->
-     <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-     <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
-     <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
-     <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
-     <!-- MDBootstrap Datatables  -->
-     <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
-     
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="/assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -61,11 +56,11 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/superadmin" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="/superadmin" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/superadmin/periode_audit" class=""><i class="lnr lnr-calendar-full"></i> <span>Periode Tata Kelola</span></a></li>
 						<li><a href="/superadmin/user_management" class=""><i class="lnr lnr-user"></i> <span>User Management</span></a></li>
 						<li>
-                            <a href="#subDataMaster" class="active" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <a href="#subDataMaster" class="" data-toggle="collapse" class="collapsed"><i class="lnr lnr-database"></i> <span>Data Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subDataMaster" class="collapse ">
                                 <ul class="nav">
                                     <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
@@ -82,40 +77,55 @@
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
-			 <!-- MAIN CONTENT -->
-             <div class="main-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="co-12">
-                            <!-- BASIC TABLE -->
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Proses Teknologi Informasi</h3>
-                                    <a href="/superadmin/tujuan_ti" class="btn btn-outline-primary"><i class="lnr lnr-trash"></i> Batal</a>
-                                </div>
-                                <div class="panel-body">
-                                    <form method="post" action="/superadmin/tujuan_ti/new_tujuan_ti/proses" enctype="multipart/form-data">
-                                        @csrf
-    
-                                    <div class="form-group">
-                                        <label for="proses_ti">Proses Teknologi Informasi</label>
-                                        <input type="text" name="proses_ti" class="form-control" placeholder="Contoh: Pengelolaan Ketersediaan dan Kapasitas Layanan TI" required> @if ($errors->has('proses_ti'))
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<h3 class="page-title">Ubah Password</h3>
+					<div class="row">
+						<div class="co-12">
+							<!-- BASIC TABLE -->
+							<div class="panel"  >
+								<div class="panel-body">
+									
+									<form method="post" action="/superadmin/ubah_password/proses" enctype="multipart/form-data">
+										@csrf
+									<div class="form-group">
+                                        <label for="password">Password Sekarang</label>
+                                        <input type="password" name="password"  class="form-control" placeholder="Password Sekarang" required> @if ($errors->has('password'))
                                         <div class="text-danger">
-                                            {{ $errors->first('proses_ti')}}
+                                            {{ $errors->first('password')}}
                                         </div>
                                         @endif
-                                    </div>
-                                    <div class="form-group mt-3">
+									</div>
+
+									<div class="form-group">
+                                        <label for="new_password">Password Baru (Min. 8 Digit)</label>
+                                        <input type="password" name="new_password" id="password" class="form-control" placeholder="Password Baru" required> @if ($errors->has('new_password'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('new_password')}}
+                                        </div>
+                                        @endif
+									</div>
+
+									<div class="form-group">
+                                        <label for="konfirmasi_password">Konfirmasi Password (Min. 8 Digit)</label><span id='message'></span>
+                                        <input type="password" name="konfirmasi_password" id="confirm_password" class="form-control" placeholder="Konfirmasi Password" required> @if ($errors->has('konfirmasi_password'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('konfirmasi_password')}}
+                                        </div>
+                                        @endif
+									</div>
+									
+									<div class="form-group mt-3">
                                         <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>  
-                                    </form> 
-                                </div>
-                            </div>
-                            <!-- END BASIC TABLE -->
+									</div>
+									</form>
+									
+								</div>
+							</div>
                         </div>
-
                         <!-- BASIC TABLE -->
-
+                        </div>
                         <!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
@@ -125,23 +135,19 @@
 		</footer>
 	</div>
 	<!-- END WRAPPER -->
-	  <!-- Javascript -->
-      <script src="/assets/vendor/jquery/jquery.min.js"></script>
-      <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-      <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-      <script src="/assets/scripts/klorofil-common.js"></script>
-
-      <!-- MDBootstrap Datatables  -->
-      <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
-      <script type="text/javascript">
-          // Basic example
-          $(document).ready(function() {
-              $('#dtBasicExample').DataTable({
-                  "searching": true // false to disable search (or any other option)
-              });
-              $('.dataTables_length').addClass('bs-select');
-          });
-      </script>
+	<!-- Javascript -->
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/assets/scripts/klorofil-common.js"></script>
+	<script type="text/javascript">
+		$('#password, #confirm_password').on('keyup', function () {
+  			if ($('#password').val() == $('#confirm_password').val()) {
+    				$('#message').html('Matching').css('color', 'green');
+  				} else 
+    				$('#message').html('Not Matching').css('color', 'red');
+		});
+	</script>
 </body>
 
 </html>
