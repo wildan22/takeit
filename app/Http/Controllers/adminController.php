@@ -15,12 +15,39 @@ class adminController extends Controller{
         return view('superadmin.dashboard');
     }
 
-    public function showPeriodeAudit(){   
-        return view('superadmin.periode_audit');
+    public function showPeriodeAudit(){
+        $periodeaudit = DB::table('periode_audit')->get();
+        return view('superadmin.periode_audit',['periodeaudit'=>$periodeaudit]);
     }
 
     public function showNewAudit(){   
         return view('superadmin.new_audit');
+    }
+
+    public function prosesNewAudit(Request $request){
+        $auditdalamproses = DB::table('periode_audit')->where('status','PROSES')->count();
+        $unique_periode = DB::table('periode_audit')->where('tanggal_audit',$request->periode.'-01')->count();
+        //Kondisi Jika tidak ada data audit dalam proses
+        if($auditdalamproses != 1){
+            if($unique_periode != 1){
+                $tambahperiode = DB::table('periode_audit')->insert([
+                    'tanggal_audit'=>$request->periode.'-01',
+                    'STATUS'=>'PROSES'
+                ]);
+                if($tambahperiode == 1){
+                    return redirect('/superadmin/periode_audit/')->with('status','Periode Baru Berhasil Ditambahkan');
+                }
+                else{
+                    return redirect('/superadmin/periode_audit/')->with('status','Periode Baru Gagal Ditambahkan');
+                }
+            }
+            else{
+                return redirect('/superadmin/periode_audit/')->with('status','Sudah ada audit dengan tanggal tersebut');
+            }
+        }
+        else{
+            return redirect('/superadmin/periode_audit/')->with('status','Sedang ada Audit dalam proses, selesaikan terlebih dahulu !!');
+        }
     }
     
     public function showTataKelola(){

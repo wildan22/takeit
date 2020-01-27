@@ -77,7 +77,7 @@ Route::middleware('is_admin')->group(function (){
     
     Route::post('/superadmin/tatakelola/hapus/','adminController@prosesHapusTataKelola');
     Route::post('/superadmin/tatakelola/edit_tatakelola/proses','adminController@prosesEditTataKelola');
-
+    Route::post('/superadmin/periode_audit/new_audit/proses','adminController@prosesNewAudit');
     
 });
 
