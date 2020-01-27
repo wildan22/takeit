@@ -15,6 +15,10 @@ class adminController extends Controller{
         return view('superadmin.dashboard');
     }
 
+    public function showUbahPassowrd(){   
+        return view('superadmin.ubah_password');
+    }
+
     public function showPeriodeAudit(){   
         return view('superadmin.periode_audit');
     }

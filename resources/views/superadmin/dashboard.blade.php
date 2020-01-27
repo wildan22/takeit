@@ -41,7 +41,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-user"></i> <span> {{ Auth::user()->name }}!</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
+								<li><a href="/superadmin/ubah_password"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
 								<li><a href="{{ url('/logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
@@ -81,9 +81,6 @@
 			<div class="main-content">
 				<div class="container-fluid">
 					<h3 class="page-title">Selamat Datang Admin</h3>
-					<div class="panel-heading">                                    
-						<a href="/superadmin/new_audit" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>  Audit Baru</a>
-					</div>
 					<div class="row">
 						<div class="co-12">
 							<!-- BASIC TABLE -->

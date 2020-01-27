@@ -23,6 +23,8 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 /*======= ROUTE GROUP UNTUK ADMIN =======*/
 Route::middleware('is_admin')->group(function (){
+    //Menampilkan halaman ubah password
+    Route::get('/superadmin/ubah_password','adminController@showUbahPassowrd')->name('superadmin.ubah_passowrd');
     //Menampilkan Dashboard
     Route::get('/superadmin','adminController@showDashboard')->name('superadmin.home');
     //Menampilkan Halaman Audit Baru
@@ -77,6 +79,8 @@ Route::middleware('is_admin')->group(function (){
     
     Route::post('/superadmin/tatakelola/hapus/','adminController@prosesHapusTataKelola');
     Route::post('/superadmin/tatakelola/edit_tatakelola/proses','adminController@prosesEditTataKelola');
+
+    Route::post('/superadmin/ubah_password/proses','adminController@prosesUbahPassword');
 
     
 });
