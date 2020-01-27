@@ -40,7 +40,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-user"></i> <span> {{ Auth::user()->name }}!</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="lnr lnr-smile"></i> <span>Ubah Password</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-cog"></i> <span>Ubah Password</span></a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
                             </ul>
                         </li>
@@ -118,7 +118,7 @@
                                                 <td><span class="label label-default">Proses</span></td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
-                                                        <i class="lnr lnr-upload"></i>
+                                                        <i class="lnr lnr-checkmark-circle"></i>
                                                     </button>
                                                 </td>
                                             </tr>
@@ -128,8 +128,8 @@
                                                 <td>Oktober 2020</td>
                                                 <td><span class="label label-success">Selesai</span></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
-                                                        <i class="lnr lnr-upload"></i>
+                                                    <button type="button" onclick="myFunction()" class="btn btn-primary" id="check" data-toggle="modal" data-target="#deleteModal-id">
+                                                        <i class="lnr lnr-checkmark-circle"></i>
                                                     </button>
                                                 </td>
                                             </tr>
@@ -195,6 +195,12 @@
                 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
                 <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
+
+                <script>
+                    function myFunction() {
+                      document.getElementById("check").disabled = true;
+                    }
+                    </script>
 </body>
 
 </html>
