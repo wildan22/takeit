@@ -123,7 +123,7 @@
                                                 @endif
                                                 <td>
                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal-id">
-                                                        <i class="lnr lnr-upload"></i>
+                                                        <i class="lnr lnr-checkmark-circle"></i>
                                                     </button>
                                                 </td>
                                             </tr>
