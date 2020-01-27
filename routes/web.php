@@ -83,6 +83,7 @@ Route::middleware('is_admin')->group(function (){
 
     Route::post('/superadmin/ubah_password/proses','adminController@prosesUbahPassword');
 
+    Route::post('/superadmin/periode/selesai/','adminController@prosesUbahStatusAudit');
     
 });
 
