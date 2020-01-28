@@ -70,7 +70,7 @@
                                     <li><a href="/superadmin/cobit5"><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
                                     <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
                                     <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
-                                    <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
+                                    <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Proses</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -89,11 +89,11 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <center>
-                                    <h3 style="font-family: lora; color: #1B2690;">Work Point</h3>
+                                    <h3 style="font-family: lora; color: #1B2690;">Work Proses</h3>
                                     <hr width="20%">
                                 </center>
                                 <div class="panel-heading">
-                                    <a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Work Point</a>
+                                    <a href="/superadmin/tatakelola/new_tatakelola" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Work Proses</a>
                                 </div>
 
                                 {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))

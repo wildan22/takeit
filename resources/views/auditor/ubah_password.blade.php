@@ -138,8 +138,8 @@
 	<script src="/assets/vendor/jquery/jquery.min.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="/assets/scripts/klorofil-common.js"></script>
-    <script type="text/javascript">
+	<script src="/assets/scripts/klorofil-common.js"></script>
+	<script type="text/javascript">
 		$('#password, #confirm_password').on('keyup', function () {
   			if ($('#password').val() == $('#confirm_password').val()) {
     				$('#message').html('Matching').css('color', 'green');

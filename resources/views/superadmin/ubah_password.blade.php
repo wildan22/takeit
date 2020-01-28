@@ -66,7 +66,7 @@
                                     <li><a href="/superadmin/cobit5" ><i class="lnr lnr-chart-bars"></i> <span>COBIT 5</a></li>
                                     <li><a href="/superadmin/tujuan_ti"><i class="lnr lnr-graduation-hat"></i> <span>Proses TI</a></li>
                                     <li><a href="/superadmin/mapping"><i class="lnr lnr-map"></i> <span>Mapping Proses TI</a></li>
-                                    <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Point</a></li>
+                                    <li><a href="/superadmin/tatakelola"><i class="lnr lnr-layers"></i> <span>Work Proses</a></li>
                                 </ul>
                             </div>
 						</li>
@@ -130,7 +130,7 @@
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative">
-						<p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+						<p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
 					</div>
 		</footer>
 	</div>
