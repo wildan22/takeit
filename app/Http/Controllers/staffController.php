@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 
 class staffController extends Controller{
 	public function __construct()
@@ -22,9 +23,13 @@ class staffController extends Controller{
     }
 
     public function showLaporan(){
-        $laporan = DB::table('laporan')->get();
-
-        return view('itstaff.laporan');
+        $laporan = DB::table('laporan')
+                    ->join('proses_ti','proses_ti.id','=','laporan.id_proses_ti')
+                    ->join('periode_audit','periode_audit.id_periode_audit','=','laporan.id_periode_audit')
+                    ->join('users','users.id','=','laporan.uploaded_by')
+                    ->select('laporan.id','laporan.nama_laporan','laporan.lokasi_laporan','periode_audit.tanggal_audit','users.name')
+                    ->get();
+        return view('itstaff.laporan',['laporan'=>$laporan]);
     }
 
     public function showViewLaporan(){
@@ -55,7 +60,8 @@ class staffController extends Controller{
                     'nama_laporan'=>$request->judul_laporan,
                     'id_proses_ti'=>$request->proses_ti,
                     'id_periode_audit'=>$request->periode,
-                    'lokasi_laporan'=>$tujuan_upload.'/'.$newfilename
+                    'lokasi_laporan'=>$tujuan_upload.'/'.$newfilename,
+                    'uploaded_by'=>Auth::id()
                 ]);
                 if($tambahlaporan == 1){
                     return redirect('/itstaff/laporan')->with('status','Laporan Berhasil Ditambahkan');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -33,7 +34,8 @@ class HomeController extends Controller
 
     public function tampilkanSession(Request $request) {
         if($request->session()->has('level')){
-            echo $request->session()->get('level');
+            echo 'Level : '.$request->session()->get('level').'<br>';
+            echo 'User ID : '.Auth::id();
         }else{
             echo 'Tidak ada data dalam session.';
         }
