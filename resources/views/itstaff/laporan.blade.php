@@ -106,10 +106,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($laporan as $l)
                                             <tr>
-                                                <td>Judul Laporan 1</td>
-                                                <td>Mas Tanto</td>
-                                                <td>Oktober 2019</td>
+                                                <td>{{$l->nama_laporan}}</td>
+                                                <td>{{$l->name}}</td>
+                                                <td>{{$l->tanggal_audit}}</td>
                                                 <td width="18%">
                                                     <a href="/file/Proses Kampret menjadi Cebong.pdf" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
                                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-id">
@@ -117,6 +118,7 @@
                                                     </button>
                                                 </td>
                                             </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
