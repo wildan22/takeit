@@ -22,6 +22,8 @@ class staffController extends Controller{
     }
 
     public function showLaporan(){
+        $laporan = DB::table('laporan')->get();
+
         return view('itstaff.laporan');
     }
 

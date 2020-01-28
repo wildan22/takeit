@@ -95,9 +95,9 @@
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text" for="inputGroupSelect01">Periode</label>
                                             </div>
-                                            <select name="periode" disabled class="form-control select2" id="inputGroupSelect01" required>
+                                            <select name="periode" class="form-control select2" id="inputGroupSelect01" required readonly="readonly">
                                                 @foreach($periode as $p)
-                                                <option value="{{$p->id_periode_audit}}" selected>{{$p->tanggal_audit}}</option>
+                                                <option value="{{$p->id_periode_audit}}" selected="true">{{$p->tanggal_audit}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
