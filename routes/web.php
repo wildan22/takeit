@@ -107,6 +107,10 @@ Route::middleware('is_staff')->group(function (){
     
      //Menampilkan halaman ubah password
     Route::get('itstaff/ubah_password','staffController@showUbahPassowrd')->name('itstaff.ubah_passowrd');
+
+
+    Route::post('/itstaff/laporan/proses','staffController@prosesTambahLaporan');
+    
     
 });
 

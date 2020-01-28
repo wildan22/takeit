@@ -88,7 +88,7 @@
                                 <div class="panel-body">
                                     {{-- form new Product --}}
 
-                                    <form method="post" action="/itstaff/laporan" enctype="multipart/form-data">
+                                    <form method="post" action="/itstaff/laporan/proses" enctype="multipart/form-data">
                                         @csrf
 
                                         <div class="input-group">
@@ -96,7 +96,9 @@
                                                 <label class="input-group-text" for="inputGroupSelect01">Periode</label>
                                             </div>
                                             <select name="periode" disabled class="form-control select2" id="inputGroupSelect01" required>
-                                                <option value hidden >Desember 2020</option>
+                                                @foreach($periode as $p)
+                                                <option value="{{$p->id_periode_audit}}" selected>{{$p->tanggal_audit}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <br>
@@ -107,8 +109,9 @@
                                             </div>
                                             <select name="proses_ti" class="form-control select2" id="inputGroupSelect02" required>
                                                 <option value hidden disable>---Pilih---</option>
-                                                <option value="1">Kerangka Kerja Tata Kelola TI</option>
-                                                <option value="2">Komite TI</option>
+                                                @foreach($proses_ti as $pti)
+                                                <option value="{{$pti->id}}">{{$pti->proses_ti}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <br>
