@@ -111,7 +111,7 @@
                                                 <td>Mas Tanto</td>
                                                 <td>Oktober 2019</td>
                                                 <td width="18%">
-                                                    <a href="/itstaff/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
+                                                    <a href="/file/Proses Kampret menjadi Cebong.pdf" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
                                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-id">
                                                         <i class="lnr lnr-trash"></i>
                                                     </button>
