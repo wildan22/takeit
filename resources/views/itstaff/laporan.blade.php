@@ -110,9 +110,9 @@
                                             <tr>
                                                 <td>{{$l->nama_laporan}}</td>
                                                 <td>{{$l->name}}</td>
-                                                <td>{{$l->tanggal_audit}}</td>
+                                                <td>{{myHelpers::dateConvert($l->tanggal_audit)}}</td>
                                                 <td width="18%">
-                                                    <a href="/file/Proses Kampret menjadi Cebong.pdf" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
+                                                    <a href="/{{$l->lokasi_laporan}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
                                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-id">
                                                         <i class="lnr lnr-trash"></i>
                                                     </button>

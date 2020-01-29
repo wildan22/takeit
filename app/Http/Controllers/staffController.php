@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use myHelpers;
 
 class staffController extends Controller{
 	public function __construct()
@@ -53,14 +54,15 @@ class staffController extends Controller{
         $tujuan_upload = 'file';
         $ekstensi =$file->getClientOriginalExtension();
         if($ekstensi == 'pdf'){
-            $newfilename = $request->judul_laporan.'.'.$ekstensi;
-            $upload = $file->move($tujuan_upload,$newfilename);
+            $newfilename = $request->judul_laporan.'_'.myHelpers::randstr(4).Auth::id().myHelpers::randstr(4);
+            $finalfile = $newfilename.'.'.$ekstensi;
+            $upload = $file->move($tujuan_upload,$finalfile);
             if($upload){
                 $tambahlaporan = DB::table('laporan')->insert([
                     'nama_laporan'=>$request->judul_laporan,
                     'id_proses_ti'=>$request->proses_ti,
                     'id_periode_audit'=>$request->periode,
-                    'lokasi_laporan'=>$tujuan_upload.'/'.$newfilename,
+                    'lokasi_laporan'=>$tujuan_upload.'/'.$finalfile,
                     'uploaded_by'=>Auth::id()
                 ]);
                 if($tambahlaporan == 1){
@@ -78,7 +80,7 @@ class staffController extends Controller{
         }
     }
 
-    public function showUbahPassowrd(){   
+    public function showUbahPassowrd(){
         return view('itstaff.ubah_password');
     }
 }
