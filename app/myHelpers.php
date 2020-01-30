@@ -16,5 +16,10 @@ class myHelpers {
         $yrdata= strtotime($date);
         return date('F Y', $yrdata);
     }
+
+    public static function cleanNumber($string){
+        $res = preg_replace('/\d+/u', '', $string);
+        return $res;
+    }
 }
 ?>
