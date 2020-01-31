@@ -24,7 +24,13 @@ class auditorController extends Controller{
             $auditcount = DB::table('periode_audit')->where('status','PROSES')->count();
             if($auditcount>=1){
                 $latestaudit = DB::table('periode_audit')->where('status','PROSES')->first();
-                $latestaudit->id_periode_audit;
+
+                $statusaudit = DB::table('hasil_audit')
+                                ->join('subdomains','subdomains.id_subdomain','=','hasil_audit.id_subdomain')
+                                ->where('hasil_audit.id_periode_audit',$latestaudit->id_periode_audit)
+                                ->where('subdomains.kode_subdomain',strtoupper($url))
+                                ->select('hasil_audit.status')
+                                ->first();
 
                 $laporan = DB::table('laporan')
                         ->join('periode_audit','periode_audit.id_periode_audit','=','laporan.id_periode_audit')
@@ -52,7 +58,8 @@ class auditorController extends Controller{
                         ->where('periode_audit.id_periode_audit',$latestaudit->id_periode_audit)
                         ->select('hasil_audit.id','hasil_audit.argumen_auditor','subdomains.id_subdomain')
                         ->first();
-                return view('auditor.audit',['subdomain'=>$subdomain,'laporan'=>$laporan,'wp_view'=>$wp_view,'hasilaudit_view'=>$hasilaudit_view]);
+                        
+                return view('auditor.audit',['subdomain'=>$subdomain,'laporan'=>$laporan,'wp_view'=>$wp_view,'hasilaudit_view'=>$hasilaudit_view,'statusaudit'=>$statusaudit]);
             }
             else{
                 echo "Tidak ada audit dalam proses";
@@ -101,20 +108,20 @@ class auditorController extends Controller{
                         ->count();
         $a = $yescount/$totalcount;
 
-        echo round($a,2);
-
-
-        // $argumen = DB::table('hasil_audit')
-        //             ->where('id',$request->id)
-        //             ->update([
-        //                 'argumen_auditor'=>$request->argumen,
-        //             ]);
-        // if($argumen == 1 ){
-        //     return back()->with('status','Data Berhasil Disimpan');
-        // }
-        // else{
-        //     return back()->with('status','Data Gagal Disimpan');
-        // }
+        $argumen = DB::table('hasil_audit')
+                    ->where('id',$request->id)
+                    ->update([
+                        'argumen_auditor'=>$request->argumen,
+                        'yescount'=>$yescount,
+                        'totaldata'=>$totalcount,
+                        'status'=>'SELESAI'
+                    ]);
+        if($argumen == 1 ){
+            return back()->with('status','Data Berhasil Disimpan');
+        }
+        else{
+            return back()->with('status','Data Gagal Disimpan');
+        }
     }
 
 

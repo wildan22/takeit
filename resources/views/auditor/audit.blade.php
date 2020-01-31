@@ -125,7 +125,7 @@
                                                 </td>
                                                 <td align="center">
                                                     <div class="form-group">
-                                                        <input class="toggle-event" type="checkbox" {{$w->answer === 'YES' ? 'checked' : ''}} data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="{{$w->id}}">
+                                                        <input class="toggle-event" type="checkbox" {{$statusaudit->status == "SELESAI" ? 'disabled' : ''}} {{$w->answer === 'YES' ? 'checked' : ''}} data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" value="{{$w->id}}">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -243,7 +243,10 @@
 
                 <script>
                     window.onload = function() {
-                        //$(".audit-section :input").prop("disabled", true);
+                        @if($statusaudit->status == "SELESAI")
+                        $(".audit-section :input,select").prop("disabled", true);
+                        @endif
+
                         totaldata = (document.querySelectorAll('input[type="checkbox"]').length);
                         //Calculate Yes Data
                         datayes = (document.querySelectorAll('input[type="checkbox"]:checked').length);
@@ -262,6 +265,7 @@
                     }
                 </script>
 
+                @if($statusaudit->status != "SELESAI")
                 <script>
                     $(function() {
                         $('.toggle-event').change(function() {
@@ -354,6 +358,8 @@
                         });
                     });
                 </script>
+                @endif
+
                 <script>
                     argumenForm.addEventListener('input',() =>{
                        if(argumen.value.length > 0){
