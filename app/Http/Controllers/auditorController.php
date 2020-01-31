@@ -19,11 +19,16 @@ class auditorController extends Controller{
         $domain = myHelpers::cleanNumber($url);
         $subdomain_val = DB::table('subdomains')->where('kode_subdomain','like',$domain.'%')->count();
         if($subdomain_val>=1){
-            $subdomain = DB::table('subdomains')->where('kode_subdomain','like',$domain.'%')->get();
-
             $auditcount = DB::table('periode_audit')->where('status','PROSES')->count();
             if($auditcount>=1){
                 $latestaudit = DB::table('periode_audit')->where('status','PROSES')->first();
+                
+                $subdomain = DB::table('subdomains')
+                            ->join('hasil_audit','hasil_audit.id_subdomain','subdomains.id_subdomain')
+                            ->where('hasil_audit.id_periode_audit',$latestaudit->id_periode_audit)
+                            ->where('kode_subdomain','like',$domain.'%')
+                            ->select('subdomains.kode_subdomain','hasil_audit.status')
+                            ->get();
 
                 $statusaudit = DB::table('hasil_audit')
                                 ->join('subdomains','subdomains.id_subdomain','=','hasil_audit.id_subdomain')
@@ -62,7 +67,7 @@ class auditorController extends Controller{
                 return view('auditor.audit',['subdomain'=>$subdomain,'laporan'=>$laporan,'wp_view'=>$wp_view,'hasilaudit_view'=>$hasilaudit_view,'statusaudit'=>$statusaudit]);
             }
             else{
-                echo "Tidak ada audit dalam proses";
+                return redirect('/auditor')->with('status','Tidak ada audit yang sedang berlangsung/berjalan');
             }
         }
         else{

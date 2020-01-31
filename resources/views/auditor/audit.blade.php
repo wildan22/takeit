@@ -93,7 +93,15 @@
                             <div class="panel">
                                 <div class="panel-heading">
                                     @foreach($subdomain as $s)
-                                    <a href="/auditor/{{strtolower($s->kode_subdomain)}}" class="btn {{ Request::path() === 'auditor/'.strtolower($s->kode_subdomain) ? 'btn-primary' : 'btn-outline-primary' }}"><i class="lnr lnr-pencil"></i>{{$s->kode_subdomain}}</a> @endforeach
+                                    <a href="/auditor/{{strtolower($s->kode_subdomain)}}" class="btn {{ Request::path() === 'auditor/'.strtolower($s->kode_subdomain) ? 'btn-primary' : 'btn-outline-primary' }}">
+                                        <i class="lnr lnr-pencil"></i>
+                                            {{$s->kode_subdomain}}  
+                                            @if($s->status != "SELESAI")
+                                                <span class="label label-warning">!</span>
+                                            @endif
+                                    </a> 
+                                    
+                                    @endforeach
                                 </div>
                                 <div class="panel-body audit-section">
                                     <table class="table">
