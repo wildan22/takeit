@@ -90,7 +90,7 @@
                                 <div class="panel-body">
                                     {{-- form new Product --}}
 
-                                    <form method="post" action="/superadmin/user_management/new_user/proses" enctype="multipart/form-data">
+                                    <form id="passwordForm" method="post" action="/superadmin/user_management/new_user/proses" enctype="multipart/form-data">
                                         @csrf
 
                                         <div class="input-group mb-3">
@@ -139,8 +139,8 @@
                                             </div>
                                             @endif
                                         </div>
-                                        <div class="form-group mt-3">
-                                            <input type="submit" class="btn btn-success" value="Simpan">
+                                        <div  class="form-group mt-3">
+                                            <input id="simpanBtn" type="submit" disabled="disabled" class="btn btn-success" value="Simpan">
                                         </div>
                                     </form>
 
@@ -173,7 +173,16 @@
     				$('#message').html('Not Matching').css('color', 'red');
 		});
 	</script>
-
+<script>
+    passwordForm.addEventListener('input',() =>{
+       if(password.value.length > 7 &&
+       confirm_password.value.length > 7){
+        simpanBtn.removeAttribute('disabled');
+           } else {
+            simpanBtn.setAttribute('disabled', 'disabled');
+           }
+   });
+</script>
 </body>
 
 </html>

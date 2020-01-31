@@ -86,7 +86,7 @@
 							<div class="panel"  >
 								<div class="panel-body">
 									
-									<form method="post" action="/superadmin/ubah_password/proses" enctype="multipart/form-data">
+									<form id="ubahPassForm" method="post" action="/superadmin/ubah_password/proses" enctype="multipart/form-data">
 										@csrf
 									<div class="form-group">
                                         <label for="password">Password Sekarang</label>
@@ -116,7 +116,7 @@
 									</div>
 									
 									<div class="form-group mt-3">
-                                        <input type="submit" class="btn btn-success" value="Simpan">
+                                        <input id="simpanBtn" disabled="disabled" type="submit" class="btn btn-success" value="Simpan">
 									</div>
 									</form>
 									
@@ -146,6 +146,16 @@
   				} else 
     				$('#message').html('Not Matching').css('color', 'red');
 		});
+	</script>
+	<script>
+		ubahPassForm.addEventListener('input',() =>{
+		   if(password.value.length > 7 &&
+		   confirm_password.value.length > 7){
+			simpanBtn.removeAttribute('disabled');
+			   } else {
+				simpanBtn.setAttribute('disabled', 'disabled');
+			   }
+	   });
 	</script>
 </body>
 

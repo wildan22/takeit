@@ -356,7 +356,7 @@
                 </script>
                 <script>
                     argumenForm.addEventListener('input',() =>{
-                       if(argumen.value.length > 0){
+                       if(argumen.value.length > 7){
                         simpanBtn.removeAttribute('disabled');
                            } else {
                             simpanBtn.setAttribute('disabled', 'disabled');
