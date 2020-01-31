@@ -135,8 +135,10 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('auditor/ubah_password','auditorController@showUbahPassowrd')->name('auditor.ubah_passowrd');
 
     Route::get('/auditor/ubahstatusasync/{id}/{status}','auditorController@ubahStatusAsync');
+    Route::get('/auditor/ubahkeputusanlaporan/{id}/{keputusan}','auditorController@ubahKeputusanAsync');
+    Route::post('/auditor/ubahkeputusanlaporan','auditorController@ubahKeputusanPost');
+    Route::post('/auditor/simpanargumen','auditorController@simpanArgumen');
     
-
 });
 
 

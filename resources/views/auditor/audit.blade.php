@@ -4,6 +4,7 @@
 <head>
     <title>Tata Kelola TI - PTPN7</title>
     <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
@@ -24,6 +25,7 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ ('/image/logo_ptpn7.png') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -90,12 +92,10 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                @foreach($subdomain as $s)
-                                    <a href="/auditor/{{strtolower($s->kode_subdomain)}}" class="btn {{ Request::path() === 'auditor/'.strtolower($s->kode_subdomain) ? 'btn-primary' : 'btn-outline-primary' }}"><i class="lnr lnr-pencil"></i>{{$s->kode_subdomain}}</a>
-                                @endforeach
-
+                                    @foreach($subdomain as $s)
+                                    <a href="/auditor/{{strtolower($s->kode_subdomain)}}" class="btn {{ Request::path() === 'auditor/'.strtolower($s->kode_subdomain) ? 'btn-primary' : 'btn-outline-primary' }}"><i class="lnr lnr-pencil"></i>{{$s->kode_subdomain}}</a> @endforeach
                                 </div>
-                                <div class="panel-body">
+                                <div class="panel-body audit-section">
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -108,16 +108,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-										@foreach($wp_view as $w)
+                                            @foreach($wp_view as $w)
                                             <tr>
                                                 <td>{{$w->kode_wp}}</td>
                                                 <td>{{$w->wp_name}}</td>
                                                 <td>{{$w->wp_deskripsi}}</td>
                                                 <td>
-                                                <div id="txtArea{{$w->id}}">{{$w->keputusan_laporan}}</div>
-                                                <div id="inputArea{{$w->id}}" class="form-group hidden">
-                                                    <textarea placeholder="{{$w->keputusan_laporan}}" class="form-control" type="textarea" rows="3"></textarea>
-                                                </div>
+                                                    <div id="txtArea{{$w->id}}">{{$w->keputusan_laporan}}</div>
+                                                    <div id="inputArea{{$w->id}}" class="form-group hidden">
+                                                        <textarea id="editArea{{$w->id}}" placeholder="{{$w->keputusan_laporan}}" class="form-control" type="textarea" rows="3"></textarea>
+                                                    </div>
                                                 </td>
                                                 <td>
                                                     <button id="editButton{{$w->id}}" class="btn btn-warning editButton" value="{{$w->id}}"><span class="lnr lnr-pencil"></span></button>
@@ -129,7 +129,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-										@endforeach
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <b>
@@ -138,17 +138,43 @@
                                         <div class="percentage">Persentase :</div>
                                         <br> <br>
                                     </b>
-                                    <div class="form-group">
-                                        <label for="argumen">Argumen</label>
-                                        <textarea id="argumen" name="argumen" class="form-control" rows="10" placeholder="Contoh: Jadwal operasional layanan belum terdokumentasi dan belum disosialisasikan, namun jadwal pemeliharaan komponen layanan khususnya di area infrastruktur sudah dibuat. Diperlukan konsistensi pelaksanaan, monitoring, dan review hasil pelaksanaan operasional layanan maupun pemeliharaan sesuai rencana, baik di area infrastruktur dan aplikasi. Diperlukan juga kebijakan, prosedur, dan standar baku mengenai quality assurance maupun quality control atas output dari proses-proses operasional layanan TI. Dalam hal awareness mengenai keselamatan, kesehatan, dan lingkungan (SHE), TI menginduk pada kebijakan SMK 3, namun diperlukan penyusunan SMK3 yang spesifik di area operasional TI baik di lingkungan internal organisasi TI maupun lingkungan unit bisnis sebagai pengguna layanan TI. Selain itu, diperlukan juga rencana audit terhadap operasional TI hingga aspek SHE-nya" required></textarea> @if ($errors->has('argumen'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('argumen')}}
+                                    <form method="POST" action="/auditor/simpanargumen">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$hasilaudit_view->id}}">
+										<input type="hidden" name="subdomain" value="{{$hasilaudit_view->id_subdomain}}">
+                                        <div class="form-group">
+                                            <label for="argumen">Argumen</label>
+                                            <textarea id="argumen" name="argumen" class="form-control" rows="10" placeholder="{{$hasilaudit_view->argumen_auditor != '' ? $hasilaudit_view->argumen_auditor :'Contoh: Jadwal operasional layanan belum terdokumentasi dan belum disosialisasikan, namun jadwal pemeliharaan komponen layanan khususnya di area infrastruktur sudah dibuat. Diperlukan konsistensi pelaksanaan, monitoring, dan review hasil pelaksanaan operasional layanan maupun pemeliharaan sesuai rencana, baik di area infrastruktur dan aplikasi. Diperlukan juga kebijakan, prosedur, dan standar baku mengenai quality assurance maupun quality control atas output dari proses-proses operasional layanan TI. Dalam hal awareness mengenai keselamatan, kesehatan, dan lingkungan (SHE), TI menginduk pada kebijakan SMK 3, namun diperlukan penyusunan SMK3 yang spesifik di area operasional TI baik di lingkungan internal organisasi TI maupun lingkungan unit bisnis sebagai pengguna layanan TI. Selain itu, diperlukan juga rencana audit terhadap operasional TI hingga aspek SHE-nya'}}" required></textarea> @if ($errors->has('argumen'))
+                                            <div class="text-danger">
+                                                {{ $errors->first('argumen')}}
+                                            </div>
+                                            @endif
                                         </div>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-success" value="Simpan">    
-                                    </div>
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#deleteModal-id">
+                                            <i class="lnr lnr-lock"> Simpan</i>
+                                        </button>
+
+                                        <!-- Simpan Argumen Modal -->
+                                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        Apakah Anda Yakin Menyimpan Data ini?
+                                                        <br>
+                                                        <i class="lnr lnr-warning"></i> Data Ini Tidak Akan Bisa diUbah Kembali
+                                                    </div>
+                                                    <div class="modal-footer">
+
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                        <button type="submit" class="btn btn-primary">Yes</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+										</form>	
+                                        <!-- Simpan Argumen Modal -->
+
+                                    
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
@@ -156,10 +182,10 @@
 
                         {{-- Sektor Laporan per Domain/Subdomain --}}
                         <div class="panel">
-                            <div class="panel-body">
+                            <div class="panel-body laporan-section">
                                 <div class="accordion" id="accordionExample">
-									
-									@foreach($laporan as $l)
+
+                                    @foreach($laporan as $l)
                                     <div class="card">
                                         <div class="card-header" id="headingTwo">
                                             <h2 class="mb-0">
@@ -178,9 +204,9 @@
                                             </div>
                                         </div>
                                     </div>
-									@endforeach
+                                    @endforeach
                                 </div>
-							</div>
+                            </div>
                         </div>
                         {{-- Sektor Laporan per Domain/Subdomain --}}
                     </div>
@@ -201,6 +227,8 @@
                 <script src="/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
                 <script src="/assets/vendor/chartist/js/chartist.min.js"></script>
                 <script src="/assets/scripts/klorofil-common.js"></script>
+                <script src="/assets/scripts/notify.js"></script>
+
                 <!-- MDBootstrap Datatables  -->
                 <script type="text/javascript" src="/assets/mdbootstrap/datatables.min.js"></script>
                 <script type="text/javascript">
@@ -212,64 +240,65 @@
                         $('.dataTables_length').addClass('bs-select');
                     });
                 </script>
-				
-				<script>
-					window.onload = function (){
-						totaldata = (document.querySelectorAll('input[type="checkbox"]').length);
-						//Calculate Yes Data
-						datayes = (document.querySelectorAll('input[type="checkbox"]:checked').length);
-						$(".yescount").remove();
-						$(".datayes").append("<a class='yescount'>"+datayes+"</a>");
 
-						//Calculate No Data
-						datano = (document.querySelectorAll('input[type="checkbox"]:not(:checked)').length);
-						$(".nocount").remove();
-						$(".datano").append("<a class='nocount'>"+datano+"</a>");
+                <script>
+                    window.onload = function() {
+                        //$(".audit-section :input").prop("disabled", true);
+                        totaldata = (document.querySelectorAll('input[type="checkbox"]').length);
+                        //Calculate Yes Data
+                        datayes = (document.querySelectorAll('input[type="checkbox"]:checked').length);
+                        $(".yescount").remove();
+                        $(".datayes").append("<a class='yescount'>" + datayes + "</a>");
 
-						//Calculate Percentage
-						percentage = (datayes/totaldata)*100;
-						$(".percentagecount").remove();
-						$(".percentage").append("<a class='nocount'>"+percentage.toFixed(2)+" %</a>");
-					}
-				</script>
+                        //Calculate No Data
+                        datano = (document.querySelectorAll('input[type="checkbox"]:not(:checked)').length);
+                        $(".nocount").remove();
+                        $(".datano").append("<a class='nocount'>" + datano + "</a>");
+
+                        //Calculate Percentage
+                        percentage = (datayes / totaldata) * 100;
+                        $(".percentagecount").remove();
+                        $(".percentage").append("<a class='nocount'>" + percentage.toFixed(2) + " %</a>");
+                    }
+                </script>
 
                 <script>
                     $(function() {
                         $('.toggle-event').change(function() {
                             id = $(this).val();
-							totaldata = (document.querySelectorAll('input[type="checkbox"]').length);
+                            totaldata = (document.querySelectorAll('input[type="checkbox"]').length);
 
-							//Calculate Yes Data
-							datayes = (document.querySelectorAll('input[type="checkbox"]:checked').length);
-							$(".yescount").remove();
-							$(".datayes").append("<a class='yescount'>"+datayes+"</a>");
+                            //Calculate Yes Data
+                            datayes = (document.querySelectorAll('input[type="checkbox"]:checked').length);
+                            $(".yescount").remove();
+                            $(".datayes").append("<a class='yescount'>" + datayes + "</a>");
 
-							//Calculate No Data
-							datano = (document.querySelectorAll('input[type="checkbox"]:not(:checked)').length);
-							$(".nocount").remove();
-							$(".datano").append("<a class='nocount'>"+datano+"</a>");
+                            //Calculate No Data
+                            datano = (document.querySelectorAll('input[type="checkbox"]:not(:checked)').length);
+                            $(".nocount").remove();
+                            $(".datano").append("<a class='nocount'>" + datano + "</a>");
 
-							//Calculate Percentage
-							percentage = (datayes/totaldata)*100;
-							$(".percentagecount").remove();
-							$(".percentage").append("<a class='nocount'>"+percentage.toFixed(2)+" %</a>");
-							
+                            //Calculate Percentage
+                            percentage = (datayes / totaldata) * 100;
+                            $(".percentagecount").remove();
+                            $(".percentage").append("<a class='nocount'>" + percentage.toFixed(2) + " %</a>");
+
                             console.log(id);
                             if ($(this).prop('checked')) {
                                 //console.log("TRUE");
                                 $.ajax({
-									url: "/auditor/ubahstatusasync/"+id+"/yes",
+                                    url: "/auditor/ubahstatusasync/" + id + "/yes",
                                     cache: false,
                                     success: function(html) {
                                         console.log("SUCCESS");
-                                        //$("#results").append(html);
+
                                     }
                                 });
 
                             } else {
                                 console.log("FALSE");
                                 $.ajax({
-                                    url: "/auditor/ubahstatusasync/"+id+"/no",
+                                    url: "/auditor/ubahstatusasync/" + id + "/no",
                                     cache: false,
                                     success: function(html) {
                                         //console.log("SUCCESS");
@@ -282,22 +311,46 @@
                 </script>
                 <script>
                     $(document).ready(function() {
-                        $(".editButton").click(function(){
+                        $(".editButton").click(function() {
                             console.log('Save Showed');
                             id = $(this).val();
-                            console.log('#inputArea'+id);
+                            console.log('#inputArea' + id);
                             $(this).addClass('hidden');
-                            $("#saveButton"+id).removeClass('hidden');
-                            $('#txtArea'+id).addClass('hidden');
-                            $('#inputArea'+id).removeClass('hidden');
+                            $("#saveButton" + id).removeClass('hidden');
+                            $('#txtArea' + id).addClass('hidden');
+                            $('#inputArea' + id).removeClass('hidden');
+
                         });
-                        $(".saveButton").click(function(){
-                        console.log('Edit Showed');
+                        $(".saveButton").click(function() {
+                            console.log('Edit Showed');
                             id = $(this).val();
                             $(this).addClass('hidden');
-                            $("#editButton"+id).removeClass('hidden');
-                            $('#txtArea'+id).removeClass('hidden');
-                            $('#inputArea'+id).addClass('hidden');
+                            $("#editButton" + id).removeClass('hidden');
+                            $('#txtArea' + id).removeClass('hidden');
+                            $('#inputArea' + id).addClass('hidden');
+                            textval = $("#editArea" + id).val();
+                            console.log(textval);
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                }
+                            });
+                            $.ajax({
+                                // url: "/auditor/ubahkeputusanlaporan/"+id+"/"+textval,
+                                // cache: false,
+                                type: 'POST',
+                                url: "/auditor/ubahkeputusanlaporan",
+                                data: {
+                                    id: id,
+                                    keputusan: textval + ""
+                                },
+                                success: function(data) {
+                                    console.log("UPDATE SUCCESS");
+                                    $.notify("Data Berhasil Diupdate", "success");
+                                }
+                            });
+                            $("#editArea" + id).attr("placeholder", textval).val('');
+                            $('#txtArea' + id).text(textval);
                         });
                     });
                 </script>
