@@ -27,7 +27,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="/admin/index"><img src={{ ('/image/logo_ptpn7.png') }} width="50px" class="img-responsive logo"></a>
+				<a href="/auditor"><img src={{ ('/image/logo_ptpn7.png') }} width="50px" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -86,6 +86,17 @@
 							<!-- BASIC TABLE -->
 							<div class="panel"  >
 								<div class="panel-heading">
+									
+									{{-- alert -> tindakan yang dilakukan --}} 
+									@if (session('status'))
+									<div class="panel-body">
+										<div class="alert alert-danger">
+											{{session('status')}}
+										</div>
+										</div>
+										@endif
+										{{-- alert -> tindakan yang dilakukan --}}
+
 									<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode 2016</h3>
 									</div>
 								<div class="panel-body">
