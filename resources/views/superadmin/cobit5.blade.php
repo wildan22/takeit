@@ -12,11 +12,13 @@
 	 <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
 	 <link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
 	 <link rel="stylesheet" href="/assets/vendor/chartist/css/chartist-custom.css">
+
 	 <!-- MDBootstrap Datatables  -->
 	 <link href="/assets/mdbootstrap/datatables.min.css" rel="stylesheet">
 
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/manual.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="/assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
@@ -162,9 +164,8 @@
                             </div>
                         </div>
 						@endforeach
-                        <!-- Delete Modal -->
-
-		<!-- END MAIN -->
+						<!-- Delete Modal -->
+						<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative">
