@@ -120,26 +120,10 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('/auditor','auditorController@showDashboard')->name('auditor.home');
     //Menampilkan Halaman Audit
     Route::get('/auditor/audit','auditorController@showAudit')->name('auditor.audit');
-    
-    //Menampilkan Halaman Audit-EDM01
-    Route::get('/auditor/edm01','auditorController@showAuditEDM01')->name('auditor.edm01');
-    //Menampilkan Halaman Audit-EDM02
-    Route::get('/auditor/edm02','auditorController@showAuditEDM02')->name('auditor.edm02');
-    //Menampilkan Halaman Audit-EDM03
-    Route::get('/auditor/edm03','auditorController@showAuditEDM03')->name('auditor.edm03');
-    //Menampilkan Halaman Audit-EDM04
-    Route::get('/auditor/edm04','auditorController@showAuditEDM04')->name('auditor.edm04');
-    //Menampilkan Halaman Audit-EDM05
-    Route::get('/auditor/edm05','auditorController@showAuditEDM05')->name('auditor.edm05');
 
-    //Menampilkan Halaman Audit-APO01
-    Route::get('/auditor/apo01','auditorController@showAuditAPO01')->name('auditor.apo01');
-    //Menampilkan Halaman Audit-BAI01
-    Route::get('/auditor/bai01','auditorController@showAuditBAI01')->name('auditor.bai01');
-    //Menampilkan Halaman Audit-DSS01
-    Route::get('/auditor/dss01','auditorController@showAuditDSS01')->name('auditor.dss01');
-    //Menampilkan Halaman Audit-MEA01
-    Route::get('/auditor/mea01','auditorController@showAuditmea01')->name('auditor.mea01');
+    //Menampilkan Halaman Audit
+    Route::get('/auditor/{subdomain}','auditorController@showAudit')->name('auditor.audit');
+
     //Menampilkan Halaman Laporan
     Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.laporan');
     //Menampilkan Halaman tambah data keterangan
@@ -150,6 +134,11 @@ Route::middleware('is_auditor')->group(function (){
     //Menampilkan halaman ubah password
     Route::get('auditor/ubah_password','auditorController@showUbahPassowrd')->name('auditor.ubah_passowrd');
 
+    Route::get('/auditor/ubahstatusasync/{id}/{status}','auditorController@ubahStatusAsync');
+    Route::get('/auditor/ubahkeputusanlaporan/{id}/{keputusan}','auditorController@ubahKeputusanAsync');
+    Route::post('/auditor/ubahkeputusanlaporan','auditorController@ubahKeputusanPost');
+    Route::post('/auditor/simpanargumen','auditorController@simpanArgumen');
+    
 });
 
 

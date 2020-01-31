@@ -50,6 +50,23 @@ class adminController extends Controller{
                     'STATUS'=>'PROSES'
                 ]);
                 if($tambahperiode == 1){
+                    $lastaudit = DB::table('periode_audit')->where('status','PROSES')->first();
+                    $workprocess = DB::table('wp_level_1')->get();
+                    $subdomain = DB::table('subdomains')->get();
+                    foreach($workprocess as $wp){
+                        $init_response = DB::table('audit_response')->insert([
+                            'id_periode_audit'=>$lastaudit->id_periode_audit,
+                            'id_wp'=>$wp->id,
+                            'answer'=>'NO'
+                        ]);
+                    }
+                    foreach($subdomain as $s){
+                        $init_hasil = DB::table('hasil_audit')->insert([
+                            'id_periode_audit'=>$lastaudit->id_periode_audit,
+                            'id_subdomain'=>$s->id_subdomain
+                        ]);
+                    }
+                    
                     return redirect('/superadmin/periode_audit/')->with('status','Periode Baru Berhasil Ditambahkan');
                 }
                 else{
