@@ -138,19 +138,19 @@
                                         <div class="percentage">Persentase :</div>
                                         <br> <br>
                                     </b>
-                                    <form method="POST" action="/auditor/simpanargumen">
+                                    <form id="argumenForm" method="POST" action="/auditor/simpanargumen">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$hasilaudit_view->id}}">
 										<input type="hidden" name="subdomain" value="{{$hasilaudit_view->id_subdomain}}">
                                         <div class="form-group">
                                             <label for="argumen">Argumen</label>
-                                            <textarea id="argumen" name="argumen" class="form-control" rows="10" placeholder="{{$hasilaudit_view->argumen_auditor != '' ? $hasilaudit_view->argumen_auditor :'Contoh: Jadwal operasional layanan belum terdokumentasi dan belum disosialisasikan, namun jadwal pemeliharaan komponen layanan khususnya di area infrastruktur sudah dibuat. Diperlukan konsistensi pelaksanaan, monitoring, dan review hasil pelaksanaan operasional layanan maupun pemeliharaan sesuai rencana, baik di area infrastruktur dan aplikasi. Diperlukan juga kebijakan, prosedur, dan standar baku mengenai quality assurance maupun quality control atas output dari proses-proses operasional layanan TI. Dalam hal awareness mengenai keselamatan, kesehatan, dan lingkungan (SHE), TI menginduk pada kebijakan SMK 3, namun diperlukan penyusunan SMK3 yang spesifik di area operasional TI baik di lingkungan internal organisasi TI maupun lingkungan unit bisnis sebagai pengguna layanan TI. Selain itu, diperlukan juga rencana audit terhadap operasional TI hingga aspek SHE-nya'}}" required></textarea> @if ($errors->has('argumen'))
+                                            <textarea id="argumen" name="argumen" id="argumen" class="form-control" rows="10" placeholder="{{$hasilaudit_view->argumen_auditor != '' ? $hasilaudit_view->argumen_auditor :'Contoh: Jadwal operasional layanan belum terdokumentasi dan belum disosialisasikan, namun jadwal pemeliharaan komponen layanan khususnya di area infrastruktur sudah dibuat. Diperlukan konsistensi pelaksanaan, monitoring, dan review hasil pelaksanaan operasional layanan maupun pemeliharaan sesuai rencana, baik di area infrastruktur dan aplikasi. Diperlukan juga kebijakan, prosedur, dan standar baku mengenai quality assurance maupun quality control atas output dari proses-proses operasional layanan TI. Dalam hal awareness mengenai keselamatan, kesehatan, dan lingkungan (SHE), TI menginduk pada kebijakan SMK 3, namun diperlukan penyusunan SMK3 yang spesifik di area operasional TI baik di lingkungan internal organisasi TI maupun lingkungan unit bisnis sebagai pengguna layanan TI. Selain itu, diperlukan juga rencana audit terhadap operasional TI hingga aspek SHE-nya'}}" required></textarea> @if ($errors->has('argumen'))
                                             <div class="text-danger">
                                                 {{ $errors->first('argumen')}}
                                             </div>
                                             @endif
                                         </div>
-                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#deleteModal-id">
+                                        <button id="simpanBtn" disabled="disabled" type="button" class="btn btn-success" data-toggle="modal" data-target="#deleteModal-id">
                                             <i class="lnr lnr-lock"> Simpan</i>
                                         </button>
 
@@ -354,6 +354,15 @@
                         });
                     });
                 </script>
+                <script>
+                    argumenForm.addEventListener('input',() =>{
+                       if(argumen.value.length > 0){
+                        simpanBtn.removeAttribute('disabled');
+                           } else {
+                            simpanBtn.setAttribute('disabled', 'disabled');
+                           }
+                   });
+           </script>
 </body>
 
 </html>
