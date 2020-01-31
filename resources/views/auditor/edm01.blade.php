@@ -219,8 +219,8 @@
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <div class="graph-outline">
-                                                    <object width="100%" height="700px" data="/file/uiux.pdf" type="application/pdf">
-                                                        <embed src="/file/uiux.pdf" type="application/pdf" />
+                                                    <object width="100%" height="700px" data="/file/Proses Kampret menjadi Cebong.pdf" type="application/pdf">
+                                                        <embed src="/file/Proses Kampret menjadi Cebong.pdf" type="application/pdf" />
                                                     </object>
                                                 </div>
                                             </div>

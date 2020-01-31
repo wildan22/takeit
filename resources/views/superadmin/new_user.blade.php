@@ -125,15 +125,15 @@
 
                                         <div class="form-group">
                                             <label for="password">Password (Min. 8 Digit)</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Password" required> @if ($errors->has('password'))
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required> @if ($errors->has('password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('password')}}
                                             </div>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label for="konfirmasi_password">Konfirmasi Password</label>
-                                            <input type="password" name="konfirmasi_password" class="form-control" placeholder="Tulis Ulang Password" required> @if ($errors->has('konfirmasi_password'))
+                                            <label for="konfirmasi_password">Konfirmasi Password</label><span id='message'></span>
+                                            <input type="password" name="konfirmasi_password" id="confirm_password" class="form-control" placeholder="Tulis Ulang Password" required> @if ($errors->has('konfirmasi_password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('konfirmasi_password')}}
                                             </div>
@@ -161,10 +161,19 @@
                 </div>
                 <!-- END WRAPPER -->
                 <!-- Javascript -->
-                <script src="/assets/vendor/jquery/jquery.min.js"></script>
-                <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-                <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-                <script src="/assets/scripts/klorofil-common.js"></script>
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/assets/scripts/klorofil-common.js"></script>
+	<script type="text/javascript">
+		$('#password, #confirm_password').on('keyup', function () {
+  			if ($('#password').val() == $('#confirm_password').val()) {
+    				$('#message').html('Matching').css('color', 'green');
+  				} else 
+    				$('#message').html('Not Matching').css('color', 'red');
+		});
+	</script>
+
 </body>
 
 </html>

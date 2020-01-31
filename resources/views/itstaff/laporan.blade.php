@@ -127,7 +127,7 @@
                         </div>
                         <!-- BASIC TABLE -->
 
-                         <!-- Delete Modal -->
+                        <!-- Delete Modal -->
 						{{-- @foreach($cobits as $cobit) --}}
                         <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
