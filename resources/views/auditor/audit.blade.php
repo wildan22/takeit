@@ -192,7 +192,6 @@
                         <div class="panel">
                             <div class="panel-body laporan-section">
                                 <div class="accordion" id="accordionExample">
-
                                     @foreach($laporan as $l)
                                     <div class="card">
                                         <div class="card-header" id="headingTwo">
