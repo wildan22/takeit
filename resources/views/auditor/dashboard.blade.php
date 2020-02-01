@@ -144,17 +144,11 @@
 											@endforeach
                                         </tbody>
                                     </table>
-
                                 </div>
-							
                             </div>
-                            
                             <!-- END BASIC TABLE -->
                         </div>
-							@endforeach
-
-                        <!-- BASIC TABLE -->
-
+						@endforeach
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
                         <footer>
