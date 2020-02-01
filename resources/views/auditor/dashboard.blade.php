@@ -18,7 +18,23 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ ('/image/logo_ptpn7.png') }}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ ('/image/logo_ptpn7.png') }}">
+	
+	{{-- manual CSS --}}
+	<style type="text/css">
+		.letter-5{ letter-spacing: -5px; }
+		.letter-1{ letter-spacing: -1px; }
+		.letter1 { letter-spacing: 1px; }
+		.letter5 { letter-spacing: 5px; }
+		
+		.word-5{ word-spacing: -5px; }
+		.word-1{ word-spacing: -1px; }  
+		.word1 { word-spacing: 1px; }  
+		.word5 { word-spacing: 5px; }    
+		
+		.box {padding-left: 10px; }
+	 </style>
+	 <style>p.indent{ padding-left: 1.8em }</style>
 </head>
 
 <body>
@@ -101,16 +117,18 @@
 									
                                 </div>
                                 <div class="panel-body">
-								<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode {{myHelpers::dateConvert($p->tanggal_audit)}}</h3>
+                                    <h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode {{myHelpers::dateConvert($p->tanggal_audit)}}</h3>
                                 <div class="panel-body">
                                     <table class="table">
                                         <thead>
-                                            <tr>
-                                                <th>Cobit 5</th>
-                                                <th>Proses</th>
-                                                <th>Kematangan Level %</th>
-                                                <th>Keterangan</th>
-                                            </tr>
+                                            <tr style="color:black">
+												<b>
+                                                <th width="9%">Cobit 5</th>
+                                                <th >Proses</th>
+												<th width="18%" colspan="2">Kematangan Level %</th>
+												<th width="8%">Keterangan</th>
+												</b>
+											</tr>
                                         </thead>
                                         <tbody>
 											@foreach($hasil_audit as $h)
@@ -122,11 +140,16 @@
 													<?php
 													$percentage = ($h->yescount/$h->totaldata)*100;
 													echo round($percentage,1)."%";
+													?>
+												</td>
+												<td >
+													<?php
 													if($percentage >= 50){
-														echo "<i class='fas fa-star' style='color:#CCCC00'></i>";
+														echo "<div class='box' style='display: inline' >
+																<i class='fas fa-star' style='color:#CCCC00'></i>
+															</span>";
 													}
 													?>
-													
 												</td>
                                                 <td>
 													@if($percentage < 50)
@@ -164,5 +187,4 @@
                     <script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
                     <script src="/assets/scripts/klorofil-common.js"></script>
 </body>
-
 </html>
