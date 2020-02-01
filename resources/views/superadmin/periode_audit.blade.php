@@ -115,7 +115,7 @@
                                             @foreach($periodeaudit as $period)
                                             <tr>
                                                 <td>{{$no++}}</td>
-                                                <td>{{$period->tanggal_audit}}</td>
+                                                <td>{{myHelpers::dateConvert($period->tanggal_audit)}}</td>
                                                 @if($period->status == 'PROSES')
                                                 <td><span class="label label-default">Proses</span></td>
                                                 <td>

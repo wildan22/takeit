@@ -97,10 +97,10 @@
                                     @endif {{-- alert -> tindakan yang dilakukan --}} 
 									
 									
-                                </div>
+								</div>
+								<div class="panel-body">
 								@foreach($periode_audit as $p)
 								<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode {{myHelpers::dateConvert($p->tanggal_audit)}}</h3>
-                                <div class="panel-body">
                                     <table class="table">
                                         <thead>
                                             <tr>
