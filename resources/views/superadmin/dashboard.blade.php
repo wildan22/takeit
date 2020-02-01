@@ -200,12 +200,7 @@
 
 						<!-- BASIC TABLE -->
 						</div>
-
-
-
-						<!-- BASIC TABLE -->
-						
-		<!-- END MAIN -->
+						<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 				<div class="container-fluid position-relative">

@@ -83,6 +83,8 @@
                     <h3 class="page-title">Selamat Datang Auditor</h3>
                     <div class="row">
                         <div class="co-12">
+                        
+								@foreach($periode_audit as $p)
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
@@ -98,7 +100,7 @@
 									
 									
                                 </div>
-								@foreach($periode_audit as $p)
+                                <div class="panel-body">
 								<h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode {{myHelpers::dateConvert($p->tanggal_audit)}}</h3>
                                 <div class="panel-body">
                                     <table class="table">
@@ -142,15 +144,14 @@
 											@endforeach
                                         </tbody>
                                     </table>
-                                    Jumlah Data :
-                                    <br/>
 
                                 </div>
 							
                             </div>
-							@endforeach
+                            
                             <!-- END BASIC TABLE -->
                         </div>
+							@endforeach
 
                         <!-- BASIC TABLE -->
 
