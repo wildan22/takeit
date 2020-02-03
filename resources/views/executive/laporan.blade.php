@@ -76,9 +76,10 @@
 						<div class="co-12">
 							<!-- BASIC TABLE -->
                             <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" class="">Data Laporan</h3>
-                                </div>
+								<center>
+									<h3 style="font-family: lora; color: #1B2690;">Laporan Proses TI</h3>
+									<hr width="23%">
+								</center>
                                 <div class="panel-body">
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>

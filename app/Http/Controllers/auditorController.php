@@ -90,7 +90,7 @@ class auditorController extends Controller{
         return view('auditor.view_laporan');
     }
 
-    public function showUbahPassowrd(){   
+    public function showUbahPassword(){   
         return view('auditor.ubah_password');
     }
 
