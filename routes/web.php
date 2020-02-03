@@ -140,7 +140,6 @@ Route::middleware('is_auditor')->group(function (){
     Route::post('/auditor/ubahkeputusanlaporan','auditorController@ubahKeputusanPost');
     Route::post('/auditor/simpanargumen','auditorController@simpanArgumen');
 
-    
     //Menampilkan Halaman Audit
     Route::get('/auditor/{subdomain}','auditorController@showAudit')->name('auditor.audit');
 });
