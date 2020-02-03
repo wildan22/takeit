@@ -22,17 +22,22 @@
     <div id="wrapper mt-0">
         <div class="vertical-align-wrap">
             <div class="vertical-align-middle">
+                <div class="container">
+                <center>
+                    {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
+                    <div class="panel-body">
+                        <div class="alert alert-success">
+                            {{session('status')}}
+                        </div>
+                        </div>
+                    @endif
+                        {{-- alert -> tindakan yang dilakukan --}}
+                    </center>
+                <br>
+            </div>
                 <div class="auth-box">
                     <div class="left">
                         <div class="content">
-                            {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-                            <div class="panel-body">
-                                <div class="alert alert-success">
-                                    {{session('status')}}
-                                </div>
-                                </div>
-                            @endif
-                                {{-- alert -> tindakan yang dilakukan --}}
                             <div class="header">
                                 <div class="logo text-center"><img src="{{ ('image/logo_ptpn7.png') }}" alt="ptpn7 Logo" width="192px"></div>
                                 <p class="lead">Login to your account</p>
