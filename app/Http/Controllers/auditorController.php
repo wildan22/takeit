@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use myHelpers;
+use Auth;
+use Hash;
 
 class auditorController extends Controller{
 	public function __construct()
@@ -107,7 +109,8 @@ class auditorController extends Controller{
                                     'password'=>Hash::make($request->new_password)
                                 ]);
                 if($updatepass == 1){
-                    return redirect('/logout')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
+                    Auth::logout();
+                    return redirect('/login')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
                 }
                 else{
                     return back()->with('error','Ubah Password gagal');

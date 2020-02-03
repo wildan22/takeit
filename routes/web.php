@@ -134,7 +134,8 @@ Route::middleware('is_auditor')->group(function (){
 
     //Menampilkan halaman ubah password
     Route::get('/auditor/ubah_password','auditorController@showUbahPassword')->name('auditor.ubah_password');
-
+    Route::post('/auditor/ubah_password/proses','auditorController@prosesUbahPassword');
+    
     Route::get('/auditor/ubahstatusasync/{id}/{status}','auditorController@ubahStatusAsync');
     Route::get('/auditor/ubahkeputusanlaporan/{id}/{keputusan}','auditorController@ubahKeputusanAsync');
     Route::post('/auditor/ubahkeputusanlaporan','auditorController@ubahKeputusanPost');
