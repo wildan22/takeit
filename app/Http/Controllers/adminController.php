@@ -39,7 +39,8 @@ class adminController extends Controller{
                                     'password'=>Hash::make($request->new_password)
                                 ]);
                 if($updatepass == 1){
-                    return redirect('/logout')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
+                    Auth::logout();
+                    return redirect('/login')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
                 }
                 else{
                     return back()->with('error','Ubah Password gagal');

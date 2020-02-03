@@ -123,8 +123,7 @@ Route::middleware('is_auditor')->group(function (){
     //Menampilkan Halaman Audit
     Route::get('/auditor/audit','auditorController@showAudit')->name('auditor.audit');
 
-    //Menampilkan Halaman Audit
-    Route::get('/auditor/{subdomain}','auditorController@showAudit')->name('auditor.audit');
+    
 
     //Menampilkan Halaman Laporan
     Route::get('/auditor/laporan','auditorController@showLaporan')->name('auditor.laporan');
@@ -140,7 +139,10 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('/auditor/ubahkeputusanlaporan/{id}/{keputusan}','auditorController@ubahKeputusanAsync');
     Route::post('/auditor/ubahkeputusanlaporan','auditorController@ubahKeputusanPost');
     Route::post('/auditor/simpanargumen','auditorController@simpanArgumen');
+
     
+    //Menampilkan Halaman Audit
+    Route::get('/auditor/{subdomain}','auditorController@showAudit')->name('auditor.audit');
 });
 
 
