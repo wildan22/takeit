@@ -155,8 +155,7 @@
 	</script>
 	<script>
 		ubahPassForm.addEventListener('input',() =>{
-		   if(password.value.length > 7 &&
-		   confirm_password.value.length > 7){
+		   if(password.value == confirm_password.value && password.value.length >7 && confirm_password.value.length >7){
 			simpanBtn.removeAttribute('disabled');
 			   } else {
 				simpanBtn.setAttribute('disabled', 'disabled');
