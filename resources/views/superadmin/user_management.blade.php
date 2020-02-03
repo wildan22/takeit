@@ -108,11 +108,11 @@
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th width="5%">No</th>
-                                                <th width="35%">Nama</th>
-                                                <th width="30%">Alamat E-Mail</th>
+                                                <th width="2%">No</th>
+                                                <th width="17%">Nama</th>
+                                                <th>Alamat E-Mail</th>
                                                 <th>Keterangan</th>
-                                                <th width="25%">Aksi</th>
+                                                <th width="22%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -124,10 +124,12 @@
                                                     <td>{{$user->email}}</td>
                                                     <td>{{$user->keterangan_level}}</td>
                                                     <td width="14%">
+                                                        <div class="row">
                                                         <a href="/superadmin/user_management/edit/{{$user->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
                                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$user->id}}">
                                                             <i class="lnr lnr-trash"></i>
                                                         </button>
+                                                    </div>
                                                     </td>
                                                 </tr>
 
