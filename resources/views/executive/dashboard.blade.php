@@ -57,7 +57,7 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="/executive" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="/executive/laporan" class=""><i class="lnr lnr-text-align-left"></i> <span>Laporan</span></a></li>
+						<li><a href="/executive/laporan" class=""><i class="lnr lnr-file-empty"></i> <span>Laporan</span></a></li>
 						</ul>
 				</nav>
 			</div>

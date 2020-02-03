@@ -113,7 +113,7 @@
                                                 <td>{{myHelpers::dateConvert($l->tanggal_audit)}}</td>
                                                 <td width="18%">
                                                     <a href="/{{$l->lokasi_laporan}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-id">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$l->id}}">
                                                         <i class="lnr lnr-trash"></i>
                                                     </button>
                                                 </td>
@@ -128,12 +128,12 @@
                         <!-- BASIC TABLE -->
 
                         <!-- Delete Modal -->
-						{{-- @foreach($cobits as $cobit) --}}
-                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        @foreach($laporan as $l)
+                        <div class="modal fade" id="deleteModal-{{$l->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Apakah Anda Yakin, Menghapus Judul Laporan 1 ?
+                                        Apakah Anda Yakin, Menghapus {{$l->nama_laporan}} ?
                                     </div>
                                     <div class="modal-footer">
                                         <form method="POST" action="/itstaff/laporan/hapus">
@@ -146,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-						{{-- @endforeach --}}
+						@endforeach
                         <!-- Delete Modal -->
 
                         <!-- END MAIN -->
