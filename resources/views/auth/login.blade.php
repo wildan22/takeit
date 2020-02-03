@@ -41,7 +41,7 @@
                         <div class="content">
                             <div class="header">
                                 <div class="logo text-center"><img src="{{ ('image/logo_ptpn7.png') }}" alt="ptpn7 Logo" width="192px"></div>
-                                <p class="lead">Login to your account</p>
+                                <p class="lead">Login dengan akun anda</p>
                             </div>
 
                             <form method="POST" action="{{ route('login') }}">
