@@ -87,7 +87,6 @@
 							<div class="panel"  >
 								<div class="panel-body">
 									{{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
-									
 										<div class="alert alert-danger">
 											{{session('status')}}
 										</div>
