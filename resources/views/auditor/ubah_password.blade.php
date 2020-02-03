@@ -85,7 +85,14 @@
 						<div class="co-12">
 							<div class="panel"  >
 								<div class="panel-body">
-									
+									{{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
+									<div class="panel-body">
+										<div class="alert alert-danger">
+											{{session('status')}}
+										</div>
+										</div>
+									@endif
+									{{-- alert -> tindakan yang dilakukan --}}
 									<form id="ubahPassForm" method="post" action="/auditor/ubah_password/proses" enctype="multipart/form-data">
 										@csrf
 									<div class="form-group">
