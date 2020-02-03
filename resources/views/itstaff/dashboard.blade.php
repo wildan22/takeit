@@ -68,7 +68,7 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h3 class="page-title">Selamat Datang Auditor</h3>
+                    <h3 class="page-title">Selamat Datang IT Staff</h3>
                     <div class="row">
                         <div class="co-12">
                         
