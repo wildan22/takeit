@@ -127,16 +127,16 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required> @if ($errors->has('password'))
+                                            <label for="password">New Password</label>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="New Password" required> @if ($errors->has('password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('password')}}
                                             </div>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label for="konfirmasi_password">Konfirmasi Password</label><span id='message'></span>
-                                            <input type="password" name="konfirmasi_password" id="confirm_password" class="form-control" placeholder="Konfirmasi Password" required> @if ($errors->has('konfirmasi_password'))
+                                            <label for="konfirmasi_password">Konfirmasi New Password</label><span id='message'></span>
+                                            <input type="password" name="konfirmasi_password" id="confirm_password" class="form-control" placeholder="Konfirmasi New Password" required> @if ($errors->has('konfirmasi_password'))
                                             <div class="text-danger">
                                                 {{ $errors->first('konfirmasi_password')}}
                                             </div>

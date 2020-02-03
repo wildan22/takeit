@@ -1,8 +1,6 @@
-@extends('layouts.app')
 
-@section('content')
 <head>
-    <title>Login | Klorofil - Free Bootstrap Dashboard Template</title>
+    <title>Login | Aplikasi Tata Kelola TI</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -16,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ ('image/logo_ptpn7.png') }}">
 </head>
 
-<body>
+<body style="background-color:#ffff">
     <!-- WRAPPER -->
     <div id="wrapper mt-0">
         <div class="vertical-align-wrap">
@@ -35,7 +33,7 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="signin-email" class="control-label sr-only">Email</label>   
+                                    <label for="signin-email" class="control-label sr-only">Alamat Email</label>   
                                         <input id="email" placeholder="Alamat Email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
         
                                         @error('email')
@@ -76,5 +74,3 @@
     
 </body>
 
-
-@endsection

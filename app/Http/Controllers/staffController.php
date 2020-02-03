@@ -11,8 +11,15 @@ class staffController extends Controller{
     {
         $this->middleware('auth');
     }
-    public function showDashboard(){   
-        return view('itstaff.dashboard');
+    
+    public function showDashboard(){
+        $periode_audit = DB::table('periode_audit')->orderby('id_periode_audit','desc')->get();
+        $hasil_audit = DB::table('hasil_audit')
+                        ->join('subdomains','subdomains.id_subdomain','=','hasil_audit.id_subdomain')
+                        ->where('hasil_audit.status','SELESAI')
+                        ->select('subdomains.kode_subdomain','subdomains.proses','hasil_audit.yescount','hasil_audit.totaldata','hasil_audit.id_periode_audit')
+                        ->get();
+        return view('itstaff.dashboard',['periode_audit'=>$periode_audit,'hasil_audit'=>$hasil_audit]);
     }
 
     public function showEvidence(){

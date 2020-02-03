@@ -60,8 +60,8 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/home" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                        <li><a href="#" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
+                        <li><a href="/itstaff" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/itstaff/laporan" class="active"><i class="lnr lnr-file-add"></i> <span>Laporan TI</span></a></li>
                       </ul>
                 </nav>
             </div>
