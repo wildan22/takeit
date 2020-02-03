@@ -161,7 +161,7 @@
                     <div class="clearfix"></div>
                     <footer>
                         <div class="container-fluid position-relative">
-                            <p class="copyright"><a href="https://www.themeineed.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
+                            <p class="copyright"><a href="https://www.ptpn7.com" target="_blank"> IT-Team PTPN7</a>. All Rights Reserved.</p>
                         </div>
                     </footer>
                 </div>
