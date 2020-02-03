@@ -19,9 +19,20 @@ class eksekutifController extends Controller{
                         ->get();
         return view('executive.dashboard',['periode_audit'=>$periode_audit,'hasil_audit'=>$hasil_audit]);
     }
+
     public function showLaporan(){
-        return view('executive.laporan');
+        $laporan = DB::table('laporan')
+                    ->join('proses_ti','proses_ti.id','=','laporan.id_proses_ti')
+                    ->join('periode_audit','periode_audit.id_periode_audit','=','laporan.id_periode_audit')
+                    ->join('users','users.id','=','laporan.uploaded_by')
+                    ->select('laporan.id','laporan.nama_laporan','laporan.lokasi_laporan','periode_audit.tanggal_audit','users.name')
+                    ->get();
+        return view('executive.laporan',['laporan'=>$laporan]);
     }
+
+    // public function showLaporan(){
+    //     return view('executive.laporan');
+    // }
 
     public function showViewLaporan(){   
         return view('executive.view_laporan');

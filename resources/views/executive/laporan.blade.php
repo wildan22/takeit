@@ -83,19 +83,21 @@
                                     <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Nama Laporan</th>
-                                                <th width="18%">Bulan</th>
+                                                <th>Judul Laporan</th>
+                                                <th width="18%">Periode</th>
                                                 <th width="10%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+											@foreach($laporan as $l)
                                             <tr>
-                                                <td>Nama Laporan 1</td>
-                                                <td>12-12-2012</td>
-                                                <td>
-                                                    <a href="/executive/laporan/view_laporan" class="btn btn-warning"><i class="lnr lnr-magnifier"></i> Detail</a>
+                                                <td>{{$l->nama_laporan}}</td>
+                                                <td>{{myHelpers::dateConvert($l->tanggal_audit)}}</td>
+                                                <td width="18%">
+                                                    <a href="/{{$l->lokasi_laporan}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" class="btn btn-warning"><i class="lnr lnr-magnifier"></i></a>
                                                 </td>
                                             </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
