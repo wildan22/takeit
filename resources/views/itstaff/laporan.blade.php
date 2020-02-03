@@ -138,7 +138,7 @@
                                     <div class="modal-footer">
                                         <form method="POST" action="/itstaff/laporan/hapus">
                                             @csrf
-                                            <input type="hidden" name="id" value="id">
+                                            <input type="hidden" name="id" value="{{$l->id}}">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" class="btn btn-danger">Delete</a>
                                         </form>

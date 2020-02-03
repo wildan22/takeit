@@ -4,16 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Hash;
+use Auth;
 
 class adminController extends Controller{
 	public function __construct()
     {
         $this->middleware('auth');
     }
-
-	// public function showDashboard(){   
-    //     return view('superadmin.dashboard');
-    // }
 
     public function showDashboard(){
         $periode_audit = DB::table('periode_audit')->orderby('id_periode_audit','desc')->get();
@@ -27,6 +24,34 @@ class adminController extends Controller{
 
     public function showUbahPassowrd(){   
         return view('superadmin.ubah_password');
+    }
+
+    public function prosesUbahPassword(Request $request){
+        $oldpass = DB::table('users')
+                        ->where('id',Auth::id())
+                        ->select('password')
+                        ->first();
+        if (Hash::check($request->password,$oldpass->password)) {
+            if($request->new_password == $request->konfirmasi_password){
+                $updatepass = DB::table('users')
+                                ->where('id',Auth::id())
+                                ->update([
+                                    'password'=>Hash::make($request->new_password)
+                                ]);
+                if($updatepass == 1){
+                    //return redirect('/logout')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
+                    return redirect('/logout')->alert()->info('info',"Perubahan password");
+                }
+                else{
+                    return back()->with('error','Ubah Password gagal');
+                }
+            }
+            else{
+                return back()->with('error','Password baru dan konfirmasi password tidak sama');
+            }
+        }else{
+            return back()->with('error','Password Lama anda salah');
+        }
     }
 
     public function showPeriodeAudit(){

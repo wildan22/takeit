@@ -110,6 +110,7 @@ Route::middleware('is_staff')->group(function (){
 
 
     Route::post('/itstaff/laporan/proses','staffController@prosesTambahLaporan');
+    Route::post('/itstaff/laporan/hapus','staffController@prosesHapusLaporan');
     
     
 });

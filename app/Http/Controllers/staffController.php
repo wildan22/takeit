@@ -90,4 +90,16 @@ class staffController extends Controller{
     public function showUbahPassowrd(){
         return view('itstaff.ubah_password');
     }
+
+    public function prosesHapusLaporan(Request $request){
+        $hapuslaporan = DB::table('laporan')
+                            ->where('id',$request->id)
+                            ->delete();
+		if($hapuslaporan == 1){
+			return redirect()->route('itstaff.laporan')->with('status','Laporan Berhasil Dihapus');
+		}
+		else{
+			return redirect()->route('itstaff.laporan')->with('status','Laporan Gagal Dihapus');
+		}
+    }
 }
