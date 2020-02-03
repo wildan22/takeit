@@ -94,6 +94,33 @@ class auditorController extends Controller{
         return view('auditor.ubah_password');
     }
 
+    public function prosesUbahPassword(Request $request){
+        $oldpass = DB::table('users')
+                        ->where('id',Auth::id())
+                        ->select('password')
+                        ->first();
+        if (Hash::check($request->password,$oldpass->password)) {
+            if($request->new_password == $request->konfirmasi_password){
+                $updatepass = DB::table('users')
+                                ->where('id',Auth::id())
+                                ->update([
+                                    'password'=>Hash::make($request->new_password)
+                                ]);
+                if($updatepass == 1){
+                    return redirect('/logout')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
+                }
+                else{
+                    return back()->with('error','Ubah Password gagal');
+                }
+            }
+            else{
+                return back()->with('error','Password baru dan konfirmasi password tidak sama');
+            }
+        }else{
+            return back()->with('error','Password Lama anda salah');
+        }
+    }
+
     public function simpanArgumen(Request $request){
         $latestaudit = DB::table('periode_audit')->where('status','PROSES')->first();
         $idhasil = DB::table('hasil_audit')->where('id',$request->id)->where('id_periode_audit',$latestaudit->id_periode_audit)->first();
@@ -137,12 +164,6 @@ class auditorController extends Controller{
 
 
     //*** FOR TESTING ***//
-    public function ajaxRequestPost(Request $request)
-    {
-        $input = $request->all();
-        return response()->json(['success'=>'Got Simple Ajax Request.']);
-    }
-
     public function ubahStatusAsync($id,$status){
         if($status=='no'|| 'yes'){
             $response_update = DB::table('audit_response')

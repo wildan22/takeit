@@ -74,7 +74,7 @@
 							<div class="panel"  >
 								<div class="panel-body">
 									
-									<form id="ubahPassForm" method="post" action="/superadmin/ubah_password/proses" enctype="multipart/form-data">
+									<form id="ubahPassForm" method="post" action="/itstaff/ubah_password/proses" enctype="multipart/form-data">
 										@csrf
 									<div class="form-group">
                                         <label for="password">Password Sekarang</label>
