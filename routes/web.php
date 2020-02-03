@@ -133,7 +133,7 @@ Route::middleware('is_auditor')->group(function (){
     Route::get('/auditor/laporan/view_laporan','auditorController@showViewLaporan')->name('auditor.view_laporan');
 
     //Menampilkan halaman ubah password
-    Route::get('auditor/ubah_password','auditorController@showUbahPassowrd')->name('auditor.ubah_passowrd');
+    Route::get('/auditor/ubah_password','auditorController@showUbahPassword')->name('auditor.ubah_password');
 
     Route::get('/auditor/ubahstatusasync/{id}/{status}','auditorController@ubahStatusAsync');
     Route::get('/auditor/ubahkeputusanlaporan/{id}/{keputusan}','auditorController@ubahKeputusanAsync');

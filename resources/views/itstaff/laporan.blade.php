@@ -78,10 +78,8 @@
                             <div class="panel">
                                 <center>
 									<h3 style="font-family: lora; color: #1B2690;">Laporan Proses TI</h3>
-									<hr width="20%">
+									<hr width="23%">
 								</center>
-                                <div class="panel-heading mt-0">
-                                </div>
                                 <div class="panel-heading">
                                     <a href="/itstaff/laporan/new_laporan" class="btn btn-outline-primary"><i class="lnr lnr-plus-circle"></i>  Laporan</a>
                                 </div>
@@ -133,7 +131,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Apakah Anda Yakin, Menghapus {{$l->nama_laporan}} ?
+                                        Apakah Anda Yakin, Menghapus <b>{{$l->nama_laporan}} ?</b>
                                     </div>
                                     <div class="modal-footer">
                                         <form method="POST" action="/itstaff/laporan/hapus">
