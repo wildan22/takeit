@@ -109,9 +109,9 @@
                                         <thead>
                                             <tr>
                                                 <th width="2%">No</th>
-                                                <th width="17%">Nama</th>
-                                                <th>Alamat E-Mail</th>
-                                                <th>Keterangan</th>
+                                                <th width="30%">Nama</th>
+                                                <th width="27%">Alamat E-Mail</th>
+                                                <th width="7">Keterangan</th>
                                                 <th width="22%">Aksi</th>
                                             </tr>
                                         </thead>

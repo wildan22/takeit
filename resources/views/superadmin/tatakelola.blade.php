@@ -112,7 +112,7 @@
                                                 <th width="7%">Kode Output</th>
                                                 <th width="22%">Output dari Proses</th>
                                                 <th>Deskripsi</th>
-                                                <th width="20%">Aksi</th>
+                                                <th width="19%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -122,9 +122,11 @@
                                                 <td>{{$t->kode_wp}}</td>
                                                 <td>{{$t->wp_name}}</td>
                                                 <td>{{$t->wp_deskripsi}}<td>
+                                                    <div class="row">
                                                     <a href="/superadmin/tatakelola/edit_tatakelola/{{$t->id}}" class="btn btn-warning"><i class="lnr lnr-pencil d-inline"></i></a>
                                                     <button type="button" class="btn btn-danger d-inline" data-toggle="modal" data-target="#deleteModal-id">
                                                         <i class="lnr lnr-trash"></i>
+                                                    </div>
                                             </tr>
                                         @endforeach
 

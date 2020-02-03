@@ -128,11 +128,12 @@
 												<td>{{$cobit->kode_subdomain}}</td>
 												<td>{{$cobit->proses}}</td>
 												<td>
+													<div class="row">
 												<a href="/superadmin/cobit5/edit_cobit5/{{$cobit->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
 													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$cobit->id}}">
                                                         <i class="lnr lnr-trash"></i>
                                                     </button>
-													
+												</div>
 													</td>
 											</tr>
 											@endforeach
