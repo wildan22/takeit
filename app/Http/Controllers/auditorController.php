@@ -18,7 +18,7 @@ class auditorController extends Controller{
         $hasil_audit = DB::table('hasil_audit')
                         ->join('subdomains','subdomains.id_subdomain','=','hasil_audit.id_subdomain')
                         ->where('hasil_audit.status','SELESAI')
-                        ->select('subdomains.kode_subdomain','subdomains.proses','hasil_audit.yescount','hasil_audit.totaldata','hasil_audit.id_periode_audit')
+                        ->select('subdomains.kode_subdomain','subdomains.proses','hasil_audit.yescount','hasil_audit.id','hasil_audit.totaldata','hasil_audit.id_periode_audit','hasil_audit.argumen_auditor')
                         ->get();
         return view('auditor.dashboard',['periode_audit'=>$periode_audit,'hasil_audit'=>$hasil_audit]);
     }
@@ -113,14 +113,14 @@ class auditorController extends Controller{
                     return redirect('/login')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
                 }
                 else{
-                    return back()->with('error','Ubah Password gagal');
+                    return back()->with('status','Ubah Password gagal');
                 }
             }
             else{
-                return back()->with('error','Password baru dan konfirmasi password tidak sama');
+                return back()->with('status','Password baru dan konfirmasi password tidak sama');
             }
         }else{
-            return back()->with('error','Password Lama anda salah');
+            return back()->with('status','Password Lama anda salah');
         }
     }
 

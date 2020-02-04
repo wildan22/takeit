@@ -126,7 +126,7 @@
                                                 <th width="9%">Cobit 5</th>
                                                 <th >Proses</th>
 												<th width="18%" colspan="2">Kematangan Level %</th>
-                                                <th width="8%">Keterangan</th>
+                                                <th width="8%">Keterangan</th>G
                                                 <th>Detail</th>
 												</b>
 											</tr>
@@ -164,7 +164,7 @@
 													@endif
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#deleteModal-id">
+                                                    <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#showAuditorArgument{{$h->id}}">
                                                         <i class="lnr lnr-magnifier"></i>
                                                     </button>
                                                 </td>
@@ -176,30 +176,28 @@
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
+                        
+                        </div>
+						@endforeach
 
-                            <!-- Delete Modal -->
-						{{-- @foreach($cobits as $cobit) --}}
-                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- Show Auditor Argument Modal -->
+						@foreach($hasil_audit as $h)
+                        <div class="modal fade" id="showAuditorArgument{{$h->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Menampilkan Argumen Auditor /SubDomain
+                                        {{$h->argumen_auditor}}
                                     </div>
                                     <div class="modal-footer">
-                                        <form method="POST" action="/auditor">
-                                            @csrf
                                             <input type="hidden" name="id" value="id">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-						{{-- @endforeach --}}
-                        <!-- Delete Modal -->
-                        
-                        </div>
 						@endforeach
+                        <!-- Show Auditor Argument Modal -->
+
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
                         <footer>

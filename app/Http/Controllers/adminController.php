@@ -43,14 +43,14 @@ class adminController extends Controller{
                     return redirect('/login')->with('status','Perubahan password berhasil dilakukan,silahkan login ulang');
                 }
                 else{
-                    return back()->with('error','Ubah Password gagal');
+                    return back()->with('status','Ubah Password gagal');
                 }
             }
             else{
-                return back()->with('error','Password baru dan konfirmasi password tidak sama');
+                return back()->with('status','Password baru dan konfirmasi password tidak sama');
             }
         }else{
-            return back()->with('error','Password Lama anda salah');
+            return back()->with('status','Password Lama anda salah');
         }
     }
 
