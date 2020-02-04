@@ -110,7 +110,7 @@
                                                 <th width="5%">Kode</th>
                                                 <th width="14%">Outpur dari Proses</th>
                                                 <th>Deskripsi</th>
-                                                <th width="23%">Terdapat/Lokasi</th>
+                                                <th width="23%">Laporan</th>
                                                 <th width="5%">Opsi</th>
                                                 <th>Y/N</th>
                                             </tr>
