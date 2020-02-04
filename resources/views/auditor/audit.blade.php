@@ -191,12 +191,13 @@
                         {{-- Sektor Laporan per Domain/Subdomain --}}
                         <div class="panel">
                             <div class="panel-body laporan-section">
+                                <h3 class="panel-title" style="font-family: lora; color: #1B2690;">List Laporan</h3>
                                 <div class="accordion" id="accordionExample">
                                     @foreach($laporan as $l)
                                     <div class="card">
                                         <div class="card-header" id="headingTwo">
                                             <h2 class="mb-0">
-										  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{$l->id}}" aria-expanded="false" aria-controls="collapseTwo">
+										  <button class="btn btn-link-default collapsed" type="button" data-toggle="collapse" data-target="#collapse{{$l->id}}" aria-expanded="false" aria-controls="collapseTwo">
 											{{$l->nama_laporan}}
 										  </button>
 										</h2>

@@ -111,6 +111,7 @@
                                                 <th >Proses</th>
 												<th width="18%" colspan="2">Kematangan Level %</th>
 												<th width="8%">Keterangan</th>
+												<th>Detail</th>
 												</b>
 											</tr>
                                         </thead>
@@ -146,6 +147,11 @@
 													Nothing
 													@endif
 												</td>
+												<td>
+                                                    <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#showAuditorArgument{{$h->id}}">
+                                                        <i class="lnr lnr-magnifier"></i>
+                                                    </button>
+                                                </td>
                                             </tr>
 											@endif
 											@endforeach
@@ -153,7 +159,26 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- END BASIC TABLE -->
+							<!-- END BASIC TABLE -->
+							
+							<!-- Show Auditor Argument Modal -->
+						@foreach($hasil_audit as $h)
+                        <div class="modal fade" id="showAuditorArgument{{$h->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        {{$h->argumen_auditor}}
+                                    </div>
+                                    <div class="modal-footer">
+                                            <input type="hidden" name="id" value="id">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						@endforeach
+						<!-- Show Auditor Argument Modal -->
+						
                         </div>
 						@endforeach
                         <!-- END MAIN -->

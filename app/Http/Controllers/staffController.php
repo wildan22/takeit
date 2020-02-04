@@ -18,7 +18,7 @@ class staffController extends Controller{
         $hasil_audit = DB::table('hasil_audit')
                         ->join('subdomains','subdomains.id_subdomain','=','hasil_audit.id_subdomain')
                         ->where('hasil_audit.status','SELESAI')
-                        ->select('subdomains.kode_subdomain','subdomains.proses','hasil_audit.yescount','hasil_audit.totaldata','hasil_audit.id_periode_audit')
+                        ->select('subdomains.kode_subdomain','subdomains.proses','hasil_audit.yescount','hasil_audit.id','hasil_audit.totaldata','hasil_audit.id_periode_audit','hasil_audit.argumen_auditor')
                         ->get();
         return view('itstaff.dashboard',['periode_audit'=>$periode_audit,'hasil_audit'=>$hasil_audit]);
     }
