@@ -126,7 +126,8 @@
                                                 <th width="9%">Cobit 5</th>
                                                 <th >Proses</th>
 												<th width="18%" colspan="2">Kematangan Level %</th>
-												<th width="8%">Keterangan</th>
+                                                <th width="8%">Keterangan</th>
+                                                <th>Detail</th>
 												</b>
 											</tr>
                                         </thead>
@@ -161,7 +162,12 @@
 													@else
 													Nothing
 													@endif
-												</td>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#deleteModal-id">
+                                                        <i class="lnr lnr-magnifier"></i>
+                                                    </button>
+                                                </td>
                                             </tr>
 											@endif
 											@endforeach
@@ -170,6 +176,28 @@
                                 </div>
                             </div>
                             <!-- END BASIC TABLE -->
+
+                            <!-- Delete Modal -->
+						{{-- @foreach($cobits as $cobit) --}}
+                        <div class="modal fade" id="deleteModal-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Menampilkan Argumen Auditor /SubDomain
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="POST" action="/auditor">
+                                            @csrf
+                                            <input type="hidden" name="id" value="id">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						{{-- @endforeach --}}
+                        <!-- Delete Modal -->
+                        
                         </div>
 						@endforeach
                         <!-- END MAIN -->
