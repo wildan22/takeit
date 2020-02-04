@@ -126,7 +126,7 @@
                                                 <th width="9%">Cobit 5</th>
                                                 <th >Proses</th>
 												<th width="18%" colspan="2">Kematangan Level %</th>
-                                                <th width="8%">Keterangan</th>G
+                                                <th width="8%">Keterangan</th>
                                                 <th>Detail</th>
 												</b>
 											</tr>
