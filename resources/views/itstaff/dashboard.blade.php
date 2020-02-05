@@ -75,20 +75,7 @@
 								@foreach($periode_audit as $p)
                             <!-- BASIC TABLE -->
                             <div class="panel">
-                                <div class="panel-heading">
-
-                                    {{-- alert -> tindakan yang dilakukan --}} 
-									@if (session('status'))
-                                    <div class="panel-body">
-                                        <div class="alert alert-danger">
-                                            {{session('status')}}
-                                        </div>
-                                    </div>
-                                    @endif {{-- alert -> tindakan yang dilakukan --}} 
-									
-									
-                                </div>
-                                <div class="panel-body">
+								<div class="panel-body">
                                     <h3 class="panel-title" style="font-family: lora; color: #1B2690;">Periode {{myHelpers::dateConvert($p->tanggal_audit)}}</h3>
                                 <div class="panel-body">
                                     <table class="table">
