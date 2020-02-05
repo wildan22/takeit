@@ -15,9 +15,10 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ ('image/logo_ptpn7.png') }}">
+
 </head>
 
-<body style="background-color:#ffff">
+<body background="{{ ('image/bg.jpg') }}">
     <!-- WRAPPER -->
     <div id="wrapper mt-0">
         <div class="vertical-align-wrap">
