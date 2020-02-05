@@ -20,7 +20,7 @@
 
 <body background="{{ ('image/bg.jpg') }}">
     <!-- WRAPPER -->
-    <div id="wrapper mt-0">
+    <div id="wrapper">
         <div class="vertical-align-wrap">
             <div class="vertical-align-middle">
                 <div class="container">
