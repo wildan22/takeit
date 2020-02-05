@@ -96,11 +96,15 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h3 class="page-title">Selamat Datang Auditor</h3>
+                    <h3 class="page-title">Selamat Datang Auditor
+                        <button type="button-right" class="btn btn-default" style="float: right;" data-toggle="modal" data-target="#showAvg-id">
+                            <i class="lnr lnr-star"> AVG</i>
+                        </button>
+                    </h3>
                     <div class="row">
                         <div class="co-12">
-                        
-								@foreach($periode_audit as $p)
+
+							@foreach($periode_audit as $p)
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
@@ -197,6 +201,53 @@
                         </div>
 						@endforeach
                         <!-- Show Auditor Argument Modal -->
+
+                         <!-- Show Avg Tahunan Modal -->
+						{{-- @foreach($hasil_audit as $h) --}}
+                        <div class="modal fade" id="showAvg-id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <h3 class="panel-title" style="font-family: lora; color: #1B2690;">Average 2020</h3> <br>
+                                        {{-- {{$h->argumen_auditor}} --}} 
+                                        <table class="table">
+                                            <thead>
+                                                <tr style="color:black">
+                                                    <b>
+                                                    <th width="12%">Cobit 5</th>
+                                                    <th width="58%">Proses</th>
+                                                    <th width="18%" colspan="2">Percentage</th>
+                                                    <th width="">Keterangan</th>
+                                                    </b>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{-- @foreach($hasil_audit as $h) --}}
+                                                {{-- @if($h->id_periode_audit == $p->id_periode_audit) --}}
+                                                <tr>
+                                                    <td>EDM01</td>
+                                                    <td>Ensure Governance Framework Setting and Maintenance</td>
+                                                    <td>83.3%</td>
+                                                    <td><div class='box' style='display: inline' >
+                                                                    <i class='fas fa-star' style='color:#CCCC00'></i>
+                                                                </span>
+                                                    </td>
+                                                    <td>	Level 1</td>
+                                                </tr>
+                                                {{-- @endif --}}
+                                                {{-- @endforeach --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                            <input type="hidden" name="id" value="id">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						{{-- @endforeach --}}
+                        <!-- Show Avg Tahunan Modal -->
 
                         <!-- END MAIN -->
                         <div class="clearfix"></div>
