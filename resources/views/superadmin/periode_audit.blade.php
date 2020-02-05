@@ -148,7 +148,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        Apakah Anda Yakin, Audit Tata Kelola TI Periode Desember 2019 telah Selesai ?
+                                        Apakah Anda Yakin, Audit Tata Kelola TI Periode  <b>  {{myHelpers::dateConvert($period->tanggal_audit)}} </b>telah Selesai ?
                                     </div>
                                     <div class="modal-footer">
                                         <form method="POST" action="/superadmin/periode/selesai/">
