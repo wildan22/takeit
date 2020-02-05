@@ -24,7 +24,7 @@
         <div class="vertical-align-wrap">
             <div class="vertical-align-middle">
                 <div class="container">
-                    <div class="col-7">
+                    <div class="col-6">
                         <center>
                             {{-- alert -> tindakan yang dilakukan --}} @if (session('status'))
                             <div class="panel-body">
@@ -34,6 +34,15 @@
                                 </div>
                             @endif
                             {{-- alert -> tindakan yang dilakukan --}}
+
+                            {{-- alert -> error login --}} @if (session('error'))
+                            <div class="panel-body">
+                                <div class="alert alert-danger">
+                                    {{session('error')}}
+                                </div>
+                                </div>
+                            @endif
+                            {{-- alert -> error login --}}
                         </center>
                     </div>
                 </div>

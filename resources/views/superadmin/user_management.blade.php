@@ -112,7 +112,7 @@
                                                 <th width="30%">Nama</th>
                                                 <th width="27%">Alamat E-Mail</th>
                                                 <th width="7">Keterangan</th>
-                                                <th width="22%">Aksi</th>
+                                                <th width="36%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -125,11 +125,13 @@
                                                     <td>{{$user->keterangan_level}}</td>
                                                     <td width="14%">
                                                         <div class="row">
-                                                        <a href="/superadmin/user_management/edit/{{$user->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$user->id}}">
-                                                            <i class="lnr lnr-trash"></i>
-                                                        </button>
-                                                    </div>
+                                                            <a href="/superadmin/user_management/edit/{{$user->id}}" class="btn btn-warning"><i class="lnr lnr-pencil"></i></a>
+                                                            {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$user->id}}">
+                                                                <i class="lnr lnr-trash"></i>
+                                                            </button> --}}
+                                                            <button id="hiddenBtn-id" class="btn btn-danger hiddenBtn" value="id"><span class="lnr lnr-trash"></span></button>
+                                                            <button id="showBtn-id" class="btn btn-primary hidden showBtn" value="id"><span class="lnr lnr-eye" style="z-index-1"></span></button>
+                                                        </div>
                                                     </td>
                                                 </tr>
 
