@@ -164,7 +164,7 @@ return [
 
         //CUSTOM PROVIDERS
         App\Providers\UserServiceProvider::class,
-
+        Mews\Captcha\CaptchaServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,6 +229,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //CUSTOM ALIASES
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'myHelpers' => App\myHelpers::class,
     ],
 
