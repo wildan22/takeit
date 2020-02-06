@@ -77,6 +77,20 @@
                                             </span>
                                         @enderror
                                 </div>
+
+                                
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <div class="captcha">
+                                            <span>cpt</span> 
+                                            <button type="button" class="btn btn-success btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                                </div>
+                                
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
                             </form>
                         </div>
