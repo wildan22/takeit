@@ -90,7 +90,7 @@
                                     <div class="form-group">
                                         <div class="captcha">
                                             <span>{!! captcha_img('black') !!}</span>
-                                            <button type="button" class="btn btn-success btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
+                                            <button type="button" class="btn btn-success btn-sm" id="refresh"><i class="lnr lnr-redo"></i></button>
                                         </div>
                                     </div>
                                 </div>
