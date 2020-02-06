@@ -34,7 +34,15 @@
                                 </div>
                             @endif
                             {{-- alert -> tindakan yang dilakukan --}}
-
+                            @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div><br />
+      @endif
                             {{-- alert -> error login --}} @if (session('error'))
                             <div class="panel-body">
                                 <div class="alert alert-danger">
@@ -81,13 +89,18 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="captcha">
+<<<<<<< HEAD
                                             <span>cpt</span> 
                                             <button type="button" class="btn btn-default btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
+=======
+                                            <span>{!! captcha_img('black') !!}</span>
+                                            <button type="button" class="btn btn-success btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
+>>>>>>> 59afc09acea3d9d0e355df8b0da6fac9d15612aa
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha" required>
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
@@ -108,6 +121,18 @@
     </div>
     <!-- END WRAPPER -->
     <br><br>
-    
+    <!-- Javascript -->
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('#refresh').click(function(){
+        $.ajax({
+            type:'GET',
+            url:'/refreshcaptcha',
+            success:function(data){
+                $(".captcha span").html(data.captcha);
+            }
+        });
+        });
+    </script>
 </body>
 
