@@ -77,13 +77,12 @@
                                             </span>
                                         @enderror
                                 </div>
-
                                 
                                 <div class="row">
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group">
                                         <div class="captcha">
                                             <span>cpt</span> 
-                                            <button type="button" class="btn btn-success btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
+                                            <button type="button" class="btn btn-default btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
                                         </div>
                                     </div>
                                 </div>
