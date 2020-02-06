@@ -89,13 +89,8 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="captcha">
-<<<<<<< HEAD
-                                            <span>cpt</span> 
-                                            <button type="button" class="btn btn-default btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
-=======
                                             <span>{!! captcha_img('black') !!}</span>
-                                            <button type="button" class="btn btn-success btn-sm"><i class="lnr lnr-redo" id="refresh"></i></button>
->>>>>>> 59afc09acea3d9d0e355df8b0da6fac9d15612aa
+                                            <button type="button" class="btn btn-success btn-sm" id="refresh"><i class="lnr lnr-redo"></i></button>
                                         </div>
                                     </div>
                                 </div>
