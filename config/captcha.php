@@ -23,6 +23,7 @@ return [
         'height' => 36,
         'quality' => 90,
         'math' => false,
+        'fontColors' => ['#000000']
     ],
 
     'flat' => [

@@ -42,11 +42,15 @@ class LoginController extends Controller
     public function login(Request $request)
     {   
         $input = $request->all();
+        $message = [
+            'captcha'=>'Captcha yang anda masukan salah'
+        ];
    
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
-        ]);
+            'captcha' => 'required|captcha'
+        ],$message);
    
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {

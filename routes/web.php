@@ -16,10 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/refreshcaptcha', 'HomeController@refreshCaptcha');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
 
 /*======= ROUTE GROUP UNTUK ADMIN =======*/
 Route::middleware('is_admin')->group(function (){
