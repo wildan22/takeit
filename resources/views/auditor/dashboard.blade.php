@@ -96,7 +96,7 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h3 class="page-title">Selamat Datang Auditor
+                    <h3 class="page-title">Selamat Datang  {{ Auth::user()->name }}!
                         <button type="button-right" class="btn btn-default" style="float: right;" data-toggle="modal" data-target="#showAvg-id">
                             <i class="lnr lnr-star"> AVG</i>
                         </button>

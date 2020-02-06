@@ -80,11 +80,10 @@
             <!-- MAIN CONTENT -->
             <div class="main-content">
                 <div class="container-fluid">
-                    <h3 class="page-title">Selamat Datang Admin</h3>
+                    <h3 class="page-title">Selamat Datang  {{ Auth::user()->name }}!</h3>
                     <div class="row">
                         <div class="co-12">
-                        
-								@foreach($periode_audit as $p)
+							@foreach($periode_audit as $p)
                             <!-- BASIC TABLE -->
                             <div class="panel">
 								<div class="panel-body">
@@ -114,7 +113,7 @@
 													echo round($percentage,1)."%";
 													?>
 												</td>
-												<td >
+												<td>
 													<?php
 													if($percentage >= 50){
 														echo "<div class='box' style='display: inline' >
